@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -9,11 +10,15 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Brand & Description */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="relative h-8 w-8">
-                <div className="h-full w-full rounded-full bg-gradient-to-br from-blackbird-ignition-blue to-blackbird-charcoal" />
-                <div className="absolute inset-1 rounded-full bg-blackbird-black" />
-                <div className="absolute inset-2 rounded-full bg-blackbird-ignition-blue" />
+            <Link href="/" className="flex items-center space-x-3 mb-4">
+              <div className="relative h-10 w-10">
+                <Image
+                  src="/blackbirdlogo.jpeg"
+                  alt="Blackbird Detailing"
+                  width={40}
+                  height={40}
+                  className="rounded-full object-cover"
+                />
               </div>
               <span className="font-heading text-xl font-bold text-blackbird-off-white">
                 Blackbird Detailing
