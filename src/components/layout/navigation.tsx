@@ -62,8 +62,21 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-blackbird-charcoal/20 bg-blackbird-black/95 backdrop-blur supports-[backdrop-filter]:bg-blackbird-black/75">
-      <div className="container flex h-20 items-center justify-between">
-        {/* Desktop Navigation Left */}
+      <div className="container flex h-20 items-center">
+        {/* Logo - Left side, larger */}
+        <Link href="/" className="mr-8 flex items-center space-x-2">
+          <div className="relative h-12 w-12 sm:h-14 sm:w-14">
+            <Image
+              src="/blackbirdlogo.jpeg"
+              alt="Blackbird Detailing"
+              width={56}
+              height={56}
+              className="rounded-full object-cover"
+            />
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -100,25 +113,7 @@ export function Navigation() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
 
-        {/* Centered Logo */}
-        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-          <div className="relative h-12 w-12 sm:h-16 sm:w-16">
-            <Image
-              src="/blackbirdlogo.jpeg"
-              alt="Blackbird Detailing"
-              width={64}
-              height={64}
-              className="rounded-full object-cover"
-            />
-          </div>
-        </Link>
-
-        {/* Desktop Navigation Right */}
-        <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/portfolio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -165,7 +160,7 @@ export function Navigation() {
         </NavigationMenu>
 
         {/* Contact Info - positioned on far right */}
-        <div className="hidden items-center space-x-4 lg:flex">
+        <div className="ml-auto hidden items-center space-x-4 lg:flex">
           <a
             href="tel:+1-757-123-4567"
             className="flex items-center space-x-2 text-sm text-blackbird-off-white/80 hover:text-blackbird-ignition-blue transition-colors"
