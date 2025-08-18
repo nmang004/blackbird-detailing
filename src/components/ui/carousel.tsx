@@ -104,7 +104,7 @@ export function Carousel({
             gap
           )}
           style={{
-            transform: `translateX(-${currentIndex * (100 / itemsPerView.desktop)}%)`
+            transform: `translateX(-${currentIndex * 100}%)`
           }}
         >
           {children.map((child, index) => (

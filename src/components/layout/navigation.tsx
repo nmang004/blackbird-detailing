@@ -64,13 +64,17 @@ export function Navigation() {
     <nav className="sticky top-0 z-50 w-full border-b border-blackbird-charcoal/20 bg-blackbird-black/95 backdrop-blur supports-[backdrop-filter]:bg-blackbird-black/75">
       <div className="container flex h-16 items-center">
         {/* Logo */}
-        <Link href="/" className="mr-8 flex items-center space-x-2">
-          <div className="relative h-8 w-8">
-            <div className="h-full w-full rounded-full bg-gradient-to-br from-blackbird-ignition-blue to-blackbird-charcoal" />
-            <div className="absolute inset-1 rounded-full bg-blackbird-black" />
-            <div className="absolute inset-2 rounded-full bg-blackbird-ignition-blue" />
+        <Link href="/" className="mr-6 sm:mr-8 flex items-center space-x-2">
+          <div className="relative h-8 w-8 sm:h-10 sm:w-10">
+            <Image
+              src="/blackbirdlogo.jpeg"
+              alt="Blackbird Detailing"
+              width={40}
+              height={40}
+              className="rounded-full object-cover"
+            />
           </div>
-          <span className="hidden font-heading text-xl font-bold text-blackbird-off-white sm:inline-block">
+          <span className="hidden font-heading text-lg sm:text-xl font-bold text-blackbird-off-white sm:inline-block">
             Blackbird Detailing
           </span>
         </Link>
@@ -177,59 +181,63 @@ export function Navigation() {
               <span className="sr-only">Toggle Menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="bg-blackbird-black border-blackbird-charcoal">
-            <div className="flex flex-col space-y-6 pt-6">
+          <SheetContent side="right" className="bg-blackbird-black border-blackbird-charcoal w-80">
+            <div className="flex flex-col space-y-8 pt-8">
               <Link
                 href="/"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
+                className="text-xl font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-3"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium text-blackbird-off-white/60 uppercase tracking-wider">
+              <div className="space-y-6">
+                <h3 className="text-sm font-medium text-blackbird-off-white/60 uppercase tracking-wider border-b border-blackbird-charcoal pb-2">
                   Services
                 </h3>
-                {services.map((service) => (
-                  <Link
-                    key={service.title}
-                    href={service.href}
-                    className="block text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
+                <div className="space-y-4 pl-2">
+                  {services.map((service) => (
+                    <Link
+                      key={service.title}
+                      href={service.href}
+                      className="block text-lg text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <Link
                 href="/portfolio"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
+                className="text-xl font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-3"
                 onClick={() => setIsOpen(false)}
               >
                 Portfolio
               </Link>
 
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium text-blackbird-off-white/60 uppercase tracking-wider">
+              <div className="space-y-6">
+                <h3 className="text-sm font-medium text-blackbird-off-white/60 uppercase tracking-wider border-b border-blackbird-charcoal pb-2">
                   Service Areas
                 </h3>
-                {serviceAreas.map((area) => (
-                  <Link
-                    key={area.title}
-                    href={area.href}
-                    className="block text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {area.title}
-                  </Link>
-                ))}
+                <div className="space-y-4 pl-2">
+                  {serviceAreas.map((area) => (
+                    <Link
+                      key={area.title}
+                      href={area.href}
+                      className="block text-lg text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {area.title}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <Link
                 href="/about"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
+                className="text-xl font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-3"
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -237,26 +245,26 @@ export function Navigation() {
 
               <Link
                 href="/contact"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
+                className="text-xl font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-3"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
 
-              <div className="pt-6 border-t border-blackbird-charcoal">
+              <div className="pt-8 border-t border-blackbird-charcoal space-y-4">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   <Button 
-                    size="sm" 
-                    className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90"
+                    size="lg" 
+                    className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 py-4 text-lg"
                   >
                     Get Estimate
                   </Button>
                 </Link>
                 <a
                   href="tel:+1-757-123-4567"
-                  className="flex items-center justify-center space-x-2 mt-4 text-sm text-blackbird-off-white/80"
+                  className="flex items-center justify-center space-x-2 text-base text-blackbird-off-white/80 py-3"
                 >
-                  <Phone className="h-4 w-4" />
+                  <Phone className="h-5 w-5" />
                   <span>(757) 123-4567</span>
                 </a>
               </div>

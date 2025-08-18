@@ -5,7 +5,7 @@ import { Play, Shield, Sparkles, Award } from 'lucide-react'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8 sm:py-0">
       {/* Background Video */}
       <div className="absolute inset-0">
         <OptimizedVideo
@@ -26,7 +26,7 @@ export function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 container text-center px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 container text-center px-6 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-blackbird-charcoal/80 rounded-full px-3 py-2 sm:px-4 sm:py-2 mb-6 sm:mb-8 backdrop-blur-sm border border-blackbird-ignition-blue/30">
@@ -37,7 +37,7 @@ export function HeroSection() {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
             <span className="text-blackbird-off-white block sm:inline">Precision.</span>{' '}
             <span className="text-blackbird-ignition-blue block sm:inline">Protection.</span>{' '}
             <span className="text-gradient bg-gradient-to-r from-blackbird-off-white to-blackbird-ignition-blue bg-clip-text text-transparent block sm:inline">
