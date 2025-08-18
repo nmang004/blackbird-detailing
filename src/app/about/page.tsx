@@ -75,36 +75,12 @@ const timeline = [
 
 const teamMembers = [
   {
-    name: 'Marcus "Tank" Thompson',
+    name: 'Judah Cates',
     role: 'Founder & Lead Technician',
-    bio: 'Former professional racing mechanic with 15+ years in automotive perfection. Tank\'s attention to detail comes from years preparing vehicles for competitive racing.',
-    certifications: ['IDA Certified', 'Ceramic Pro Certified', 'GYEON Certified'],
+    bio: 'Professional automotive detailing specialist with a passion for motorsport-grade precision. Judah brings meticulous attention to detail and commitment to excellence to every vehicle that comes through Blackbird Detailing.',
+    certifications: ['IDA Certified', 'Ceramic Pro Certified', 'Advanced Paint Correction'],
     image: '/api/placeholder/300/300',
-    specialty: 'Paint Correction & Ceramic Coatings'
-  },
-  {
-    name: 'Sarah Mitchell',
-    role: 'Senior Detailing Specialist',
-    bio: 'Certified color specialist with expertise in luxury vehicle restoration. Sarah brings artistic precision to every paint correction project.',
-    certifications: ['IDA Advanced', 'Gtechniq Accredited', 'Color Matching Certified'],
-    image: '/api/placeholder/300/300',
-    specialty: 'Luxury Vehicle Restoration'
-  },
-  {
-    name: 'David Rodriguez',
-    role: 'Interior Specialist',
-    bio: 'Master craftsman in leather and fabric restoration. David\'s background in upholstery brings unmatched expertise to interior detailing.',
-    certifications: ['Leather Master Certified', 'Fabric Protection Expert', 'Odor Elimination Specialist'],
-    image: '/api/placeholder/300/300',
-    specialty: 'Interior Restoration & Protection'
-  },
-  {
-    name: 'Alex Chen',
-    role: 'Paint Protection Specialist',
-    bio: 'Former aerospace coating technician who applies military-grade precision to automotive paint protection and ceramic coating applications.',
-    certifications: ['SystemX Certified', 'Paint Protection Film Expert', 'Aerospace Coating Background'],
-    image: '/api/placeholder/300/300',
-    specialty: 'Ceramic Coatings & PPF'
+    specialty: 'Comprehensive Vehicle Detailing'
   }
 ]
 
@@ -314,7 +290,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex justify-center">
             {teamMembers.map((member, index) => (
               <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
                 <CardContent className="p-6 text-center">
