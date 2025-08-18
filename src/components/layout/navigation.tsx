@@ -177,12 +177,12 @@ export function Navigation() {
 
         {/* Mobile Logo */}
         <Link href="/" className="lg:hidden flex items-center">
-          <div className="relative h-10 w-10">
+          <div className="relative h-12 w-12">
             <Image
               src="/blackbirdlogo.jpeg"
               alt="Blackbird Detailing"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               className="rounded-full object-cover"
             />
           </div>
@@ -200,17 +200,17 @@ export function Navigation() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="bg-blackbird-black border-blackbird-charcoal w-72 overflow-y-auto">
-            <div className="flex flex-col space-y-4 pt-4">
+            <div className="flex flex-col space-y-5 pt-6">
               <Link
                 href="/"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               
               <div className="space-y-3">
-                <h3 className="text-xs font-medium text-blackbird-off-white/60 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-1">
+                <h3 className="text-sm font-semibold text-blackbird-off-white/75 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-2">
                   Services
                 </h3>
                 <div className="space-y-2 pl-3">
@@ -218,7 +218,7 @@ export function Navigation() {
                     <Link
                       key={service.title}
                       href={service.href}
-                      className="block text-sm text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-1"
+                      className="block text-base text-blackbird-off-white/85 hover:text-blackbird-ignition-blue transition-colors py-1.5 font-body"
                       onClick={() => setIsOpen(false)}
                     >
                       {service.title}
@@ -229,7 +229,7 @@ export function Navigation() {
 
               <Link
                 href="/membership"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
                 onClick={() => setIsOpen(false)}
               >
                 Membership
@@ -237,14 +237,14 @@ export function Navigation() {
 
               <Link
                 href="/portfolio"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
                 onClick={() => setIsOpen(false)}
               >
                 Portfolio
               </Link>
 
               <div className="space-y-3">
-                <h3 className="text-xs font-medium text-blackbird-off-white/60 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-1">
+                <h3 className="text-sm font-semibold text-blackbird-off-white/75 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-2">
                   Service Areas
                 </h3>
                 <div className="space-y-2 pl-3">
@@ -252,7 +252,7 @@ export function Navigation() {
                     <Link
                       key={area.title}
                       href={area.href}
-                      className="block text-sm text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-1"
+                      className="block text-base text-blackbird-off-white/85 hover:text-blackbird-ignition-blue transition-colors py-1.5 font-body"
                       onClick={() => setIsOpen(false)}
                     >
                       {area.title}
@@ -263,7 +263,7 @@ export function Navigation() {
 
               <Link
                 href="/about"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
                 onClick={() => setIsOpen(false)}
               >
                 About
@@ -271,24 +271,24 @@ export function Navigation() {
 
               <Link
                 href="/contact"
-                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
               </Link>
 
-              <div className="pt-4 border-t border-blackbird-charcoal/30 space-y-3 mt-4">
+              <div className="pt-6 border-t border-blackbird-charcoal/30 space-y-4 mt-6">
                 <Link href="/contact" onClick={() => setIsOpen(false)}>
                   <Button 
                     size="sm" 
-                    className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 py-3 text-sm"
+                    className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 py-3 text-base font-semibold"
                   >
                     Get Estimate
                   </Button>
                 </Link>
                 <a
                   href="tel:+1-757-123-4567"
-                  className="flex items-center justify-center space-x-2 text-sm text-blackbird-off-white/80 py-2"
+                  className="flex items-center justify-center space-x-2 text-base text-blackbird-off-white/85 py-2 font-body hover:text-blackbird-ignition-blue transition-colors"
                 >
                   <Phone className="h-4 w-4" />
                   <span>(757) 123-4567</span>
