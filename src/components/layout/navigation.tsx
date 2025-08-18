@@ -106,7 +106,7 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/portfolio" legacyBehavior passHref>
+              <Link href="/#portfolio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Portfolio
                 </NavigationMenuLink>
@@ -133,7 +133,7 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
+              <Link href="/#about" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   About
                 </NavigationMenuLink>
@@ -141,7 +141,7 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/contact" legacyBehavior passHref>
+              <Link href="/#contact" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Contact
                 </NavigationMenuLink>
@@ -202,7 +202,7 @@ export function Navigation() {
               </div>
 
               <Link
-                href="/portfolio"
+                href="/#portfolio"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -226,7 +226,7 @@ export function Navigation() {
               </div>
 
               <Link
-                href="/about"
+                href="/#about"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -234,7 +234,7 @@ export function Navigation() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/#contact"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >

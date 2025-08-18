@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
 
-// Mock portfolio data - will be replaced with real images later
+// Mock portfolio data - using gradient placeholders temporarily
 const portfolioItems = [
   {
     id: 1,
     title: 'BMW M3 Paint Correction & Ceramic Coating',
     category: 'Paint Correction',
-    beforeImage: '/api/placeholder/400/300',
-    afterImage: '/api/placeholder/400/300',
+    beforeImage: null,
+    afterImage: null,
     description: 'Complete paint restoration with multi-stage correction followed by premium ceramic coating application.',
     services: ['Paint Correction', 'Ceramic Coating'],
     vehicle: 'BMW M3'
@@ -21,8 +21,8 @@ const portfolioItems = [
     id: 2,
     title: 'Ford F-250 Full Detail Package',
     category: 'Full Detail',
-    beforeImage: '/api/placeholder/400/300',
-    afterImage: '/api/placeholder/400/300',
+    beforeImage: null,
+    afterImage: null,
     description: 'Comprehensive interior and exterior detailing for work truck restoration.',
     services: ['Interior Detail', 'Exterior Detail'],
     vehicle: 'Ford F-250'
@@ -31,8 +31,8 @@ const portfolioItems = [
     id: 3,
     title: 'Toyota 4Runner Interior Restoration',
     category: 'Interior Detail',
-    beforeImage: '/api/placeholder/400/300',
-    afterImage: '/api/placeholder/400/300',
+    beforeImage: null,
+    afterImage: null,
     description: 'Deep interior cleaning and conditioning bringing family SUV back to like-new condition.',
     services: ['Interior Detail', 'Leather Treatment'],
     vehicle: 'Toyota 4Runner'
@@ -41,8 +41,8 @@ const portfolioItems = [
     id: 4,
     title: 'Suburban Family Vehicle Detail',
     category: 'Full Service',
-    beforeImage: '/api/placeholder/400/300',
-    afterImage: '/api/placeholder/400/300',
+    beforeImage: null,
+    afterImage: null,
     description: 'Complete transformation of family vehicle with kids and pet hair removal.',
     services: ['Deep Clean', 'Interior Detail', 'Exterior Detail'],
     vehicle: 'Chevrolet Suburban'
@@ -84,12 +84,7 @@ export function PortfolioShowcase() {
                     {/* Before Image */}
                     <div className="relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent to-blackbird-black/20 z-10" />
-                      <Image
-                        src={item.beforeImage}
-                        alt={`${item.title} - Before`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                      <div className="w-full h-full bg-gradient-to-br from-blackbird-charcoal via-blackbird-black to-blackbird-charcoal/50 transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute top-4 left-4 bg-red-600/90 text-white text-xs px-2 py-1 rounded">
                         BEFORE
                       </div>
@@ -98,12 +93,7 @@ export function PortfolioShowcase() {
                     {/* After Image */}
                     <div className="relative overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-l from-transparent to-blackbird-black/20 z-10" />
-                      <Image
-                        src={item.afterImage}
-                        alt={`${item.title} - After`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
+                      <div className="w-full h-full bg-gradient-to-br from-blackbird-ignition-blue/20 via-blackbird-charcoal to-blackbird-black transition-transform duration-500 group-hover:scale-110" />
                       <div className="absolute top-4 right-4 bg-green-600/90 text-white text-xs px-2 py-1 rounded">
                         AFTER
                       </div>
