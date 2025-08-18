@@ -1,4 +1,8 @@
+'use client'
+
 import { TestimonialCard } from '@/components/ui/testimonial-card'
+import { Carousel } from '@/components/ui/carousel'
+import { useCarousel } from '@/hooks/use-carousel'
 import { Users, Star } from 'lucide-react'
 
 const testimonials = [
@@ -68,6 +72,13 @@ const testimonials = [
 ]
 
 export function TestimonialsSection() {
+  const carousel = useCarousel({
+    itemCount: testimonials.length,
+    autoPlay: true,
+    autoPlayInterval: 5500,
+    pauseOnHover: true
+  })
+
   return (
     <section className="py-20 md:py-32 bg-blackbird-charcoal/10">
       <div className="container">
@@ -115,16 +126,31 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Testimonials Carousel */}
+        <Carousel
+          currentIndex={carousel.currentIndex}
+          onNext={carousel.goToNext}
+          onPrevious={carousel.goToPrevious}
+          onMouseEnter={carousel.handleMouseEnter}
+          onMouseLeave={carousel.handleMouseLeave}
+          itemsPerView={{
+            mobile: 1,
+            tablet: 2, 
+            desktop: 3
+          }}
+          showArrows={true}
+          showDots={false}
+          gap="gap-8"
+          className="mb-8"
+        >
           {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
               {...testimonial}
-              className={index % 3 === 1 ? "md:transform md:translate-y-8" : ""}
+              className="h-full"
             />
           ))}
-        </div>
+        </Carousel>
 
         {/* CTA */}
         <div className="text-center mt-16">

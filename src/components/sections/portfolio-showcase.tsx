@@ -1,9 +1,13 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Camera, ArrowRight, Eye } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import { Carousel } from '@/components/ui/carousel'
+import { useCarousel } from '@/hooks/use-carousel'
 
 // Mock portfolio data - using gradient placeholders temporarily
 const portfolioItems = [
@@ -50,6 +54,13 @@ const portfolioItems = [
 ]
 
 export function PortfolioShowcase() {
+  const carousel = useCarousel({
+    itemCount: portfolioItems.length,
+    autoPlay: true,
+    autoPlayInterval: 4500,
+    pauseOnHover: true
+  })
+
   return (
     <section className="py-20 md:py-32 bg-blackbird-black">
       <div className="container">
@@ -73,11 +84,26 @@ export function PortfolioShowcase() {
           </p>
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {/* Recent Transformations Carousel */}
+        <Carousel
+          currentIndex={carousel.currentIndex}
+          onNext={carousel.goToNext}
+          onPrevious={carousel.goToPrevious}
+          onMouseEnter={carousel.handleMouseEnter}
+          onMouseLeave={carousel.handleMouseLeave}
+          itemsPerView={{
+            mobile: 1,
+            tablet: 1,
+            desktop: 2
+          }}
+          showArrows={true}
+          showDots={false}
+          gap="gap-8"
+          className="mb-16"
+        >
           {portfolioItems.map((item, index) => (
-            <Card key={item.id} className="group bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 overflow-hidden">
-              <CardContent className="p-0">
+            <Card key={item.id} className="group bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 overflow-hidden h-full">
+              <CardContent className="p-0 h-full flex flex-col">
                 {/* Before/After Images */}
                 <div className="relative h-64 md:h-80 overflow-hidden">
                   <div className="absolute inset-0 grid grid-cols-2">
@@ -110,7 +136,7 @@ export function PortfolioShowcase() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex-1 flex flex-col">
                   {/* Category & Vehicle */}
                   <div className="flex items-center justify-between mb-3">
                     <Badge variant="outline" className="text-blackbird-ignition-blue border-blackbird-ignition-blue/30">
@@ -125,7 +151,7 @@ export function PortfolioShowcase() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-blackbird-off-white/70 mb-4 text-sm leading-relaxed">
+                  <p className="text-blackbird-off-white/70 mb-4 text-sm leading-relaxed flex-1">
                     {item.description}
                   </p>
 
@@ -144,7 +170,7 @@ export function PortfolioShowcase() {
                   {/* View Details Link */}
                   <Link
                     href={`/portfolio/${item.id}`}
-                    className="inline-flex items-center text-blackbird-ignition-blue hover:text-blackbird-ignition-blue/80 transition-colors text-sm font-medium"
+                    className="inline-flex items-center text-blackbird-ignition-blue hover:text-blackbird-ignition-blue/80 transition-colors text-sm font-medium mt-auto"
                   >
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -153,7 +179,7 @@ export function PortfolioShowcase() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </Carousel>
 
         {/* CTA */}
         <div className="text-center">
