@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { OptimizedVideo } from '@/components/ui/optimized-video'
 import { Play, Shield, Sparkles, Award } from 'lucide-react'
 
 export function HeroSection() {
@@ -7,26 +8,26 @@ export function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
       <div className="absolute inset-0">
-        <video
+        <OptimizedVideo
+          src="/BlackbirdHomepageHeader.mov"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/BlackbirdHomepageHeader.mov" type="video/mp4" />
-          <source src="/BlackbirdHomepageHeader.mov" type="video/quicktime" />
-        </video>
+          preload="metadata"
+          className="absolute inset-0 w-full h-full"
+          onError={() => console.log('Video failed to load, using gradient fallback')}
+        />
         
         {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blackbird-black/90 via-blackbird-black/60 to-blackbird-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blackbird-black/90 via-blackbird-black/60 to-blackbird-black/70 z-10" />
         
         {/* Additional overlay for better text contrast */}
-        <div className="absolute inset-0 bg-blackbird-black/40" />
+        <div className="absolute inset-0 bg-blackbird-black/40 z-10" />
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 container text-center">
+      <div className="relative z-20 container text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-blackbird-charcoal/80 rounded-full px-4 py-2 mb-8 backdrop-blur-sm border border-blackbird-ignition-blue/30">

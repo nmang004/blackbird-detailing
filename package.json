@@ -8,7 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "check-video": "node scripts/optimize-video.js",
+    "optimize-video": "echo 'Install FFmpeg and run the commands in scripts/optimize-video.js'"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,7 @@
     "next": "^15.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-player": "^3.3.1",
     "tailwind-merge": "^3.3.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.9.2"
