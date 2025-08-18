@@ -101,6 +101,94 @@ COMMENT ON COLUMN public.estimate_submissions.estimated_price IS 'System-calcula
 COMMENT ON COLUMN public.estimate_submissions.final_price IS 'Final quoted price after consultation';
 COMMENT ON COLUMN public.estimate_submissions.status IS 'Current status of the estimate request';
 
+-- Create the portfolio_items table
+CREATE TABLE IF NOT EXISTS public.portfolio_items (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  
+  -- Project Information
+  title VARCHAR(200) NOT NULL,
+  description TEXT NOT NULL,
+  completion_date TIMESTAMP WITH TIME ZONE NOT NULL,
+  featured BOOLEAN DEFAULT FALSE,
+  
+  -- Vehicle Information
+  vehicle_year INTEGER NOT NULL,
+  vehicle_make VARCHAR(50) NOT NULL,
+  vehicle_model VARCHAR(50) NOT NULL,
+  vehicle_color VARCHAR(30) NOT NULL,
+  vehicle_type VARCHAR(20) NOT NULL CHECK (vehicle_type IN ('sedan', 'suv', 'truck', 'coupe', 'convertible', 'hatchback', 'wagon', 'van', 'exotic', 'motorcycle')),
+  
+  -- Images (stored as JSON arrays of URLs)
+  before_images JSONB NOT NULL DEFAULT '[]',
+  after_images JSONB NOT NULL DEFAULT '[]',
+  process_images JSONB DEFAULT '[]',
+  thumbnail_image VARCHAR(500) NOT NULL,
+  
+  -- Service Information
+  services_performed TEXT[] NOT NULL DEFAULT '{}',
+  primary_service VARCHAR(50) NOT NULL CHECK (primary_service IN ('ceramic-coating', 'paint-correction', 'interior-detailing', 'full-detail', 'maintenance')),
+  package_used VARCHAR(20) CHECK (package_used IN ('sport', 'grand-tourer', 'trackhawk')),
+  
+  -- Project Details
+  duration_hours DECIMAL(4,1) NOT NULL,
+  price_range VARCHAR(20) NOT NULL CHECK (price_range IN ('under-500', '500-1000', '1000-2000', 'over-2000')),
+  difficulty_level VARCHAR(20) NOT NULL CHECK (difficulty_level IN ('basic', 'intermediate', 'advanced', 'expert')),
+  
+  -- Customer Information (optional for display)
+  customer_testimonial TEXT,
+  customer_name VARCHAR(100),
+  customer_location VARCHAR(100),
+  
+  -- SEO and Display
+  tags TEXT[] DEFAULT '{}',
+  slug VARCHAR(200) UNIQUE NOT NULL,
+  meta_description TEXT
+);
+
+-- Create indexes for portfolio_items
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_created_at ON public.portfolio_items(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_completion_date ON public.portfolio_items(completion_date DESC);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_featured ON public.portfolio_items(featured);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_primary_service ON public.portfolio_items(primary_service);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_vehicle_make ON public.portfolio_items(vehicle_make);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_vehicle_type ON public.portfolio_items(vehicle_type);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_slug ON public.portfolio_items(slug);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_tags ON public.portfolio_items USING GIN(tags);
+CREATE INDEX IF NOT EXISTS idx_portfolio_items_services ON public.portfolio_items USING GIN(services_performed);
+
+-- Create trigger for portfolio_items updated_at
+DROP TRIGGER IF EXISTS update_portfolio_items_updated_at ON public.portfolio_items;
+CREATE TRIGGER update_portfolio_items_updated_at
+  BEFORE UPDATE ON public.portfolio_items
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- Enable Row Level Security for portfolio_items
+ALTER TABLE public.portfolio_items ENABLE ROW LEVEL SECURITY;
+
+-- Create policies for portfolio_items
+-- Allow public read access (for portfolio display)
+CREATE POLICY "Allow public read access" ON public.portfolio_items
+  FOR SELECT USING (true);
+
+-- Allow service role to do everything (for admin)
+CREATE POLICY "Allow service role all operations on portfolio" ON public.portfolio_items
+  FOR ALL USING (auth.role() = 'service_role');
+
+-- Grant necessary permissions for portfolio_items
+GRANT SELECT ON public.portfolio_items TO anon;
+GRANT ALL ON public.portfolio_items TO authenticated;
+
+-- Comments for portfolio_items documentation
+COMMENT ON TABLE public.portfolio_items IS 'Stores completed project portfolio items for display on website';
+COMMENT ON COLUMN public.portfolio_items.before_images IS 'JSONB array of before image URLs';
+COMMENT ON COLUMN public.portfolio_items.after_images IS 'JSONB array of after image URLs';
+COMMENT ON COLUMN public.portfolio_items.services_performed IS 'Array of service IDs performed on this project';
+COMMENT ON COLUMN public.portfolio_items.tags IS 'Array of searchable tags for filtering and SEO';
+COMMENT ON COLUMN public.portfolio_items.slug IS 'URL-friendly unique identifier for SEO-friendly URLs';
+
 -- Sample data for testing (optional - remove in production)
 /*
 INSERT INTO public.estimate_submissions (

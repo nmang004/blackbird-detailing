@@ -90,7 +90,7 @@ export const estimateFormSchema = z.object({
     .min(1, 'Vehicle color is required')
     .max(30, 'Vehicle color is too long'),
   vehicleCondition: z.enum(['excellent', 'good', 'fair', 'poor'], {
-    required_error: 'Please select vehicle condition'
+    message: 'Please select vehicle condition'
   }),
 
   // Step 2: Services Selection
@@ -116,8 +116,8 @@ export const estimateFormSchema = z.object({
 
   // Additional fields
   additionalNotes: z.string().optional(),
-  preferredContactMethod: z.enum(['phone', 'email']).default('phone'),
-  timeframe: z.enum(['asap', 'week', 'month', 'flexible']).default('flexible')
+  preferredContactMethod: z.enum(['phone', 'email']),
+  timeframe: z.enum(['asap', 'week', 'month', 'flexible'])
 })
 
 export type EstimateFormData = z.infer<typeof estimateFormSchema>

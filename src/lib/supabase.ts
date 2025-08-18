@@ -59,6 +59,98 @@ export type Database = {
           status?: 'pending' | 'contacted' | 'scheduled' | 'completed'
         }
       }
+      portfolio_items: {
+        Row: {
+          id: string
+          created_at: string
+          updated_at: string
+          title: string
+          description: string
+          completion_date: string
+          featured: boolean
+          vehicle_year: number
+          vehicle_make: string
+          vehicle_model: string
+          vehicle_color: string
+          vehicle_type: 'sedan' | 'suv' | 'truck' | 'coupe' | 'convertible' | 'hatchback' | 'wagon' | 'van' | 'exotic' | 'motorcycle'
+          before_images: string[]
+          after_images: string[]
+          process_images?: string[]
+          thumbnail_image: string
+          services_performed: string[]
+          primary_service: 'ceramic-coating' | 'paint-correction' | 'interior-detailing' | 'full-detail' | 'maintenance'
+          package_used?: 'sport' | 'grand-tourer' | 'trackhawk'
+          duration_hours: number
+          price_range: 'under-500' | '500-1000' | '1000-2000' | 'over-2000'
+          difficulty_level: 'basic' | 'intermediate' | 'advanced' | 'expert'
+          customer_testimonial?: string
+          customer_name?: string
+          customer_location?: string
+          tags: string[]
+          slug: string
+          meta_description?: string
+        }
+        Insert: {
+          id?: string
+          created_at?: string
+          updated_at?: string
+          title: string
+          description: string
+          completion_date: string
+          featured?: boolean
+          vehicle_year: number
+          vehicle_make: string
+          vehicle_model: string
+          vehicle_color: string
+          vehicle_type: 'sedan' | 'suv' | 'truck' | 'coupe' | 'convertible' | 'hatchback' | 'wagon' | 'van' | 'exotic' | 'motorcycle'
+          before_images: string[]
+          after_images: string[]
+          process_images?: string[]
+          thumbnail_image: string
+          services_performed: string[]
+          primary_service: 'ceramic-coating' | 'paint-correction' | 'interior-detailing' | 'full-detail' | 'maintenance'
+          package_used?: 'sport' | 'grand-tourer' | 'trackhawk'
+          duration_hours: number
+          price_range: 'under-500' | '500-1000' | '1000-2000' | 'over-2000'
+          difficulty_level: 'basic' | 'intermediate' | 'advanced' | 'expert'
+          customer_testimonial?: string
+          customer_name?: string
+          customer_location?: string
+          tags?: string[]
+          slug: string
+          meta_description?: string
+        }
+        Update: {
+          id?: string
+          created_at?: string
+          updated_at?: string
+          title?: string
+          description?: string
+          completion_date?: string
+          featured?: boolean
+          vehicle_year?: number
+          vehicle_make?: string
+          vehicle_model?: string
+          vehicle_color?: string
+          vehicle_type?: 'sedan' | 'suv' | 'truck' | 'coupe' | 'convertible' | 'hatchback' | 'wagon' | 'van' | 'exotic' | 'motorcycle'
+          before_images?: string[]
+          after_images?: string[]
+          process_images?: string[]
+          thumbnail_image?: string
+          services_performed?: string[]
+          primary_service?: 'ceramic-coating' | 'paint-correction' | 'interior-detailing' | 'full-detail' | 'maintenance'
+          package_used?: 'sport' | 'grand-tourer' | 'trackhawk'
+          duration_hours?: number
+          price_range?: 'under-500' | '500-1000' | '1000-2000' | 'over-2000'
+          difficulty_level?: 'basic' | 'intermediate' | 'advanced' | 'expert'
+          customer_testimonial?: string
+          customer_name?: string
+          customer_location?: string
+          tags?: string[]
+          slug?: string
+          meta_description?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
