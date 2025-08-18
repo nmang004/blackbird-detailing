@@ -159,9 +159,9 @@ export function Navigation() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Navigation Button - Left side */}
+        {/* Mobile Navigation Button - Right side */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="lg:hidden">
+          <SheetTrigger asChild className="lg:hidden ml-auto">
             <Button
               variant="ghost"
               className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
@@ -171,8 +171,8 @@ export function Navigation() {
             </Button>
           </SheetTrigger>
 
-        {/* Mobile Logo - Right side */}
-        <Link href="/" className="lg:hidden flex items-center ml-auto">
+        {/* Mobile Logo - Left side */}
+        <Link href="/" className="lg:hidden flex items-center">
           <div className="relative h-12 w-12">
             <Image
               src="/blackbirdlogo.jpeg"
