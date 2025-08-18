@@ -85,9 +85,9 @@ const services = [
 
 const whyChooseUs = [
   {
-    title: 'Motorsport Precision',
-    description: 'Every service meets the exacting standards used in professional motorsport.',
-    icon: '🏁'
+    title: 'Luxury Excellence',
+    description: 'Every service exemplifies our commitment to luxury and uncompromising quality.',
+    icon: '💎'
   },
   {
     title: 'Premium Products',
@@ -108,7 +108,7 @@ const whyChooseUs = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-blackbird-black">
+    <div className="min-h-screen bg-gradient-to-br from-blackbird-charcoal/20 via-blackbird-black to-blackbird-charcoal/20">
       {/* Hero Section */}
       <section className="py-20 md:py-32 bg-gradient-to-br from-blackbird-black via-blackbird-charcoal/20 to-blackbird-black">
         <div className="container">
@@ -121,14 +121,14 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-blackbird-off-white mb-6">
-              Motorsport-Grade{' '}
+              Luxury{' '}
               <span className="text-blackbird-ignition-blue">Detailing Services</span>
             </h1>
             
             <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
-              Experience the precision and excellence that sets Blackbird Detailing apart. 
-              From advanced ceramic coatings to meticulous paint correction, every service 
-              is performed with the attention to detail demanded by high-performance vehicles.
+              Experience the luxury and exclusivity that defines Blackbird Detailing. 
+              From premium ceramic protection to expert paint restoration, every service 
+              is crafted for discerning clients who demand nothing but perfection.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -242,8 +242,8 @@ export default function ServicesPage() {
               <span className="text-blackbird-ignition-blue">Blackbird Detailing?</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
-              We bring the same level of precision and attention to detail that's demanded 
-              in professional motorsport to every vehicle that enters our care.
+              We deliver an unparalleled luxury experience with meticulous attention to detail 
+              for every exclusive vehicle that entrusts us with their care.
             </p>
           </div>
 

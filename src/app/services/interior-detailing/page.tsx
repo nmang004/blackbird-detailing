@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Car, Check, Star, ArrowRight, Shield, Droplets, Zap, RefreshCw } from 'lucide-react'
+import { Car, Check, Shield, Droplets, Zap, RefreshCw } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'

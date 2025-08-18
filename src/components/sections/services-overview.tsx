@@ -55,7 +55,7 @@ const services = [
 
 export function ServicesOverview() {
   return (
-    <section id="services" className="py-20 md:py-32 bg-blackbird-black">
+    <section id="services" className="py-20 md:py-32 bg-gradient-to-br from-blackbird-black via-blackbird-charcoal/30 to-blackbird-black">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -67,14 +67,14 @@ export function ServicesOverview() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-blackbird-off-white mb-6">
-            Motorsport-Grade{' '}
+            Luxury Detailing{' '}
             <span className="text-blackbird-ignition-blue">Excellence</span>
           </h2>
           
           <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
-            Every service we provide meets the exacting standards of professional motorsport. 
-            From precision paint correction to advanced ceramic protection, we deliver results 
-            that exceed expectations.
+            Every service we provide exemplifies our commitment to luxury and exclusivity. 
+            From meticulous paint restoration to premium protection systems, we deliver 
+            exceptional results that surpass the highest expectations.
           </p>
         </div>
 
@@ -93,11 +93,11 @@ export function ServicesOverview() {
         <div className="bg-blackbird-charcoal/20 rounded-2xl p-8 md:p-12 border border-blackbird-charcoal/50">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
-              Our Precision Process
+              The Blackbird Experience
             </h3>
             <p className="text-blackbird-off-white/70 max-w-2xl mx-auto">
-              Every vehicle receives the same meticulous attention to detail, following our proven methodology 
-              developed through years of experience with high-performance vehicles.
+              Every vehicle receives our signature white-glove treatment, ensuring an unparalleled 
+              luxury experience from consultation to completion.
             </p>
           </div>
 
@@ -105,23 +105,23 @@ export function ServicesOverview() {
             {[
               {
                 step: '01',
-                title: 'Assessment',
-                description: 'Comprehensive vehicle inspection and condition documentation'
+                title: 'Consultation',
+                description: 'Personalized assessment and luxury service customization'
               },
               {
                 step: '02',
                 title: 'Preparation',
-                description: 'Thorough decontamination and surface preparation'
+                description: 'Meticulous pre-service preparation in our climate-controlled facility'
               },
               {
                 step: '03',
-                title: 'Execution',
-                description: 'Precision application of selected services and treatments'
+                title: 'Transformation',
+                description: 'Expert application of premium treatments and finishes'
               },
               {
                 step: '04',
-                title: 'Quality Control',
-                description: 'Final inspection and quality assurance before delivery'
+                title: 'White-Glove Delivery',
+                description: 'Final inspection and luxurious vehicle presentation'
               }
             ].map((process, index) => (
               <div key={index} className="text-center">

@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react'
 import { InstantEstimateForm } from '@/components/forms/instant-estimate-form'
+import { UrableBooking } from '@/components/integrations/urable-booking'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 export const metadata: Metadata = {
@@ -61,7 +62,7 @@ const whyChooseUs = [
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-blackbird-black py-20">
+    <div className="min-h-screen bg-gradient-to-br from-blackbird-charcoal/20 via-blackbird-black to-blackbird-charcoal/20 py-20">
       <div className="container">
         {/* Header Section */}
         <div className="text-center mb-16">
@@ -98,7 +99,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-blackbird-off-white">Contact Information</CardTitle>
                 <CardDescription className="text-blackbird-off-white/70">
-                  Prefer to speak with us directly? We're here to help.
+                  Prefer to speak with us directly? We&apos;re here to help.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -156,6 +157,9 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
+            {/* URABLE Booking System */}
+            <UrableBooking variant="compact" className="mb-8" />
+
             {/* Quick Contact CTA */}
             <Card className="bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 border-blackbird-ignition-blue/30">
               <CardContent className="p-6 text-center">
@@ -163,8 +167,8 @@ export default function ContactPage() {
                   Need to Speak with Someone?
                 </h3>
                 <p className="text-blackbird-off-white/80 text-sm mb-4">
-                  Our detailing experts are standing by to answer your questions 
-                  and provide personalized recommendations.
+                  Our luxury detailing experts are here to provide personalized 
+                  consultations and recommendations.
                 </p>
                 <a
                   href="tel:+1-757-123-4567"
@@ -212,8 +216,8 @@ export default function ContactPage() {
                 Questions About Our Services?
               </h2>
               <p className="text-blackbird-off-white/80 mb-6 max-w-2xl mx-auto">
-                Every vehicle is unique, and we're here to provide personalized 
-                recommendations. Don't hesitate to reach out with any questions 
+                Every vehicle is unique, and we&apos;re here to provide personalized 
+                recommendations. Don&apos;t hesitate to reach out with any questions 
                 about our detailing services or packages.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

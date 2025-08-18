@@ -12,7 +12,7 @@
     --card-foreground: 17 17 17;
     --popover: 245 245 245;
     --popover-foreground: 17 17 17;
-    --primary: 0 168 255; /* ignition blue */
+    --primary: 112 168 175; /* ignition blue - updated to logo color */
     --primary-foreground: 245 245 245;
     --secondary: 43 43 43; /* charcoal */
     --secondary-foreground: 245 245 245;
@@ -24,7 +24,7 @@
     --destructive-foreground: 245 245 245;
     --border: 43 43 43;
     --input: 43 43 43;
-    --ring: 0 168 255;
+    --ring: 112 168 175;
     --radius: 0.5rem;
   }
 
@@ -35,7 +35,7 @@
     --card-foreground: 245 245 245;
     --popover: 17 17 17;
     --popover-foreground: 245 245 245;
-    --primary: 0 168 255;
+    --primary: 112 168 175;
     --primary-foreground: 17 17 17;
     --secondary: 43 43 43;
     --secondary-foreground: 245 245 245;
@@ -47,7 +47,7 @@
     --destructive-foreground: 245 245 245;
     --border: 43 43 43;
     --input: 43 43 43;
-    --ring: 0 168 255;
+    --ring: 112 168 175;
   }
 }
 

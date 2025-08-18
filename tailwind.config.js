@@ -55,7 +55,7 @@ module.exports = {
           'black': '#111111',
           'charcoal': '#2B2B2B',
           'off-white': '#F5F5F5',
-          'ignition-blue': '#00A8FF',
+          'ignition-blue': '#70a8af',
         },
       },
       borderRadius: {

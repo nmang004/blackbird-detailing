@@ -18,11 +18,11 @@ export function HeroSection() {
           className="absolute inset-0 w-full h-full"
         />
         
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-blackbird-black/90 via-blackbird-black/60 to-blackbird-black/70 z-10" />
+        {/* Overlay gradient - lighter for better brightness */}
+        <div className="absolute inset-0 bg-gradient-to-t from-blackbird-black/70 via-blackbird-black/40 to-blackbird-black/50 z-10" />
         
-        {/* Additional overlay for better text contrast */}
-        <div className="absolute inset-0 bg-blackbird-black/40 z-10" />
+        {/* Additional overlay for text contrast - reduced */}
+        <div className="absolute inset-0 bg-blackbird-black/20 z-10" />
       </div>
 
       {/* Hero Content */}
@@ -32,7 +32,7 @@ export function HeroSection() {
           <div className="inline-flex items-center space-x-2 bg-blackbird-charcoal/80 rounded-full px-3 py-2 sm:px-4 sm:py-2 mb-6 sm:mb-8 backdrop-blur-sm border border-blackbird-ignition-blue/30">
             <Award className="h-3 w-3 sm:h-4 sm:w-4 text-blackbird-ignition-blue" />
             <span className="text-xs sm:text-sm text-blackbird-off-white font-medium">
-              Virginia Beach's Premier Detailing Service
+              Virginia Beach's Exclusive Luxury Detailing
             </span>
           </div>
 
@@ -47,14 +47,14 @@ export function HeroSection() {
 
           {/* Tagline */}
           <p className="text-lg sm:text-xl md:text-2xl text-blackbird-off-white/80 mb-3 sm:mb-4 max-w-3xl mx-auto px-2">
-            Motorsport-Grade Precision for Your Automobile
+            Luxury Detailing. Exceptional Care. Uncompromising Excellence.
           </p>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-blackbird-off-white/60 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 leading-relaxed">
-            Experience premium automotive detailing that combines cutting-edge technology 
-            with meticulous craftsmanship. Serving Virginia Beach, Chesapeake, and Norfolk 
-            with uncompromising excellence.
+            Experience the ultimate in luxury automotive care with our exclusive, 
+            white-glove detailing services. Every detail perfected for discerning owners 
+            across Virginia Beach, Chesapeake, and Norfolk.
           </p>
 
           {/* CTA Buttons */}
@@ -87,30 +87,30 @@ export function HeroSection() {
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Shield className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
               <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
-                Ceramic Protection
+                Premium Protection
               </h3>
               <p className="text-sm text-blackbird-off-white/70">
-                Industry-leading ceramic coatings with multi-year warranties
+                Exclusive ceramic coatings for lasting beauty and protection
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Sparkles className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
               <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
-                Paint Correction
+                Flawless Finish
               </h3>
               <p className="text-sm text-blackbird-off-white/70">
-                Professional swirl removal and paint restoration
+                Expert paint restoration for showroom-perfect results
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Award className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
               <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
-                Premium Service
+                Concierge Experience
               </h3>
               <p className="text-sm text-blackbird-off-white/70">
-                White-glove treatment with attention to every detail
+                Exclusive service experience tailored to discerning clients
               </p>
             </div>
           </div>

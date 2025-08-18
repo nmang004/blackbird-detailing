@@ -107,6 +107,14 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
+              <Link href="/membership" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Membership
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
               <Link href="/portfolio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Portfolio
@@ -205,6 +213,14 @@ export function Navigation() {
                   ))}
                 </div>
               </div>
+
+              <Link
+                href="/membership"
+                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors py-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Membership
+              </Link>
 
               <Link
                 href="/portfolio"
