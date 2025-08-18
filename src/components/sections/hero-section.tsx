@@ -16,7 +16,6 @@ export function HeroSection() {
           playsInline
           preload="metadata"
           className="absolute inset-0 w-full h-full"
-          onError={() => console.log('Video failed to load, using gradient fallback')}
         />
         
         {/* Overlay gradient */}

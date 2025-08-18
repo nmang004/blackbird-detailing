@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Blackbird Detailing' }],
   creator: 'Blackbird Detailing',
   publisher: 'Blackbird Detailing',
+  icons: {
+    icon: '/favicon.ico',
+  },
   formatDetection: {
     email: false,
     address: false,
