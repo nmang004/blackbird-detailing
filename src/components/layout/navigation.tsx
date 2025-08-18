@@ -63,8 +63,8 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-blackbird-charcoal/20 bg-blackbird-black/95 backdrop-blur supports-[backdrop-filter]:bg-blackbird-black/75">
       <div className="container flex h-20 items-center">
-        {/* Logo - Left side, larger */}
-        <Link href="/" className="mr-8 flex items-center space-x-2">
+        {/* Logo - Left side, larger (desktop only) */}
+        <Link href="/" className="mr-8 hidden lg:flex items-center space-x-2">
           <div className="relative h-12 w-12 sm:h-14 sm:w-14">
             <Image
               src="/blackbirdlogo.jpeg"
@@ -159,7 +159,32 @@ export function Navigation() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Contact Info - positioned on far right */}
+        {/* Mobile Navigation Button - Left side */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild className="lg:hidden">
+            <Button
+              variant="ghost"
+              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+            >
+              <Menu className="h-6 w-6 text-blackbird-off-white" />
+              <span className="sr-only">Toggle Menu</span>
+            </Button>
+          </SheetTrigger>
+
+        {/* Mobile Logo - Right side */}
+        <Link href="/" className="lg:hidden flex items-center ml-auto">
+          <div className="relative h-12 w-12">
+            <Image
+              src="/blackbirdlogo.jpeg"
+              alt="Blackbird Detailing"
+              width={48}
+              height={48}
+              className="rounded-full object-cover"
+            />
+          </div>
+        </Link>
+
+        {/* Contact Info - positioned on far right (desktop) */}
         <div className="ml-auto hidden items-center space-x-4 lg:flex">
           <a
             href="tel:+1-757-123-4567"
@@ -175,32 +200,8 @@ export function Navigation() {
           </Link>
         </div>
 
-        {/* Mobile Logo */}
-        <Link href="/" className="lg:hidden flex items-center">
-          <div className="relative h-12 w-12">
-            <Image
-              src="/blackbirdlogo.jpeg"
-              alt="Blackbird Detailing"
-              width={48}
-              height={48}
-              className="rounded-full object-cover"
-            />
-          </div>
-        </Link>
-
-        {/* Mobile Navigation */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="lg:hidden">
-            <Button
-              variant="ghost"
-              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-            >
-              <Menu className="h-6 w-6 text-blackbird-off-white" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
           <SheetContent side="right" className="bg-blackbird-black border-blackbird-charcoal w-72 overflow-y-auto">
-            <div className="flex flex-col space-y-5 pt-6">
+            <div className="flex flex-col space-y-5 p-6">
               <Link
                 href="/"
                 className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
