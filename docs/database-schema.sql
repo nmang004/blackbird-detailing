@@ -1,0 +1,119 @@
+-- Blackbird Detailing Database Schema
+-- This file contains the SQL commands to set up the database tables
+
+-- Create the estimate_submissions table
+CREATE TABLE IF NOT EXISTS public.estimate_submissions (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+  
+  -- Vehicle Information
+  vehicle_year INTEGER NOT NULL,
+  vehicle_make VARCHAR(50) NOT NULL,
+  vehicle_model VARCHAR(50) NOT NULL,
+  vehicle_color VARCHAR(30) NOT NULL,
+  vehicle_condition VARCHAR(20) NOT NULL CHECK (vehicle_condition IN ('excellent', 'good', 'fair', 'poor')),
+  
+  -- Service Selection
+  selected_services TEXT[] NOT NULL DEFAULT '{}',
+  package_selection VARCHAR(50),
+  
+  -- Customer Information
+  customer_name VARCHAR(100) NOT NULL,
+  customer_email VARCHAR(255) NOT NULL,
+  customer_phone VARCHAR(20) NOT NULL,
+  
+  -- Additional Information
+  additional_notes TEXT,
+  preferred_contact_method VARCHAR(10) DEFAULT 'phone' CHECK (preferred_contact_method IN ('phone', 'email')),
+  timeframe VARCHAR(20) DEFAULT 'flexible' CHECK (timeframe IN ('asap', 'week', 'month', 'flexible')),
+  
+  -- Business Data
+  estimated_price DECIMAL(10,2),
+  final_price DECIMAL(10,2),
+  status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending', 'contacted', 'scheduled', 'in_progress', 'completed', 'cancelled')),
+  
+  -- Internal Notes
+  internal_notes TEXT,
+  assigned_to VARCHAR(100),
+  scheduled_date TIMESTAMP WITH TIME ZONE,
+  completed_date TIMESTAMP WITH TIME ZONE
+);
+
+-- Create indexes for better performance
+CREATE INDEX IF NOT EXISTS idx_estimate_submissions_created_at ON public.estimate_submissions(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_estimate_submissions_status ON public.estimate_submissions(status);
+CREATE INDEX IF NOT EXISTS idx_estimate_submissions_customer_email ON public.estimate_submissions(customer_email);
+CREATE INDEX IF NOT EXISTS idx_estimate_submissions_scheduled_date ON public.estimate_submissions(scheduled_date);
+
+-- Create a function to automatically update the updated_at timestamp
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ language 'plpgsql';
+
+-- Create the trigger
+DROP TRIGGER IF EXISTS update_estimate_submissions_updated_at ON public.estimate_submissions;
+CREATE TRIGGER update_estimate_submissions_updated_at
+  BEFORE UPDATE ON public.estimate_submissions
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();
+
+-- Enable Row Level Security (RLS)
+ALTER TABLE public.estimate_submissions ENABLE ROW LEVEL SECURITY;
+
+-- Create policies for RLS
+-- Allow anonymous inserts (for the contact form)
+CREATE POLICY "Allow anonymous inserts" ON public.estimate_submissions
+  FOR INSERT WITH CHECK (true);
+
+-- Allow service role to do everything (for admin dashboard)
+CREATE POLICY "Allow service role all operations" ON public.estimate_submissions
+  FOR ALL USING (auth.role() = 'service_role');
+
+-- Create a view for analytics (optional)
+CREATE OR REPLACE VIEW public.estimate_analytics AS
+SELECT 
+  DATE_TRUNC('day', created_at) as date,
+  COUNT(*) as total_submissions,
+  COUNT(CASE WHEN status = 'completed' THEN 1 END) as completed_submissions,
+  AVG(estimated_price) as avg_estimated_price,
+  AVG(final_price) as avg_final_price,
+  COUNT(CASE WHEN package_selection IS NOT NULL THEN 1 END) as package_selections,
+  COUNT(CASE WHEN array_length(selected_services, 1) > 1 THEN 1 END) as multi_service_requests
+FROM public.estimate_submissions
+GROUP BY DATE_TRUNC('day', created_at)
+ORDER BY date DESC;
+
+-- Grant necessary permissions
+GRANT USAGE ON SCHEMA public TO anon;
+GRANT INSERT ON public.estimate_submissions TO anon;
+GRANT SELECT ON public.estimate_analytics TO authenticated;
+
+-- Comments for documentation
+COMMENT ON TABLE public.estimate_submissions IS 'Stores all estimate form submissions from the website';
+COMMENT ON COLUMN public.estimate_submissions.selected_services IS 'Array of service IDs selected by the customer';
+COMMENT ON COLUMN public.estimate_submissions.vehicle_condition IS 'Customer-reported condition: excellent, good, fair, or poor';
+COMMENT ON COLUMN public.estimate_submissions.estimated_price IS 'System-calculated estimated price in USD';
+COMMENT ON COLUMN public.estimate_submissions.final_price IS 'Final quoted price after consultation';
+COMMENT ON COLUMN public.estimate_submissions.status IS 'Current status of the estimate request';
+
+-- Sample data for testing (optional - remove in production)
+/*
+INSERT INTO public.estimate_submissions (
+  vehicle_year, vehicle_make, vehicle_model, vehicle_color, vehicle_condition,
+  selected_services, customer_name, customer_email, customer_phone,
+  estimated_price, status
+) VALUES 
+(2020, 'BMW', 'M3', 'Alpine White', 'good', 
+ ARRAY['ceramic-coating', 'paint-correction'], 
+ 'John Smith', 'john@example.com', '(757) 555-0123', 
+ 1498.00, 'pending'),
+(2018, 'Porsche', '911', 'Guards Red', 'excellent', 
+ ARRAY['ceramic-coating'], 
+ 'Jane Doe', 'jane@example.com', '(757) 555-0124', 
+ 899.00, 'contacted');
+*/
