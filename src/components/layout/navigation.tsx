@@ -106,7 +106,7 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/#portfolio" legacyBehavior passHref>
+              <Link href="/services" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Portfolio
                 </NavigationMenuLink>
@@ -114,26 +114,15 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-blackbird-off-white hover:text-blackbird-ignition-blue">
-                Service Areas
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]">
-                  {serviceAreas.map((area) => (
-                    <ListItem
-                      key={area.title}
-                      title={area.title}
-                      href={area.href}
-                    >
-                      {area.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
+              <Link href="/services" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Service Areas
+                </NavigationMenuLink>
+              </Link>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/#about" legacyBehavior passHref>
+              <Link href="/contact" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   About
                 </NavigationMenuLink>
@@ -141,7 +130,7 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/#contact" legacyBehavior passHref>
+              <Link href="/contact" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Contact
                 </NavigationMenuLink>
@@ -159,9 +148,11 @@ export function Navigation() {
             <Phone className="h-4 w-4" />
             <span>(757) 123-4567</span>
           </a>
-          <Button size="sm" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90">
-            Get Estimate
-          </Button>
+          <Link href="/contact">
+            <Button size="sm" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90">
+              Get Estimate
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Navigation */}
@@ -202,31 +193,23 @@ export function Navigation() {
               </div>
 
               <Link
-                href="/#portfolio"
+                href="/services"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Portfolio
               </Link>
 
-              <div className="space-y-4">
-                <h3 className="text-sm font-medium text-blackbird-off-white/60 uppercase tracking-wider">
-                  Service Areas
-                </h3>
-                {serviceAreas.map((area) => (
-                  <Link
-                    key={area.title}
-                    href={area.href}
-                    className="block text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {area.title}
-                  </Link>
-                ))}
-              </div>
+              <Link
+                href="/services"
+                className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Service Areas
+              </Link>
 
               <Link
-                href="/#about"
+                href="/contact"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -234,7 +217,7 @@ export function Navigation() {
               </Link>
 
               <Link
-                href="/#contact"
+                href="/contact"
                 className="text-lg font-semibold text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
                 onClick={() => setIsOpen(false)}
               >
@@ -242,13 +225,14 @@ export function Navigation() {
               </Link>
 
               <div className="pt-6 border-t border-blackbird-charcoal">
-                <Button 
-                  size="sm" 
-                  className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Get Estimate
-                </Button>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <Button 
+                    size="sm" 
+                    className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90"
+                  >
+                    Get Estimate
+                  </Button>
+                </Link>
                 <a
                   href="tel:+1-757-123-4567"
                   className="flex items-center justify-center space-x-2 mt-4 text-sm text-blackbird-off-white/80"
