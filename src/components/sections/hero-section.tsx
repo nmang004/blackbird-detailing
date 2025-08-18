@@ -46,12 +46,12 @@ export function HeroSection() {
           </h1>
 
           {/* Tagline */}
-          <p className="text-lg sm:text-xl md:text-2xl text-blackbird-off-white/80 mb-3 sm:mb-4 max-w-3xl mx-auto px-2">
+          <p className="text-xl sm:text-2xl md:text-3xl text-blackbird-off-white/85 mb-4 sm:mb-6 max-w-3xl mx-auto px-2 font-medium">
             Luxury Detailing. Exceptional Care. Uncompromising Excellence.
           </p>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-blackbird-off-white/60 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 leading-relaxed">
+          <p className="text-lg sm:text-xl text-blackbird-off-white/75 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 leading-relaxed font-body">
             Experience the ultimate in luxury automotive care with our exclusive, 
             white-glove detailing services. Every detail perfected for discerning owners 
             across Virginia Beach, Chesapeake, and Norfolk.
@@ -86,30 +86,30 @@ export function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto px-2">
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Shield className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
-              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
+              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2 text-lg">
                 Premium Protection
               </h3>
-              <p className="text-sm text-blackbird-off-white/70">
+              <p className="text-base text-blackbird-off-white/80 font-body">
                 Exclusive ceramic coatings for lasting beauty and protection
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Sparkles className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
-              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
+              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2 text-lg">
                 Flawless Finish
               </h3>
-              <p className="text-sm text-blackbird-off-white/70">
+              <p className="text-base text-blackbird-off-white/80 font-body">
                 Expert paint restoration for showroom-perfect results
               </p>
             </div>
             
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Award className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
-              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2">
+              <h3 className="font-heading font-semibold text-blackbird-off-white mb-2 text-lg">
                 Concierge Experience
               </h3>
-              <p className="text-sm text-blackbird-off-white/70">
+              <p className="text-base text-blackbird-off-white/80 font-body">
                 Exclusive service experience tailored to discerning clients
               </p>
             </div>

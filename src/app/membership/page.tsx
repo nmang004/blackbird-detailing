@@ -120,7 +120,7 @@ export default function MembershipPage() {
               <span className="text-blackbird-ignition-blue">Membership</span>
             </h1>
             
-            <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-blackbird-off-white/80 mb-12 max-w-3xl mx-auto font-body leading-relaxed">
               Join our exclusive membership program and experience the ultimate in recurring luxury 
               automotive care. Designed for discerning owners who demand consistent perfection.
             </p>
@@ -145,7 +145,7 @@ export default function MembershipPage() {
               Choose Your{' '}
               <span className="text-blackbird-ignition-blue">Experience Level</span>
             </h2>
-            <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
+            <p className="text-xl text-blackbird-off-white/80 max-w-3xl mx-auto font-body leading-relaxed">
               Each membership tier is carefully crafted to deliver exceptional value and uncompromising quality, 
               tailored to your specific automotive care needs.
             </p>
@@ -198,7 +198,7 @@ export default function MembershipPage() {
                       {tier.features.map((feature, idx) => (
                         <li key={idx} className="flex items-start">
                           <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-blackbird-off-white/80 text-sm">{feature}</span>
+                          <span className="text-blackbird-off-white/85 text-base font-body">{feature}</span>
                         </li>
                       ))}
                     </ul>

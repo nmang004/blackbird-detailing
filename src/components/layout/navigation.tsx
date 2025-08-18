@@ -62,21 +62,8 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-blackbird-charcoal/20 bg-blackbird-black/95 backdrop-blur supports-[backdrop-filter]:bg-blackbird-black/75">
-      <div className="container flex h-16 items-center">
-        {/* Logo */}
-        <Link href="/" className="mr-6 sm:mr-8 flex items-center space-x-2">
-          <div className="relative h-8 w-8 sm:h-10 sm:w-10">
-            <Image
-              src="/blackbirdlogo.jpeg"
-              alt="Blackbird Detailing"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
-            />
-          </div>
-        </Link>
-
-        {/* Desktop Navigation */}
+      <div className="container flex h-20 items-center justify-between">
+        {/* Desktop Navigation Left */}
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -113,7 +100,25 @@ export function Navigation() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
+        {/* Centered Logo */}
+        <Link href="/" className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
+          <div className="relative h-12 w-12 sm:h-16 sm:w-16">
+            <Image
+              src="/blackbirdlogo.jpeg"
+              alt="Blackbird Detailing"
+              width={64}
+              height={64}
+              className="rounded-full object-cover"
+            />
+          </div>
+        </Link>
+
+        {/* Desktop Navigation Right */}
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList>
             <NavigationMenuItem>
               <Link href="/portfolio" legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -159,8 +164,8 @@ export function Navigation() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Contact Info */}
-        <div className="ml-auto hidden items-center space-x-4 lg:flex">
+        {/* Contact Info - positioned on far right */}
+        <div className="hidden items-center space-x-4 lg:flex">
           <a
             href="tel:+1-757-123-4567"
             className="flex items-center space-x-2 text-sm text-blackbird-off-white/80 hover:text-blackbird-ignition-blue transition-colors"
@@ -169,18 +174,31 @@ export function Navigation() {
             <span>(757) 123-4567</span>
           </a>
           <Link href="/contact">
-            <Button size="sm" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90">
+            <Button size="sm" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 font-semibold">
               Get Estimate
             </Button>
           </Link>
         </div>
+
+        {/* Mobile Logo */}
+        <Link href="/" className="lg:hidden flex items-center">
+          <div className="relative h-10 w-10">
+            <Image
+              src="/blackbirdlogo.jpeg"
+              alt="Blackbird Detailing"
+              width={40}
+              height={40}
+              className="rounded-full object-cover"
+            />
+          </div>
+        </Link>
 
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button
               variant="ghost"
-              className="ml-auto px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
             >
               <Menu className="h-6 w-6 text-blackbird-off-white" />
               <span className="sr-only">Toggle Menu</span>

@@ -65,7 +65,8 @@ module.exports = {
       },
       fontFamily: {
         'heading': ['Exo 2', 'Inter', 'sans-serif'],
-        'body': ['Roboto', 'sans-serif'],
+        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'accent': ['Montserrat', 'Inter', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

@@ -71,7 +71,7 @@ export function ServicesOverview() {
             <span className="text-blackbird-ignition-blue">Excellence</span>
           </h2>
           
-          <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
+          <p className="text-xl sm:text-2xl text-blackbird-off-white/80 max-w-3xl mx-auto font-body leading-relaxed">
             Every service we provide exemplifies our commitment to luxury and exclusivity. 
             From meticulous paint restoration to premium protection systems, we deliver 
             exceptional results that surpass the highest expectations.
@@ -95,7 +95,7 @@ export function ServicesOverview() {
             <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
               The Blackbird Experience
             </h3>
-            <p className="text-blackbird-off-white/70 max-w-2xl mx-auto">
+            <p className="text-lg text-blackbird-off-white/80 max-w-2xl mx-auto font-body leading-relaxed">
               Every vehicle receives our signature white-glove treatment, ensuring an unparalleled 
               luxury experience from consultation to completion.
             </p>
@@ -135,10 +135,10 @@ export function ServicesOverview() {
                     <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blackbird-ignition-blue/50 to-transparent" />
                   )}
                 </div>
-                <h4 className="font-heading font-semibold text-blackbird-off-white mb-2">
+                <h4 className="font-heading font-semibold text-blackbird-off-white mb-2 text-lg">
                   {process.title}
                 </h4>
-                <p className="text-sm text-blackbird-off-white/60">
+                <p className="text-base text-blackbird-off-white/75 font-body">
                   {process.description}
                 </p>
               </div>
