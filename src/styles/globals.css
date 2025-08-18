@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@layer base {
+  :root {
+    --background: 245 245 245; /* off-white */
+    --foreground: 17 17 17; /* matte black */
+    --card: 245 245 245;
+    --card-foreground: 17 17 17;
+    --popover: 245 245 245;
+    --popover-foreground: 17 17 17;
+    --primary: 0 168 255; /* ignition blue */
+    --primary-foreground: 245 245 245;
+    --secondary: 43 43 43; /* charcoal */
+    --secondary-foreground: 245 245 245;
+    --muted: 43 43 43;
+    --muted-foreground: 163 163 163;
+    --accent: 43 43 43;
+    --accent-foreground: 245 245 245;
+    --destructive: 239 68 68;
+    --destructive-foreground: 245 245 245;
+    --border: 43 43 43;
+    --input: 43 43 43;
+    --ring: 0 168 255;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 17 17 17;
+    --foreground: 245 245 245;
+    --card: 17 17 17;
+    --card-foreground: 245 245 245;
+    --popover: 17 17 17;
+    --popover-foreground: 245 245 245;
+    --primary: 0 168 255;
+    --primary-foreground: 17 17 17;
+    --secondary: 43 43 43;
+    --secondary-foreground: 245 245 245;
+    --muted: 43 43 43;
+    --muted-foreground: 163 163 163;
+    --accent: 43 43 43;
+    --accent-foreground: 245 245 245;
+    --destructive: 239 68 68;
+    --destructive-foreground: 245 245 245;
+    --border: 43 43 43;
+    --input: 43 43 43;
+    --ring: 0 168 255;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blackbird-ignition-blue text-white hover:bg-blackbird-ignition-blue/90 transition-colors duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-blackbird-charcoal text-blackbird-off-white hover:bg-blackbird-charcoal/80 transition-colors duration-300;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blackbird-ignition-blue to-blackbird-charcoal bg-clip-text text-transparent;
+  }
+}
