@@ -159,18 +159,6 @@ export function Navigation() {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Mobile Navigation Button - Right side */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="lg:hidden ml-auto">
-            <Button
-              variant="ghost"
-              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-            >
-              <Menu className="h-6 w-6 text-blackbird-off-white" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-
         {/* Mobile Logo - Left side */}
         <Link href="/" className="lg:hidden flex items-center">
           <div className="relative h-12 w-12">
@@ -183,6 +171,18 @@ export function Navigation() {
             />
           </div>
         </Link>
+
+        {/* Mobile Navigation Button - Right side */}
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild className="lg:hidden ml-auto">
+            <Button
+              variant="ghost"
+              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+            >
+              <Menu className="h-6 w-6 text-blackbird-off-white" />
+              <span className="sr-only">Toggle Menu</span>
+            </Button>
+          </SheetTrigger>
 
         {/* Contact Info - positioned on far right (desktop) */}
         <div className="ml-auto hidden items-center space-x-4 lg:flex">
