@@ -108,7 +108,7 @@ export default function VirginiaBeachPage() {
               <p className="text-xl text-blackbird-off-white/70 mb-8">
                 Protect your vehicle from Virginia Beach's harsh coastal environment with our 
                 professional automotive detailing services. From the Oceanfront to Town Center, 
-                we bring motorsport-grade precision to every neighborhood.
+                we bring luxury automotive excellence to every neighborhood.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">

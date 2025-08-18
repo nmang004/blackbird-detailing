@@ -18,7 +18,7 @@ const localBenefits = [
   },
   {
     icon: Home,
-    title: 'Suburban Precision',
+    title: 'Suburban Excellence',
     description: 'Perfect for Chesapeake\'s family-friendly suburban communities with services tailored for daily drivers, family vehicles, and weekend warriors.'
   },
   {
@@ -108,7 +108,7 @@ export default function ChesapeakePage() {
               <p className="text-xl text-blackbird-off-white/70 mb-8">
                 Protect your vehicle from Chesapeake's suburban challenges with our professional 
                 automotive detailing services. From Great Bridge to Deep Creek, we deliver 
-                precision care for every neighborhood in Virginia's second-largest city.
+                meticulous care for every neighborhood in Virginia's second-largest city.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">

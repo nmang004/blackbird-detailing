@@ -63,13 +63,13 @@ export default function PortfolioPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-blackbird-off-white mb-6">
-              Precision{' '}
+              Luxury{' '}
               <span className="text-blackbird-ignition-blue">Transformations</span>
             </h1>
             
             <p className="text-xl text-blackbird-off-white/70 mb-8 max-w-3xl mx-auto leading-relaxed">
               Every vehicle tells a story. From daily drivers to exotic supercars, witness the 
-              dramatic before and after results that showcase our motorsport-grade precision 
+              dramatic before and after results that showcase our luxury excellence 
               and commitment to perfection.
             </p>
 

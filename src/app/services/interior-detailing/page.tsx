@@ -192,7 +192,7 @@ export default function InteriorDetailingPage() {
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
               We specialize in comprehensive interior care, addressing every surface 
-              and material in your vehicle with precision and expertise.
+              and material in your vehicle with luxury care and expertise.
             </p>
           </div>
 

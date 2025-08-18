@@ -14,7 +14,7 @@ const localBenefits = [
   {
     icon: Anchor,
     title: 'Naval-Grade Protection',
-    description: 'Military-inspired precision and protection standards designed for Norfolk\'s naval community and the unique challenges of coastal military life.'
+    description: 'Military-inspired excellence and protection standards designed for Norfolk\'s naval community and the unique challenges of coastal military life.'
   },
   {
     icon: Building,
@@ -53,7 +53,7 @@ const testimonials = [
     name: 'Commander Sarah Mitchell',
     location: 'Larchmont',
     rating: 5,
-    text: 'As a naval officer, I appreciate attention to detail and precision. Blackbird delivers military-grade excellence. My vehicle looks immaculate despite Norfolk\'s harsh maritime conditions.',
+    text: 'As a naval officer, I appreciate attention to detail and excellence. Blackbird delivers military-grade quality. My vehicle looks immaculate despite Norfolk\'s harsh maritime conditions.',
     service: 'Ceramic Coating'
   },
   {
@@ -106,7 +106,7 @@ export default function NorfolkPage() {
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8">
-                Precision automotive care for Norfolk's naval community and urban professionals. 
+                Elite automotive care for Norfolk's naval community and urban professionals. 
                 From downtown to Ocean View, we deliver the same attention to detail and excellence 
                 that Norfolk's military heritage demands.
               </p>
@@ -155,7 +155,7 @@ export default function NorfolkPage() {
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
               Norfolk's unique combination of naval heritage, urban environment, and coastal location 
-              requires specialized automotive care. Our services honor the precision and excellence 
+              requires specialized automotive care. Our services honor the attention to detail and excellence 
               that define this historic maritime city.
             </p>
           </div>
@@ -275,7 +275,7 @@ export default function NorfolkPage() {
             <div className="text-blackbird-off-white/70 space-y-6">
               <p className="text-lg">
                 Norfolk, Virginia, home to the world's largest naval station, demands automotive care that meets 
-                the highest standards of precision and durability. The combination of maritime climate, urban 
+                the highest standards of excellence and durability. The combination of maritime climate, urban 
                 pollution, and salt air exposure creates unique challenges for vehicle maintenance in the 757 area.
               </p>
               
@@ -309,7 +309,7 @@ export default function NorfolkPage() {
               <p>
                 Whether you're stationed at Norfolk Naval Base, work at Sentara Norfolk General Hospital, attend 
                 Old Dominion University, or live in any of Norfolk's vibrant neighborhoods, Blackbird Detailing 
-                brings military-grade precision to every vehicle we service.
+                brings military-grade excellence to every vehicle we service.
               </p>
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function NorfolkPage() {
       <section className="py-20 md:py-32 bg-gradient-to-r from-blackbird-charcoal/30 to-blackbird-ignition-blue/10">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-            Experience Military-Grade Precision in{' '}
+            Experience Military-Grade Excellence in{' '}
             <span className="text-blackbird-ignition-blue">Norfolk</span>
           </h2>
           <p className="text-xl text-blackbird-off-white/70 mb-8 max-w-2xl mx-auto">

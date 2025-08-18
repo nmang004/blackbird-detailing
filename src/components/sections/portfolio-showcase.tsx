@@ -80,7 +80,7 @@ export function PortfolioShowcase() {
           
           <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
             See the dramatic before and after results from our recent projects. 
-            Every vehicle tells a story of precision, care, and exceptional craftsmanship.
+            Every vehicle tells a story of meticulous care and exceptional craftsmanship.
           </p>
         </div>
 

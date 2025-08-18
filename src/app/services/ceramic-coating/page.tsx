@@ -311,8 +311,8 @@ export default function CeramicCoatingPage() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-              Our Precision{' '}
-              <span className="text-blackbird-ignition-blue">Process</span>
+              The Luxury{' '}
+              <span className="text-blackbird-ignition-blue">Experience</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
               Every ceramic coating application follows our proven 5-step process, 

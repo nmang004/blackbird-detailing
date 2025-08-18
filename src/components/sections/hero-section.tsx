@@ -38,10 +38,10 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-heading font-bold mb-4 sm:mb-6 leading-tight">
-            <span className="text-blackbird-off-white block sm:inline">Precision.</span>{' '}
-            <span className="text-blackbird-ignition-blue block sm:inline">Protection.</span>{' '}
+            <span className="text-blackbird-off-white block sm:inline">Luxury.</span>{' '}
+            <span className="text-blackbird-ignition-blue block sm:inline">Excellence.</span>{' '}
             <span className="text-gradient bg-gradient-to-r from-blackbird-off-white to-blackbird-ignition-blue bg-clip-text text-transparent block sm:inline">
-              Perfection.
+              Distinction.
             </span>
           </h1>
 
@@ -77,7 +77,7 @@ export function HeroSection() {
             >
               <Link href="#services" className="flex items-center justify-center space-x-2">
                 <Play className="h-4 w-4 sm:h-5 sm:w-5" />
-                <span>Watch Our Process</span>
+                <span>Experience Luxury</span>
               </Link>
             </Button>
           </div>

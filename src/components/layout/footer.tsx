@@ -25,7 +25,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-blackbird-off-white/70 mb-6 max-w-xs">
-              Motorsport-grade precision for your automobile. Premium detailing services 
+              Luxury detailing excellence for your automobile. Premium detailing services 
               serving Virginia Beach, Chesapeake, and Norfolk.
             </p>
             <div className="flex space-x-4">

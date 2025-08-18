@@ -31,7 +31,7 @@ const testimonials = [
     name: 'Bobby',
     location: 'Local Guide - Virginia Beach',
     rating: 5,
-    testimonial: 'Blackbird mobile detailing is on point! Thorough, extremely detailed, punctual, and highly professional. Made our Suburban look brand new on the inside. Truly a master of his craft, Judah used precision in cleaning our vehicle. He explained thoroughly what he wasn\'t able to do, and the reasons behind it. His price was extremely fair, and he even gave us a discount because the initial scope was less than what he needed to do. That\'s complete honesty right there! 100% satisfied.',
+    testimonial: 'Blackbird mobile detailing is on point! Thorough, extremely detailed, punctual, and highly professional. Made our Suburban look brand new on the inside. Truly a master of his craft, Judah used meticulous care in cleaning our vehicle. He explained thoroughly what he wasn\'t able to do, and the reasons behind it. His price was extremely fair, and he even gave us a discount because the initial scope was less than what he needed to do. That\'s complete honesty right there! 100% satisfied.',
     vehicleType: 'Suburban'
   },
   {

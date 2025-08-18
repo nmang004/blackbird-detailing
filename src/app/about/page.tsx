@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
   title: 'About Blackbird Detailing | Professional Auto Detailing Virginia Beach',
-  description: 'Learn about Blackbird Detailing\'s commitment to motorsport-grade precision in automotive care. Professional team, certifications, and values serving Virginia Beach, Chesapeake, and Norfolk.',
+  description: 'Learn about Blackbird Detailing\'s commitment to luxury automotive excellence. Professional team, certifications, and values serving Virginia Beach, Chesapeake, and Norfolk.',
   keywords: 'about Blackbird Detailing, professional auto detailing team, Virginia Beach detailing company, automotive care specialists, certified detailing professionals',
 }
 
@@ -22,8 +22,8 @@ const stats = [
 const values = [
   {
     icon: Target,
-    title: 'Precision',
-    description: 'Every detail matters. We approach each vehicle with the same meticulous attention to detail found in motorsport preparation.',
+    title: 'Meticulous Care',
+    description: 'Every detail matters. We approach each vehicle with unwavering attention to detail and commitment to excellence.',
     color: 'text-red-400'
   },
   {
@@ -44,7 +44,7 @@ const timeline = [
   {
     year: '2016',
     title: 'The Beginning',
-    description: 'Founded with a passion for automotive excellence and a vision to bring motorsport-grade precision to everyday vehicle care.',
+    description: 'Founded with a passion for automotive excellence and a vision to bring luxury-level care to every vehicle.',
     milestone: 'Company Founded'
   },
   {
@@ -68,7 +68,7 @@ const timeline = [
   {
     year: '2024',
     title: 'Continued Excellence',
-    description: 'Expanding services while maintaining our commitment to precision, protection, and perfection for every client.',
+    description: 'Expanding services while maintaining our commitment to luxury, protection, and perfection for every client.',
     milestone: '2000+ Happy Customers'
   }
 ]
@@ -77,7 +77,7 @@ const teamMembers = [
   {
     name: 'Judah Cates',
     role: 'Founder & Lead Technician',
-    bio: 'Professional automotive detailing specialist with a passion for motorsport-grade precision. Judah brings meticulous attention to detail and commitment to excellence to every vehicle that comes through Blackbird Detailing.',
+    bio: 'Professional automotive detailing specialist with a passion for luxury automotive care. Judah brings meticulous attention to detail and commitment to excellence to every vehicle that comes through Blackbird Detailing.',
     certifications: ['IDA Certified', 'Ceramic Pro Certified', 'Advanced Paint Correction'],
     image: '/api/placeholder/300/300',
     specialty: 'Comprehensive Vehicle Detailing'
@@ -88,7 +88,7 @@ const certifications = [
   { name: 'International Detailing Association (IDA)', level: 'Certified Professionals', description: 'Industry-leading certification for professional detailing standards' },
   { name: 'Ceramic Pro', level: 'Authorized Installer', description: 'Factory-trained in premium ceramic coating application' },
   { name: 'GYEON Quartz', level: 'Certified Applicator', description: 'Advanced training in Japanese ceramic coating technology' },
-  { name: 'Gtechniq', level: 'Accredited Detailer', description: 'British engineering precision in paint protection' },
+  { name: 'Gtechniq', level: 'Accredited Detailer', description: 'British engineering excellence in paint protection' },
   { name: 'SystemX', level: 'Certified Installer', description: 'Revolutionary ceramic coating technology certification' },
   { name: 'Paint Protection Film', level: 'Expert Installation', description: 'Advanced training in clear bra and PPF application' }
 ]
@@ -109,15 +109,14 @@ export default function AboutPage() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-blackbird-off-white mb-6">
-                Motorsport-Grade{' '}
-                <span className="text-blackbird-ignition-blue">Precision</span>
+                Luxury Automotive{' '}
+                <span className="text-blackbird-ignition-blue">Excellence</span>
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8 leading-relaxed">
                 Born from a passion for automotive excellence, Blackbird Detailing brings 
-                the same level of precision and attention to detail found in professional 
-                motorsport to every vehicle we service. Our mission is simple: deliver 
-                perfection, protect your investment, and exceed expectations.
+                uncompromising luxury and attention to detail to every vehicle we service. 
+                Our mission is simple: deliver perfection, protect your investment, and exceed expectations.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -182,9 +181,9 @@ export default function AboutPage() {
               <div className="prose prose-invert max-w-none">
                 <p className="text-blackbird-off-white/70 mb-6 text-lg leading-relaxed">
                   Blackbird Detailing was born from a simple belief: every vehicle deserves to be treated 
-                  with the same level of care and precision found in professional motorsport. Our founder, 
-                  a lifelong automotive enthusiast with experience in competitive racing, saw a gap in the 
-                  market for truly professional-grade detailing services.
+                  with the highest level of luxury care and attention to detail. Our founder, 
+                  a lifelong automotive enthusiast, saw a gap in the market for truly 
+                  exceptional, white-glove detailing services.
                 </p>
                 
                 <p className="text-blackbird-off-white/70 mb-6 leading-relaxed">
@@ -196,7 +195,7 @@ export default function AboutPage() {
                 
                 <p className="text-blackbird-off-white/70 leading-relaxed">
                   Every member of our team shares this philosophy. From our lead technicians with decades 
-                  of experience to our newest apprentices, we all understand that precision isn't just 
+                  of experience to our newest apprentices, we all understand that excellence isn't just 
                   about technique - it's about caring for each vehicle as if it were our own.
                 </p>
               </div>
@@ -285,7 +284,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
               Our certified professionals bring decades of combined experience and a shared passion 
-              for automotive excellence. Every team member is committed to delivering the precision 
+              for automotive excellence. Every team member is committed to delivering the luxury 
               and perfection that defines the Blackbird standard.
             </p>
           </div>

@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge'
 
 export const metadata: Metadata = {
   title: 'Premium Auto Detailing Services | Blackbird Detailing Virginia Beach',
-  description: 'Professional automotive detailing services in Virginia Beach. Ceramic coating, paint correction, interior detailing, and full detail packages with motorsport-grade precision.',
+  description: 'Professional automotive detailing services in Virginia Beach. Ceramic coating, paint correction, interior detailing, and full detail packages with luxury excellence.',
   keywords: 'auto detailing services, ceramic coating, paint correction, interior detailing, Virginia Beach, Chesapeake, Norfolk, car detailing packages',
 }
 
