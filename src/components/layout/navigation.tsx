@@ -20,7 +20,17 @@ const services = [
   {
     title: 'Ceramic Coating',
     href: '/services/ceramic-coating',
-    description: 'Ultimate paint protection with long-lasting shine and hydrophobic properties.',
+    description: 'Professional paint protection with or without paint enhancement options.',
+  },
+  {
+    title: 'Paint Protection Film',
+    href: '/services/paint-protection-film',
+    description: 'Self-healing invisible armor protection for your vehicle\'s paint.',
+  },
+  {
+    title: 'Full Detail Packages',
+    href: '/services/packages',
+    description: 'Complete Level 1 and Level 2 interior and exterior detailing services.',
   },
   {
     title: 'Paint Correction',
@@ -31,11 +41,6 @@ const services = [
     title: 'Interior Detailing',
     href: '/services/interior-detailing',
     description: 'Deep cleaning and protection for leather, fabric, and trim surfaces.',
-  },
-  {
-    title: 'Full Detail Packages',
-    href: '/services/packages',
-    description: 'Complete automotive care combining exterior and interior services.',
   },
 ]
 

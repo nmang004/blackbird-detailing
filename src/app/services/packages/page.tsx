@@ -11,112 +11,140 @@ export const metadata: Metadata = {
   keywords: 'detail packages, complete car detailing, Virginia Beach, auto detail packages, full service detailing, car care packages',
 }
 
-const packages = [
+const detailPackages = [
   {
-    name: 'Sport Package',
-    price: '$799',
-    originalPrice: '$899',
-    savings: 'Save $100',
-    duration: '1-2 Days',
-    description: 'Complete detail for the driving enthusiast who demands performance and protection.',
+    name: 'Level 1 Intro Full Detail',
+    subtitle: 'Express Full Detail',
+    description: 'Complete interior & exterior detail, designed to clean every inch of your car! Perfect for vehicles 1-3 years old or newer.',
     icon: Zap,
     popular: false,
-    ideal: 'Sports cars, daily drivers, performance vehicles',
+    ideal: 'Newer vehicles (1-3 years), vehicles in average condition',
+    pricing: {
+      sedan: '$280',
+      midsize: '$300',
+      large: '$320'
+    },
+    note: 'Pricing based on vehicles in average condition. Vehicle will be inspected prior to service for any additional recommendations.',
     exteriorServices: [
-      'Complete exterior wash and decontamination',
-      'Clay bar treatment',
-      'Single-stage paint correction',
-      'Tire and wheel cleaning',
-      'Trim restoration',
-      'Glass cleaning and treatment',
-      '6-month paint sealant'
+      'Detailed Hand Wash + Foam Bath',
+      'Bug Splatters Cleaned Off',
+      'Wheels + Rims Deep Cleaned',
+      'Tires Shined + Dressed',
+      'Clean Gas Cap Area',
+      'Premium Spray Wax/Paint Sealant',
+      'Blow Dry and Microfiber Hand Dry'
     ],
     interiorServices: [
-      'Complete interior vacuum',
-      'Dashboard and trim cleaning',
-      'Leather cleaning and conditioning',
-      'Fabric spot treatment',
-      'Interior glass cleaning',
-      'Air freshening treatment'
+      'Detailed Vacuum',
+      'Detailed Wipe Down',
+      'All Cracks + Crevices',
+      'Floor Mats Cleaned',
+      'Windows Cleaned',
+      'Door Jambs Cleaned',
+      'Trunk Cleaned',
+      'Floor Mats Dressed (Non-Slick)'
     ],
-    additionalServices: [
-      'Engine bay cleaning',
-      'Door jamb detailing',
-      'Before/after documentation'
+    addOns: [
+      { name: 'Leather Conditioning', price: '1 Row $40, 2 Row $60, 3 Row $80' },
+      { name: 'Steam Clean & Ozone Odor Treatment', price: '$250' },
+      { name: 'Engine Bay Detail', price: '$60' },
+      { name: 'Steam Clean Carpet/Seats', price: '$60, $80, $120' },
+      { name: 'Clay Bar/Paint Decontamination', price: '$60, $75, $90' },
+      { name: 'Black Trim Restoration', price: '$250 (Ceramic Coating)' },
+      { name: 'Trash/Item Removal', price: '$50 Fee' }
     ]
   },
   {
-    name: 'Grand Tourer Package',
-    price: '$1,299',
-    originalPrice: '$1,499',
-    savings: 'Save $200',
-    duration: '2-3 Days',
-    description: 'Premium protection and restoration for luxury and touring vehicles.',
+    name: 'Level 2 Intro Full Detail',
+    subtitle: 'Executive Full Detail',
+    description: 'Our most intensive deep cleaning package that reaches every crack, corner and crevice of your vehicle, leaving you with a cleaner vehicle than when you drove it off the lot! Perfect for vehicles 3-5 years old or older.',
     icon: Crown,
     popular: true,
-    ideal: 'Luxury vehicles, frequent travelers, premium cars',
+    ideal: 'Older vehicles (3-5+ years), vehicles needing intensive cleaning',
+    pricing: {
+      sedan: '$400',
+      midsize: '$450',
+      large: '$500'
+    },
+    note: 'Pricing based on vehicles in average condition. Vehicle will be inspected prior to service for any additional recommendations.',
     exteriorServices: [
-      'Complete exterior wash and decontamination',
-      'Clay bar and iron removal',
-      'Two-stage paint correction',
-      'Wheel and tire deep cleaning',
-      'Trim restoration and protection',
-      'Glass ceramic coating application',
-      'Single-layer ceramic coating',
-      '2-year protection warranty'
+      'Detailed Hand Wash + Foam Bath',
+      'Clay Bar & Paint Decontamination (as needed)',
+      'Bug Splatters Cleaned Off',
+      'Wheels + Rims Deep Cleaned',
+      'Wheel Wells Cleaned',
+      'Tires Shined + Dressed',
+      'Clean Gas Cap Area',
+      'Premium Paint Sealant (8-12mo Protection)',
+      'Blow Dry and Microfiber Hand Dry',
+      'Black Trim Restored & UV Protected'
     ],
     interiorServices: [
-      'Deep interior extraction cleaning',
-      'Steam cleaning of all surfaces',
-      'Leather deep cleaning and conditioning',
-      'Fabric protection application',
-      'Plastic and vinyl restoration',
-      'UV protection treatment',
-      'Odor elimination service'
+      'Detailed Vacuum',
+      'Detailed Wipe Down',
+      'All Cracks + Crevices',
+      'Floor Mats Cleaned',
+      'Leather Conditioned & Protected',
+      'Windows Cleaned (Streak Free)',
+      'Door Jambs Cleaned',
+      'Trunk Cleaned',
+      'Steam Clean All Panels & Vents',
+      'Steam Clean Carpets & Seats'
     ],
-    additionalServices: [
-      'Engine bay detailing and protection',
-      'Complete door jamb service',
-      'Maintenance kit included',
-      'Annual inspection service'
+    addOns: [
+      { name: '1 Year Ceramic Coating', price: '$250, $300, $400' },
+      { name: 'Black Trim Restoration', price: '$250 (Ceramic Coating)' },
+      { name: 'Glass Ceramic Coating', price: '$40 for Windshield, $20 per Window' },
+      { name: 'Hard Water Spot Removal on Windows', price: '$40 for Windshield, $20 per Window' },
+      { name: 'Trash/Item Removal', price: '$50 Fee' },
+      { name: 'Engine Bay Detail', price: '$60' },
+      { name: 'Ozone Odor Treatment', price: '$100' }
+    ]
+  }
+]
+
+const specialtyServices = [
+  {
+    name: 'Intro Exterior Only Detail',
+    subtitle: 'Level 2/Executive Only',
+    description: 'Premium exterior detail designed to remove micro contaminants from your cars paint, leave a silky smooth finish, and protect the paint for up to 8 months!',
+    pricing: {
+      sedan: '$150',
+      midsize: '$170',
+      large: '$190'
+    },
+    services: [
+      'Detailed Hand Wash + Foam Bath',
+      'Bug Splatters Cleaned Off',
+      'Clay Bar Service',
+      'Micro Contaminants Removed from Paint',
+      'Wheels & Tires Deep Cleaned',
+      'Tires Shined',
+      'Premium Paint Sealant (8-12mo Protection)',
+      'Black Trim Restored & UV Protected',
+      'Blow Dry & Microfiber Hand Dry'
     ]
   },
   {
-    name: 'Trackhawk Package',
-    price: '$1,999',
-    originalPrice: '$2,399',
-    savings: 'Save $400',
-    duration: '3-5 Days',
-    description: 'Ultimate protection and perfection for exotic and high-performance vehicles.',
-    icon: Trophy,
-    popular: false,
-    ideal: 'Exotic cars, supercars, show vehicles, collectors',
-    exteriorServices: [
-      'Complete multi-stage decontamination',
-      'Clay, iron, and tar removal',
-      'Three-stage paint correction',
-      'Wheel and caliper deep restoration',
-      'Trim and plastic restoration',
-      'Complete glass ceramic coating',
-      'Triple-layer ceramic coating system',
-      '5-year protection warranty'
-    ],
-    interiorServices: [
-      'Professional grade extraction cleaning',
-      'Multi-stage leather restoration',
-      'Advanced stain removal treatment',
-      'Complete fabric protection system',
-      'Headliner cleaning and protection',
-      'UV protection for all surfaces',
-      'Complete sanitization service'
-    ],
-    additionalServices: [
-      'Complete engine bay restoration',
-      'Undercarriage cleaning and protection',
-      'Professional photography session',
-      'Comprehensive maintenance system',
-      'Quarterly inspection service',
-      'Priority booking status'
+    name: 'Intro Interior Only Detail',
+    subtitle: 'Level 2/Executive Only',
+    description: 'Our signature interior package, made for cars that need extra love! Perfect if you\'re prepping to sell, cleaning up after kids, pets, or after years of daily buildup. Optional exterior wash can be added.',
+    pricing: {
+      sedan: '$250',
+      midsize: '$300',
+      large: '$350'
+    },
+    services: [
+      'Detailed Vacuum',
+      'Detailed Wipe Down',
+      'All Cracks + Crevices',
+      'Steam Cleaning All Panels & Vents',
+      'Steam Clean and Shampoo Carpets & Seats',
+      'Light to Moderate Stain Removal',
+      'Leather Conditioned & Protected',
+      'Windows Cleaned',
+      'Door Jambs Cleaned',
+      'Trunk Cleaned'
     ]
   }
 ]
@@ -136,28 +164,7 @@ const comparison = [
   { feature: 'Inspection Service', sport: false, grand: 'Annual', trackhawk: 'Quarterly' }
 ]
 
-const addOns = [
-  {
-    name: 'Paint Protection Film',
-    price: 'From $899',
-    description: 'Clear protective film for high-impact areas'
-  },
-  {
-    name: 'Headlight Restoration',
-    price: '$199',
-    description: 'Restore clarity and protection to foggy headlights'
-  },
-  {
-    name: 'Wheel Coating',
-    price: '$299',
-    description: 'Ceramic coating for wheels and calipers'
-  },
-  {
-    name: 'Pet Hair Removal',
-    price: '$149',
-    description: 'Specialized removal of embedded pet hair'
-  }
-]
+// Add-ons will be displayed per package
 
 export default function PackagesPage() {
   return (
@@ -174,14 +181,14 @@ export default function PackagesPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-blackbird-off-white mb-6">
-              Complete Vehicle{' '}
-              <span className="text-blackbird-ignition-blue">Transformation</span>
+              Professional Detail{' '}
+              <span className="text-blackbird-ignition-blue">Packages</span>
             </h1>
-            
+
             <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
-              Our comprehensive detail packages combine interior, exterior, and protection 
-              services for complete vehicle care. Save money while getting the ultimate 
-              in automotive perfection.
+              Complete interior and exterior detailing services designed to clean every inch
+              of your vehicle. Choose from our Express or Executive packages based on your
+              vehicle's age and condition needs.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -201,59 +208,63 @@ export default function PackagesPage() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-              Choose Your{' '}
-              <span className="text-blackbird-ignition-blue">Performance Level</span>
+              Full Detail{' '}
+              <span className="text-blackbird-ignition-blue">Packages</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
-              Like high-performance vehicles, our packages are designed for different 
-              driving styles and protection needs. Each package builds upon the last 
-              with enhanced services and longer-lasting protection.
+              Professional interior and exterior detailing designed for different vehicle
+              ages and conditions. All products are pro-grade, non-toxic, and designed
+              to care for you, your car, and the environment.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {packages.map((pkg, index) => (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {detailPackages.map((pkg, index) => (
               <Card key={index} className={`relative bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 ${pkg.popular ? 'ring-2 ring-blackbird-ignition-blue/50 scale-105' : ''}`}>
                 {pkg.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blackbird-ignition-blue text-white">
                     Most Popular
                   </Badge>
                 )}
-                
+
                 <CardHeader className="text-center pb-4">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-full mb-4 mx-auto">
                     <pkg.icon className="h-8 w-8 text-blackbird-ignition-blue" />
                   </div>
-                  
+
                   <CardTitle className="text-2xl font-heading font-bold text-blackbird-off-white">
                     {pkg.name}
                   </CardTitle>
-                  
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-center space-x-2">
-                      <span className="text-4xl font-bold text-blackbird-ignition-blue">
-                        {pkg.price}
-                      </span>
-                      <div className="text-right">
-                        <div className="text-blackbird-off-white/50 line-through text-sm">
-                          {pkg.originalPrice}
-                        </div>
-                        <div className="text-green-400 text-xs font-semibold">
-                          {pkg.savings}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-blackbird-off-white/60">
-                      {pkg.duration}
-                    </div>
-                  </div>
-                  
+
+                  <p className="text-blackbird-ignition-blue font-medium mb-4">
+                    {pkg.subtitle}
+                  </p>
+
                   <CardDescription className="text-blackbird-off-white/70">
                     {pkg.description}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent>
+                  {/* Pricing */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-blackbird-off-white mb-3">Pricing:</h4>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Sedans & Coupes:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{pkg.pricing.sedan}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Midsize Truck/SUV:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{pkg.pricing.midsize}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Large Truck/SUV:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{pkg.pricing.large}</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-6 mb-6">
                     {/* Exterior Services */}
                     <div>
@@ -262,15 +273,15 @@ export default function PackagesPage() {
                         Exterior Services
                       </h4>
                       <ul className="space-y-1">
-                        {pkg.exteriorServices.slice(0, 4).map((service, idx) => (
+                        {pkg.exteriorServices.slice(0, 5).map((service, idx) => (
                           <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
                             <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
                             {service}
                           </li>
                         ))}
-                        {pkg.exteriorServices.length > 4 && (
+                        {pkg.exteriorServices.length > 5 && (
                           <li className="text-xs text-blackbird-off-white/60 ml-5">
-                            +{pkg.exteriorServices.length - 4} more services
+                            +{pkg.exteriorServices.length - 5} more services
                           </li>
                         )}
                       </ul>
@@ -283,15 +294,15 @@ export default function PackagesPage() {
                         Interior Services
                       </h4>
                       <ul className="space-y-1">
-                        {pkg.interiorServices.slice(0, 3).map((service, idx) => (
+                        {pkg.interiorServices.slice(0, 5).map((service, idx) => (
                           <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
                             <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
                             {service}
                           </li>
                         ))}
-                        {pkg.interiorServices.length > 3 && (
+                        {pkg.interiorServices.length > 5 && (
                           <li className="text-xs text-blackbird-off-white/60 ml-5">
-                            +{pkg.interiorServices.length - 3} more services
+                            +{pkg.interiorServices.length - 5} more services
                           </li>
                         )}
                       </ul>
@@ -300,6 +311,9 @@ export default function PackagesPage() {
                     <div className="pt-4 border-t border-blackbird-charcoal/50">
                       <p className="text-xs text-blackbird-off-white/60">
                         <strong>Ideal for:</strong> {pkg.ideal}
+                      </p>
+                      <p className="text-xs text-blackbird-off-white/50 mt-2">
+                        {pkg.note}
                       </p>
                     </div>
                   </div>
@@ -316,6 +330,85 @@ export default function PackagesPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Specialty Services */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                Specialty Detail Services
+              </h3>
+              <p className="text-lg text-blackbird-off-white/70">
+                Focused interior or exterior services for specific needs
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {specialtyServices.map((service, index) => (
+                <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-xl font-heading font-bold text-blackbird-off-white">
+                      {service.name}
+                    </CardTitle>
+                    <p className="text-blackbird-ignition-blue font-medium">
+                      {service.subtitle}
+                    </p>
+                    <CardDescription className="text-blackbird-off-white/70">
+                      {service.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent>
+                    {/* Pricing */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-blackbird-off-white mb-3">Pricing:</h4>
+                      <div className="space-y-2">
+                        <div className="flex justify-between">
+                          <span className="text-blackbird-off-white/80">Sedans & Coupes:</span>
+                          <span className="text-blackbird-ignition-blue font-bold">{service.pricing.sedan}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-blackbird-off-white/80">Midsize Truck/SUV:</span>
+                          <span className="text-blackbird-ignition-blue font-bold">{service.pricing.midsize}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-blackbird-off-white/80">Large Truck/SUV:</span>
+                          <span className="text-blackbird-ignition-blue font-bold">{service.pricing.large}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Services */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-blackbird-off-white mb-3">What's Included:</h4>
+                      <ul className="space-y-1">
+                        {service.services.slice(0, 6).map((item, idx) => (
+                          <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
+                            <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
+                            {item}
+                          </li>
+                        ))}
+                        {service.services.length > 6 && (
+                          <li className="text-xs text-blackbird-off-white/60 ml-5">
+                            +{service.services.length - 6} more services
+                          </li>
+                        )}
+                      </ul>
+                    </div>
+
+                    <Button
+                      size="lg"
+                      className="w-full bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 transition-colors"
+                      asChild
+                    >
+                      <Link href="/contact">
+                        Select {service.name}
+                      </Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -389,36 +482,51 @@ export default function PackagesPage() {
         </div>
       </section>
 
-      {/* Add-Ons Section */}
+      {/* Package Add-Ons Section */}
       <section className="py-20 md:py-32">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-              Optional{' '}
+              Available{' '}
               <span className="text-blackbird-ignition-blue">Add-Ons</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
-              Enhance any package with additional specialized services 
-              tailored to your specific needs.
+              Enhance your detail package with additional specialized services.
+              Add-on availability and pricing may vary by package level.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {addOns.map((addon, index) => (
-              <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/30 transition-colors duration-300 text-center">
-                <CardContent className="p-6">
-                  <h3 className="font-heading font-bold text-blackbird-off-white mb-2">
-                    {addon.name}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {detailPackages.map((pkg, pkgIndex) => (
+              <div key={pkgIndex}>
+                <div className="text-center mb-8">
+                  <h3 className="text-xl font-heading font-bold text-blackbird-off-white mb-2">
+                    {pkg.name} Add-Ons
                   </h3>
-                  <p className="text-blackbird-ignition-blue font-semibold mb-3">
-                    {addon.price}
-                  </p>
-                  <p className="text-blackbird-off-white/70 text-sm">
-                    {addon.description}
-                  </p>
-                </CardContent>
-              </Card>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {pkg.addOns.map((addon, index) => (
+                    <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
+                      <CardContent className="p-4">
+                        <h4 className="font-semibold text-blackbird-off-white mb-2 text-sm">
+                          {addon.name}
+                        </h4>
+                        <p className="text-blackbird-ignition-blue font-semibold text-sm mb-2">
+                          {addon.price}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-sm text-blackbird-off-white/60">
+              All products are pro-grade, non-toxic, and designed to care for you, your car, and the environment.
+            </p>
           </div>
         </div>
       </section>

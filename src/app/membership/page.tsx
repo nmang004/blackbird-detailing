@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Crown, Star, CheckCircle, CalendarDays, Shield, Sparkles, Award, Phone } from 'lucide-react'
+import { Crown, Star, CheckCircle, CalendarDays, Shield, Sparkles, Award, Phone, Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -12,69 +12,177 @@ export const metadata: Metadata = {
   keywords: 'auto detailing membership, recurring car detailing, luxury car care subscription, Virginia Beach, monthly detailing, bi-weekly detailing',
 }
 
-const membershipTiers = [
+const membershipPlans = {
+  inAndOut: {
+    title: 'In & Out Membership',
+    subtitle: 'Complete Interior & Exterior Care',
+    plans: [
+      {
+        name: 'Bi-Monthly Plan',
+        frequency: 'Every 2 Months',
+        pricing: {
+          sedan: { monthly: '$240', annual: '$1,300' },
+          midsize: { monthly: '$260', annual: '$1,400' },
+          large: { monthly: '$280', annual: '$1,650' }
+        },
+        popular: false,
+        description: 'Complete interior and exterior care every two months for consistent protection.',
+        features: [
+          'Complete exterior wash & detailing',
+          'Full interior deep cleaning',
+          'Leather conditioning & protection',
+          'Fabric cleaning & protection',
+          'Wheel & tire cleaning',
+          'Glass cleaning inside & out',
+          'Trim restoration & protection',
+          'Door jamb cleaning'
+        ]
+      },
+      {
+        name: 'Monthly Plan',
+        frequency: 'Every Month',
+        pricing: {
+          sedan: { monthly: '$180', annual: '$2,000' },
+          midsize: { monthly: '$210', annual: '$2,400' },
+          large: { monthly: '$240', annual: '$2,700' }
+        },
+        popular: true,
+        description: 'Monthly complete care for vehicles that demand consistent perfection.',
+        features: [
+          'Monthly complete detailing service',
+          'Interior & exterior perfection',
+          'Premium product protection',
+          'Leather conditioning treatment',
+          'Advanced cleaning techniques',
+          'Priority booking status',
+          'Quality inspection guarantee',
+          'Maintenance recommendations'
+        ]
+      },
+      {
+        name: 'Bi-Weekly Plan',
+        frequency: 'Every 2 Weeks',
+        pricing: {
+          sedan: { monthly: '$140', annual: '$3,150' },
+          midsize: { monthly: '$160', annual: '$3,650' },
+          large: { monthly: '$180', annual: '$4,150' }
+        },
+        popular: false,
+        description: 'Ultimate care for enthusiasts who demand showroom condition every two weeks.',
+        features: [
+          'Bi-weekly complete service',
+          'Paint correction as needed',
+          'Interior deep cleaning',
+          'Exterior paint protection',
+          'Wheel & tire maintenance',
+          'Premium product application',
+          'White-glove service',
+          'Guaranteed availability'
+        ]
+      }
+    ]
+  },
+  exteriorOnly: {
+    title: 'Exterior Only Membership',
+    subtitle: 'Premium Exterior Care & Protection',
+    plans: [
+      {
+        name: 'Bi-Monthly Exterior',
+        frequency: 'Every 2 Months',
+        pricing: {
+          sedan: { monthly: '$140', annual: '$800' },
+          midsize: { monthly: '$160', annual: '$900' },
+          large: { monthly: '$180', annual: '$1,000' }
+        },
+        popular: false,
+        description: 'Professional exterior-only care for the discerning owner.',
+        features: [
+          'Professional exterior wash',
+          'Premium paint protection',
+          'Wheel & tire detailing',
+          'Glass cleaning & treatment',
+          'Trim restoration',
+          'Paint decontamination',
+          'Ceramic spray protection',
+          'Quality guarantee'
+        ]
+      },
+      {
+        name: 'Monthly Exterior',
+        frequency: 'Every Month',
+        pricing: {
+          sedan: { monthly: '$100', annual: '$1,100' },
+          midsize: { monthly: '$120', annual: '$1,200' },
+          large: { monthly: '$140', annual: '$1,400' }
+        },
+        popular: true,
+        description: 'Monthly exterior perfection for consistent showroom appearance.',
+        features: [
+          'Monthly exterior detailing',
+          'Paint protection application',
+          'Wheel & tire care',
+          'Glass ceramic treatment',
+          'Trim protection',
+          'Quality inspection',
+          'Priority scheduling',
+          'Maintenance tracking'
+        ]
+      },
+      {
+        name: 'Bi-Weekly Exterior',
+        frequency: 'Every 2 Weeks',
+        pricing: {
+          sedan: { monthly: '$100', annual: '$2,200' },
+          midsize: { monthly: '$110', annual: '$2,500' },
+          large: { monthly: '$120', annual: '$2,600' }
+        },
+        popular: false,
+        description: 'Ultimate exterior maintenance for maximum protection and appearance.',
+        features: [
+          'Bi-weekly exterior service',
+          'Advanced paint protection',
+          'Premium wheel care',
+          'Specialized glass treatment',
+          'Paint enhancement',
+          'Contaminant removal',
+          'Guaranteed scheduling',
+          'Performance tracking'
+        ]
+      }
+    ]
+  }
+}
+
+const addOnServices = [
   {
-    name: 'Exterior Excellence',
-    subtitle: 'Monthly Exterior Care',
-    price: '$149',
-    period: '/month',
-    popular: false,
-    description: 'Premium exterior-only maintenance for the discerning owner who values consistent perfection.',
-    features: [
-      'Professional exterior wash & dry',
-      'Premium ceramic spray protection',
-      'Wheel & tire detailing',
-      'Glass cleaning & treatment',
-      'Trim restoration & protection',
-      'Priority booking guaranteed',
-      'Complimentary interior vacuum',
-      '10% discount on additional services'
-    ],
-    icon: Sparkles,
-    color: 'from-blackbird-ignition-blue/20 to-blackbird-charcoal/20'
+    name: 'Mechanical/Cosmetic Service (Scheduled)',
+    price: '$100',
+    description: 'Coordinate mechanical or cosmetic service appointments'
   },
   {
-    name: 'Elite Monthly',
-    subtitle: 'Complete Monthly Service',
-    price: '$299',
-    period: '/month',
-    popular: true,
-    description: 'The ultimate luxury experience combining interior and exterior perfection every month.',
-    features: [
-      'Complete exterior detailing service',
-      'Full interior deep cleaning',
-      'Leather conditioning & protection',
-      'Premium ceramic maintenance',
-      'Engine bay detailing',
-      'Priority booking & VIP treatment',
-      'Complimentary vehicle pickup/delivery*',
-      '15% discount on additional services',
-      'Exclusive member events access'
-    ],
-    icon: Crown,
-    color: 'from-blackbird-ignition-blue/30 to-yellow-400/20'
+    name: 'Full Service Coordination',
+    price: '$250',
+    description: 'Complete drop-off and pick-up coordination for services'
   },
   {
-    name: 'Executive Bi-Weekly',
-    subtitle: 'Ultimate Care Package',
-    price: '$449',
-    period: '/month',
-    popular: false,
-    description: 'For the ultimate enthusiast who demands perfection every two weeks.',
-    features: [
-      'Bi-weekly complete detailing',
-      'Paint correction as needed',
-      'Advanced ceramic maintenance',
-      'Interior & exterior perfection',
-      'White-glove concierge service',
-      'Guaranteed same-day booking',
-      'Complimentary pickup/delivery*',
-      '20% discount on additional services',
-      'Exclusive detailing consultations',
-      'Annual paint protection review'
-    ],
-    icon: Award,
-    color: 'from-yellow-400/20 to-blackbird-ignition-blue/30'
+    name: 'Engine Bay Detail',
+    price: '$40',
+    description: 'Professional engine bay cleaning and detailing'
+  },
+  {
+    name: 'Pet Hair Removal',
+    price: '$50',
+    description: 'Specialized removal of embedded pet hair'
+  },
+  {
+    name: 'Clay Bar Treatment',
+    price: '$50',
+    description: 'Paint decontamination and smoothness restoration'
+  },
+  {
+    name: 'Leather Conditioning',
+    price: '$40',
+    description: 'Premium leather treatment and protection'
   }
 ]
 
@@ -151,76 +259,286 @@ export default function MembershipPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            {membershipTiers.map((tier) => (
-              <Card 
-                key={tier.name} 
-                className={`relative group bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 overflow-hidden ${tier.popular ? 'ring-2 ring-blackbird-ignition-blue/30 scale-105' : ''}`}
-              >
-                {tier.popular && (
-                  <div className="absolute top-0 left-0 right-0">
-                    <div className="bg-gradient-to-r from-blackbird-ignition-blue to-yellow-400 text-blackbird-black text-center py-2 text-sm font-semibold">
-                      Most Popular Choice
-                    </div>
-                  </div>
-                )}
-                
-                <CardContent className="p-0">
-                  {/* Tier Header */}
-                  <div className={`relative p-8 bg-gradient-to-br ${tier.color}`}>
-                    <div className="flex items-center justify-center mb-4">
-                      <div className="p-3 bg-blackbird-ignition-blue/20 rounded-full backdrop-blur-sm">
-                        <tier.icon className="h-8 w-8 text-blackbird-ignition-blue" />
+          {/* In & Out Membership Plans */}
+          <div className="mb-20">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                {membershipPlans.inAndOut.title}
+              </h3>
+              <p className="text-lg text-blackbird-ignition-blue mb-6">
+                {membershipPlans.inAndOut.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+              {membershipPlans.inAndOut.plans.map((plan) => (
+                <Card
+                  key={plan.name}
+                  className={`relative group bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 overflow-hidden ${plan.popular ? 'ring-2 ring-blackbird-ignition-blue/30 scale-105' : ''}`}
+                >
+                  {plan.popular && (
+                    <div className="absolute top-0 left-0 right-0">
+                      <div className="bg-gradient-to-r from-blackbird-ignition-blue to-yellow-400 text-blackbird-black text-center py-2 text-sm font-semibold">
+                        Most Popular Choice
                       </div>
                     </div>
-                    
-                    <h3 className="text-2xl font-heading font-bold text-blackbird-off-white text-center mb-2">
-                      {tier.name}
-                    </h3>
-                    
-                    <p className="text-blackbird-ignition-blue text-center font-medium mb-4">
-                      {tier.subtitle}
-                    </p>
-                    
-                    <div className="text-center mb-4">
-                      <span className="text-4xl font-bold text-blackbird-off-white">{tier.price}</span>
-                      <span className="text-blackbird-off-white/70">{tier.period}</span>
+                  )}
+
+                  <CardContent className="p-0">
+                    {/* Plan Header */}
+                    <div className="relative p-6 bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/20">
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="p-3 bg-blackbird-ignition-blue/20 rounded-full backdrop-blur-sm">
+                          <Crown className="h-6 w-6 text-blackbird-ignition-blue" />
+                        </div>
+                      </div>
+
+                      <h4 className="text-xl font-heading font-bold text-blackbird-off-white text-center mb-2">
+                        {plan.name}
+                      </h4>
+
+                      <p className="text-blackbird-ignition-blue text-center font-medium mb-4">
+                        {plan.frequency}
+                      </p>
+
+                      <p className="text-sm text-blackbird-off-white/70 text-center">
+                        {plan.description}
+                      </p>
                     </div>
-                    
-                    <p className="text-sm text-blackbird-off-white/70 text-center">
-                      {tier.description}
-                    </p>
-                  </div>
 
-                  {/* Features List */}
-                  <div className="p-8">
-                    <ul className="space-y-4 mb-8">
-                      {tier.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mr-3 flex-shrink-0 mt-0.5" />
-                          <span className="text-blackbird-off-white/85 text-base font-body">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Pricing Tiers */}
+                    <div className="p-6">
+                      <div className="space-y-3 mb-6">
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Sedans & Coupes:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.sedan.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.sedan.annual}/year PIF</div>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Midsize Truck/SUV:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.midsize.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.midsize.annual}/year PIF</div>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Large Truck/SUV:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.large.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.large.annual}/year PIF</div>
+                          </div>
+                        </div>
+                      </div>
 
-                    <Button
-                      className={`w-full ${tier.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80'} text-white`}
-                      asChild
-                    >
-                      <Link href="/contact">
-                        Select {tier.name}
-                      </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                      {/* Features Preview */}
+                      <div className="mb-6">
+                        <ul className="space-y-2">
+                          {plan.features.slice(0, 4).map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-sm">
+                              <CheckCircle className="h-4 w-4 text-blackbird-ignition-blue mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-blackbird-off-white/85">{feature}</span>
+                            </li>
+                          ))}
+                          {plan.features.length > 4 && (
+                            <li className="text-xs text-blackbird-off-white/60 ml-6">
+                              +{plan.features.length - 4} more services
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+
+                      <Button
+                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80'} text-white`}
+                        asChild
+                      >
+                        <Link href="/contact">
+                          Select {plan.name}
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
 
-          {/* Additional Info */}
-          <div className="text-center text-sm text-blackbird-off-white/60">
-            <p className="mb-2">* Pickup and delivery available within 15 miles of Virginia Beach location</p>
-            <p>All memberships require a 6-month commitment. Cancel anytime thereafter with 30-day notice.</p>
+          {/* Exterior Only Membership Plans */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                {membershipPlans.exteriorOnly.title}
+              </h3>
+              <p className="text-lg text-blackbird-ignition-blue mb-6">
+                {membershipPlans.exteriorOnly.subtitle}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {membershipPlans.exteriorOnly.plans.map((plan) => (
+                <Card
+                  key={plan.name}
+                  className={`relative group bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 overflow-hidden ${plan.popular ? 'ring-2 ring-blackbird-ignition-blue/30 scale-105' : ''}`}
+                >
+                  {plan.popular && (
+                    <div className="absolute top-0 left-0 right-0">
+                      <div className="bg-gradient-to-r from-blackbird-ignition-blue to-yellow-400 text-blackbird-black text-center py-2 text-sm font-semibold">
+                        Most Popular Choice
+                      </div>
+                    </div>
+                  )}
+
+                  <CardContent className="p-0">
+                    {/* Plan Header */}
+                    <div className="relative p-6 bg-gradient-to-br from-blackbird-ignition-blue/10 to-blackbird-charcoal/20">
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="p-3 bg-blackbird-ignition-blue/20 rounded-full backdrop-blur-sm">
+                          <Sparkles className="h-6 w-6 text-blackbird-ignition-blue" />
+                        </div>
+                      </div>
+
+                      <h4 className="text-xl font-heading font-bold text-blackbird-off-white text-center mb-2">
+                        {plan.name}
+                      </h4>
+
+                      <p className="text-blackbird-ignition-blue text-center font-medium mb-4">
+                        {plan.frequency}
+                      </p>
+
+                      <p className="text-sm text-blackbird-off-white/70 text-center">
+                        {plan.description}
+                      </p>
+                    </div>
+
+                    {/* Pricing Tiers */}
+                    <div className="p-6">
+                      <div className="space-y-3 mb-6">
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Sedans & Coupes:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.sedan.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.sedan.annual}/year PIF</div>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Midsize Truck/SUV:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.midsize.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.midsize.annual}/year PIF</div>
+                          </div>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <span className="text-blackbird-off-white/80">Large Truck/SUV:</span>
+                          <div className="text-right">
+                            <div className="text-blackbird-ignition-blue font-bold">{plan.pricing.large.monthly}/month</div>
+                            <div className="text-blackbird-off-white/60 text-xs">or {plan.pricing.large.annual}/year PIF</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Features Preview */}
+                      <div className="mb-6">
+                        <ul className="space-y-2">
+                          {plan.features.slice(0, 4).map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-sm">
+                              <CheckCircle className="h-4 w-4 text-blackbird-ignition-blue mr-2 flex-shrink-0 mt-0.5" />
+                              <span className="text-blackbird-off-white/85">{feature}</span>
+                            </li>
+                          ))}
+                          {plan.features.length > 4 && (
+                            <li className="text-xs text-blackbird-off-white/60 ml-6">
+                              +{plan.features.length - 4} more services
+                            </li>
+                          )}
+                        </ul>
+                      </div>
+
+                      <Button
+                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80'} text-white`}
+                        asChild
+                      >
+                        <Link href="/contact">
+                          Select {plan.name}
+                        </Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Membership Add-Ons */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                Available Add-On Services
+              </h3>
+              <p className="text-lg text-blackbird-off-white/70">
+                Enhance your membership with additional specialized services
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {addOnServices.map((addon, index) => (
+                <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
+                  <CardContent className="p-6 text-center">
+                    <h4 className="font-heading font-bold text-blackbird-off-white mb-2">
+                      {addon.name}
+                    </h4>
+                    <p className="text-blackbird-ignition-blue font-semibold text-lg mb-3">
+                      +{addon.price}
+                    </p>
+                    <p className="text-blackbird-off-white/70 text-sm">
+                      {addon.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Additional Benefits */}
+          <div className="bg-blackbird-charcoal/20 rounded-2xl p-8 mb-16">
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-heading font-bold text-blackbird-off-white mb-4">
+                Additional Member Benefits
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <h4 className="font-semibold text-blackbird-ignition-blue mb-3">Discounts Available:</h4>
+                <ul className="space-y-2 text-blackbird-off-white/80">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blackbird-ignition-blue mr-2" />
+                    Paint Enhancement/Ceramic Coating: 10-20% off
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blackbird-ignition-blue mr-2" />
+                    Paint Protection Film: 10% off
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-blackbird-ignition-blue mb-3">Membership Terms:</h4>
+                <ul className="space-y-2 text-blackbird-off-white/80">
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blackbird-ignition-blue mr-2" />
+                    All memberships require 6-month minimum commitment
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blackbird-ignition-blue mr-2" />
+                    Cancel anytime after minimum with 30-day notice
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="h-4 w-4 text-blackbird-ignition-blue mr-2" />
+                    PIF (Paid In Full) plans offer significant savings
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>

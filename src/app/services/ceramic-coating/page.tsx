@@ -11,76 +11,73 @@ export const metadata: Metadata = {
   keywords: 'ceramic coating, paint protection, Virginia Beach, car ceramic coating, vehicle protection, paint coating, automotive ceramic coating',
 }
 
-const packages = [
+const ceramicCoatingOptions = [
   {
-    name: 'Sport Package',
-    price: '$899',
-    duration: '5 Years',
-    description: 'Professional-grade protection for daily drivers and enthusiasts.',
-    popular: false,
-    features: [
-      'Single layer ceramic coating',
-      'Paint decontamination',
-      'Clay bar treatment',
-      'Paint correction (1-step)',
-      'Tire and trim protection',
-      '5-year warranty',
-      'Maintenance kit included',
-      'Annual inspection'
-    ],
-    notIncluded: [
-      'Multi-stage paint correction',
-      'Interior protection',
-      'Wheel coating'
-    ],
-    ideal: 'Daily drivers, newer vehicles, budget-conscious owners'
-  },
-  {
-    name: 'Grand Tourer Package',
-    price: '$1,499',
-    duration: '7 Years',
-    description: 'Enhanced protection for luxury and performance vehicles.',
+    category: 'With Paint Enhancement',
+    description: 'Complete paint correction and ceramic coating application for maximum results',
     popular: true,
+    pricing: {
+      coupe: '$1,000',
+      sedan: '$1,200',
+      midsize: '$1,400',
+      large: '$1,600'
+    },
     features: [
-      'Dual layer ceramic coating',
       'Complete paint decontamination',
-      'Clay bar and iron removal',
-      'Paint correction (2-step)',
-      'Wheel and caliper coating',
-      'Tire and trim protection',
-      'Interior fabric protection',
-      '7-year warranty',
-      'Premium maintenance kit',
-      'Bi-annual inspections'
+      'Clay bar and contaminant removal',
+      'Multi-stage paint correction',
+      'Swirl and scratch removal',
+      'Professional ceramic coating application',
+      'Paint depth restoration',
+      'Enhanced gloss and clarity',
+      'Long-term protection warranty'
     ],
-    notIncluded: [
-      'Glass coating',
-      'Engine bay detailing'
-    ],
-    ideal: 'Luxury vehicles, performance cars, frequent drivers'
+    ideal: 'Vehicles with paint imperfections, older vehicles, maximum enhancement desired'
   },
   {
-    name: 'Trackhawk Package',
-    price: '$2,299',
-    duration: '10 Years',
-    description: 'Ultimate protection for exotic and high-end vehicles.',
+    category: 'No Paint Enhancement',
+    description: 'Ceramic coating application on well-maintained paint without correction',
     popular: false,
+    pricing: {
+      coupe: '$600',
+      sedan: '$800',
+      midsize: '$900',
+      large: '$1,000'
+    },
     features: [
-      'Triple layer ceramic coating',
-      'Full paint decontamination',
-      'Clay, iron, and tar removal',
-      'Paint correction (3-step)',
-      'Wheel and caliper coating',
-      'Glass ceramic coating',
-      'Interior leather and fabric protection',
-      'Engine bay detailing',
-      'Tire and trim protection',
-      '10-year warranty',
-      'Complete maintenance system',
-      'Quarterly inspections'
+      'Paint decontamination wash',
+      'Clay bar treatment',
+      'Surface preparation',
+      'Professional ceramic coating application',
+      'Surface inspection',
+      'Protection warranty',
+      'Maintenance instructions',
+      'Quality guarantee'
     ],
-    notIncluded: [],
-    ideal: 'Exotic cars, show vehicles, collectors, maximum protection'
+    ideal: 'New vehicles, well-maintained paint, budget-conscious protection'
+  }
+]
+
+const addOnServices = [
+  {
+    name: 'Glass Ceramic Coating',
+    price: '$50 for Windshield, $20 per Window',
+    description: 'Hydrophobic coating for improved visibility and easier cleaning'
+  },
+  {
+    name: 'Trim Ceramic Coating',
+    price: '$200',
+    description: 'Protection and restoration for plastic trim and exterior accents'
+  },
+  {
+    name: 'Wheel Ceramic Coating',
+    price: '$400',
+    description: 'Brake dust resistance and easier cleaning for wheels and calipers'
+  },
+  {
+    name: 'Paint Protection Film',
+    price: 'Pricing Varies',
+    description: 'Clear protective film for high-impact areas - see PPF page for details'
   }
 ]
 
@@ -151,14 +148,14 @@ export default function CeramicCoatingPage() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-blackbird-off-white mb-6">
-                Ultimate Paint{' '}
-                <span className="text-blackbird-ignition-blue">Protection</span>
+                Professional Ceramic{' '}
+                <span className="text-blackbird-ignition-blue">Coating</span>
               </h1>
-              
+
               <p className="text-xl text-blackbird-off-white/70 mb-8">
-                Professional-grade ceramic coatings that provide years of protection against 
-                environmental contaminants, UV damage, and everyday wear. Experience the ultimate 
-                in paint preservation technology.
+                Professional-grade ceramic coatings that provide years of protection against
+                environmental contaminants, UV damage, and everyday wear. Choose from our
+                enhancement or protection-only options based on your vehicle's needs.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -222,45 +219,62 @@ export default function CeramicCoatingPage() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-              Choose Your{' '}
-              <span className="text-blackbird-ignition-blue">Protection Level</span>
+              Ceramic Coating{' '}
+              <span className="text-blackbird-ignition-blue">Options</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
-              From daily drivers to exotic supercars, we have the perfect ceramic coating 
-              package to meet your needs and budget.
+              Professional ceramic coating with or without paint enhancement.
+              Choose based on your vehicle's current paint condition and desired results.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <Card key={index} className={`relative bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 ${pkg.popular ? 'ring-2 ring-blackbird-ignition-blue/50' : ''}`}>
-                {pkg.popular && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {ceramicCoatingOptions.map((option, index) => (
+              <Card key={index} className={`relative bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 ${option.popular ? 'ring-2 ring-blackbird-ignition-blue/50 scale-105' : ''}`}>
+                {option.popular && (
                   <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blackbird-ignition-blue text-white">
                     Most Popular
                   </Badge>
                 )}
-                
+
                 <CardHeader className="text-center pb-4">
                   <CardTitle className="text-2xl font-heading font-bold text-blackbird-off-white">
-                    {pkg.name}
+                    {option.category}
                   </CardTitle>
-                  <div className="text-4xl font-bold text-blackbird-ignition-blue mb-2">
-                    {pkg.price}
-                  </div>
-                  <div className="text-blackbird-off-white/60">
-                    {pkg.duration} Warranty
-                  </div>
                   <CardDescription className="text-blackbird-off-white/70">
-                    {pkg.description}
+                    {option.description}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent>
+                  {/* Pricing by Vehicle Type */}
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-blackbird-off-white mb-3">Pricing by Vehicle Type:</h4>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Coupe:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{option.pricing.coupe}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Sedan:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{option.pricing.sedan}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Midsize Truck/SUV:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{option.pricing.midsize}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-blackbird-off-white/80">Large Truck/SUV:</span>
+                        <span className="text-blackbird-ignition-blue font-bold">{option.pricing.large}</span>
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-4 mb-6">
                     <div>
                       <h4 className="font-semibold text-blackbird-off-white mb-3">What's Included:</h4>
                       <ul className="space-y-2">
-                        {pkg.features.map((feature, idx) => (
+                        {option.features.map((feature, idx) => (
                           <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
                             <Check className="h-4 w-4 text-blackbird-ignition-blue mr-3 flex-shrink-0" />
                             {feature}
@@ -269,39 +283,55 @@ export default function CeramicCoatingPage() {
                       </ul>
                     </div>
 
-                    {pkg.notIncluded.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold text-blackbird-off-white/60 mb-3">Not Included:</h4>
-                        <ul className="space-y-2">
-                          {pkg.notIncluded.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-blackbird-off-white/50">
-                              <X className="h-4 w-4 text-blackbird-off-white/30 mr-3 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
                     <div className="pt-4 border-t border-blackbird-charcoal/50">
                       <p className="text-xs text-blackbird-off-white/60">
-                        <strong>Ideal for:</strong> {pkg.ideal}
+                        <strong>Ideal for:</strong> {option.ideal}
                       </p>
                     </div>
                   </div>
 
                   <Button
                     size="lg"
-                    className={`w-full ${pkg.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 text-blackbird-off-white'} transition-colors`}
+                    className={`w-full ${option.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 text-blackbird-off-white'} transition-colors`}
                     asChild
                   >
                     <Link href="/contact">
-                      Select {pkg.name}
+                      Select {option.category}
                     </Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* Add-On Services */}
+          <div className="mb-16">
+            <div className="text-center mb-12">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                Available Add-On Services
+              </h3>
+              <p className="text-lg text-blackbird-off-white/70">
+                Enhance your ceramic coating with additional protection services
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {addOnServices.map((addon, index) => (
+                <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/30 transition-colors duration-300 text-center">
+                  <CardContent className="p-6">
+                    <h4 className="font-heading font-bold text-blackbird-off-white mb-2">
+                      {addon.name}
+                    </h4>
+                    <p className="text-blackbird-ignition-blue font-semibold mb-3">
+                      {addon.price}
+                    </p>
+                    <p className="text-blackbird-off-white/70 text-sm">
+                      {addon.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

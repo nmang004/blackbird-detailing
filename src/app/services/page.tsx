@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Shield, Sparkles, Car, Package, ArrowRight, Check, Star } from 'lucide-react'
+import { Shield, Sparkles, Car, Package, ArrowRight, Check, Star, Crown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -14,71 +14,73 @@ export const metadata: Metadata = {
 const services = [
   {
     title: 'Ceramic Coating',
-    description: 'Ultimate paint protection with hydrophobic properties and multi-year durability. Our professional-grade ceramic coatings create an invisible shield.',
+    description: 'Professional-grade ceramic coating protection with or without paint enhancement. Crystal-clear, long-lasting protection against environmental contaminants.',
     icon: Shield,
     href: '/services/ceramic-coating',
     popular: true,
-    startingPrice: 'Starting at $899',
+    startingPrice: 'Starting at $600',
     features: [
-      'Multi-layer protection system',
-      '5-10 year warranty options',
+      'With/without paint enhancement options',
+      'Multi-year protection warranty',
       'Hydrophobic self-cleaning properties',
       'UV protection and gloss enhancement',
-      'Chemical resistance',
-      'Scratch resistance up to 9H hardness'
+      'Chemical and scratch resistance',
+      'Professional application process'
     ],
-    packages: ['Sport Package', 'Grand Tourer Package', 'Trackhawk Package'],
+    packages: ['With Paint Enhancement', 'No Paint Enhancement'],
     image: '/api/placeholder/600/400'
   },
   {
-    title: 'Paint Correction',
-    description: 'Professional swirl removal and paint restoration using advanced polishing techniques. Transform your vehicle\'s finish to showroom condition.',
-    icon: Sparkles,
-    href: '/services/paint-correction',
-    startingPrice: 'Starting at $599',
+    title: 'Paint Protection Film',
+    description: 'Invisible armor for your vehicle\'s paint. Self-healing, crystal-clear urethane protection that absorbs damage so your finish doesn\'t.',
+    icon: Shield,
+    href: '/services/paint-protection-film',
+    popular: false,
+    startingPrice: 'Starting at $700',
     features: [
-      'Multi-stage correction process',
-      'Swirl and scratch removal',
-      'Paint depth analysis',
-      'Professional grade compounds',
-      'Machine polishing techniques',
-      'Before/after documentation'
+      'Self-healing urethane technology',
+      'Crystal-clear, invisible protection',
+      'Manufacturer-backed warranty',
+      'Computer-cut precision patterns',
+      'Stain and acid resistance',
+      'Removable without paint damage'
     ],
-    packages: ['Single Stage', 'Two Stage', 'Three Stage'],
+    packages: ['Front Bumper', 'Partial Front', 'Full Front', 'Track Package', 'Full Body'],
     image: '/api/placeholder/600/400'
   },
   {
-    title: 'Interior Detailing',
-    description: 'Complete interior restoration and protection for leather, fabric, and trim surfaces. Deep cleaning and conditioning for a like-new experience.',
-    icon: Car,
-    href: '/services/interior-detailing',
-    startingPrice: 'Starting at $299',
-    features: [
-      'Leather cleaning & conditioning',
-      'Fabric protection treatment',
-      'Trim restoration and protection',
-      'Deep vacuum and extraction',
-      'Odor elimination treatment',
-      'UV protection for all surfaces'
-    ],
-    packages: ['Essential', 'Premium', 'Ultimate'],
-    image: '/api/placeholder/600/400'
-  },
-  {
-    title: 'Detail Packages',
-    description: 'Comprehensive automotive care combining multiple services. Choose from Sport, Grand Tourer, or Trackhawk packages for different needs.',
+    title: 'Full Detail Packages',
+    description: 'Complete interior and exterior detailing services. Professional cleaning designed to reach every inch of your vehicle.',
     icon: Package,
     href: '/services/packages',
-    startingPrice: 'Starting at $799',
+    startingPrice: 'Starting at $280',
+    popular: true,
     features: [
-      'Interior and exterior services',
-      'Package discounts available',
-      'Customizable service options',
-      'Professional documentation',
-      'Multi-service coordination',
-      'Complete vehicle transformation'
+      'Level 1 (Express) and Level 2 (Executive) options',
+      'Complete interior and exterior service',
+      'Professional-grade, non-toxic products',
+      'Pricing based on vehicle size',
+      'Extensive add-on options available',
+      'Quality guarantee included'
     ],
-    packages: ['Sport', 'Grand Tourer', 'Trackhawk'],
+    packages: ['Level 1 Express', 'Level 2 Executive', 'Interior Only', 'Exterior Only'],
+    image: '/api/placeholder/600/400'
+  },
+  {
+    title: 'Membership Plans',
+    description: 'Recurring maintenance plans for consistent vehicle care. Choose from interior/exterior or exterior-only memberships with significant savings.',
+    icon: Crown,
+    href: '/membership',
+    startingPrice: 'Starting at $100/month',
+    features: [
+      'In & Out or Exterior Only options',
+      'Bi-weekly, monthly, or bi-monthly service',
+      'Paid-in-full annual discounts available',
+      'Priority booking and VIP treatment',
+      'Add-on services at member rates',
+      'Flexible cancellation terms'
+    ],
+    packages: ['Bi-Weekly', 'Monthly', 'Bi-Monthly'],
     image: '/api/placeholder/600/400'
   }
 ]
@@ -121,14 +123,14 @@ export default function ServicesPage() {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-blackbird-off-white mb-6">
-              Luxury{' '}
-              <span className="text-blackbird-ignition-blue">Detailing Services</span>
+              Professional{' '}
+              <span className="text-blackbird-ignition-blue">Automotive Care</span>
             </h1>
-            
+
             <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
-              Experience the luxury and exclusivity that defines Blackbird Detailing. 
-              From premium ceramic protection to expert paint restoration, every service 
-              is crafted for discerning clients who demand nothing but perfection.
+              From complete detail packages to advanced protection services, we offer
+              comprehensive automotive care solutions. Choose from our ceramic coatings,
+              paint protection film, detail packages, and membership plans.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
