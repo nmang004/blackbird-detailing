@@ -15,8 +15,8 @@ const portfolioItems = [
     id: 1,
     title: 'BMW M3 Paint Correction & Ceramic Coating',
     category: 'Paint Correction',
-    beforeImage: null,
-    afterImage: null,
+    beforeImage: '/images/portfolio/before-after/ceramic-coating/bmw-ceramic-coating-2.webp',
+    afterImage: '/images/portfolio/before-after/ceramic-coating/bmw-ceramic-coating-11.webp',
     description: 'Complete paint restoration with multi-stage correction followed by premium ceramic coating application.',
     services: ['Paint Correction', 'Ceramic Coating'],
     vehicle: 'BMW M3'
@@ -25,8 +25,8 @@ const portfolioItems = [
     id: 2,
     title: 'Ford F-250 Full Detail Package',
     category: 'Full Detail',
-    beforeImage: null,
-    afterImage: null,
+    beforeImage: '/images/portfolio/before-after/ceramic-coating/ford-ceramic-coating-4.webp',
+    afterImage: '/images/portfolio/before-after/ceramic-coating/ford-ceramic-coating-29.webp',
     description: 'Comprehensive interior and exterior detailing for work truck restoration.',
     services: ['Interior Detail', 'Exterior Detail'],
     vehicle: 'Ford F-250'
@@ -35,8 +35,8 @@ const portfolioItems = [
     id: 3,
     title: 'Toyota 4Runner Interior Restoration',
     category: 'Interior Detail',
-    beforeImage: null,
-    afterImage: null,
+    beforeImage: '/images/portfolio/before-after/interior-detailing/interior-detail-12.webp',
+    afterImage: '/images/portfolio/before-after/interior-detailing/lexus-interior-detail-8.webp',
     description: 'Deep interior cleaning and conditioning bringing family SUV back to like-new condition.',
     services: ['Interior Detail', 'Leather Treatment'],
     vehicle: 'Toyota 4Runner'
@@ -45,8 +45,8 @@ const portfolioItems = [
     id: 4,
     title: 'Suburban Family Vehicle Detail',
     category: 'Full Service',
-    beforeImage: null,
-    afterImage: null,
+    beforeImage: '/images/portfolio/before-after/ceramic-coating/chevrolet-tahoe-ceramic-coating-22.webp',
+    afterImage: '/images/portfolio/before-after/ceramic-coating/chevrolet-ceramic-coating-27.webp',
     description: 'Complete transformation of family vehicle with kids and pet hair removal.',
     services: ['Deep Clean', 'Interior Detail', 'Exterior Detail'],
     vehicle: 'Chevrolet Suburban'

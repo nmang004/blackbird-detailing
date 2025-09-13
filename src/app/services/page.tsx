@@ -28,7 +28,7 @@ const services = [
       'Professional application process'
     ],
     packages: ['With Paint Enhancement', 'No Paint Enhancement'],
-    image: '/api/placeholder/600/400'
+    image: '/images/services/ceramic-coating/porsche-ceramic-coating-20.webp'
   },
   {
     title: 'Paint Protection Film',
@@ -46,7 +46,7 @@ const services = [
       'Removable without paint damage'
     ],
     packages: ['Front Bumper', 'Partial Front', 'Full Front', 'Track Package', 'Full Body'],
-    image: '/api/placeholder/600/400'
+    image: '/images/services/paint-protection-film/aston-martin-ceramic-coating-26.webp'
   },
   {
     title: 'Full Detail Packages',
@@ -64,7 +64,7 @@ const services = [
       'Quality guarantee included'
     ],
     packages: ['Level 1 Express', 'Level 2 Executive', 'Interior Only', 'Exterior Only'],
-    image: '/api/placeholder/600/400'
+    image: '/images/portfolio/before-after/process/mercedes-benz-process-1.webp'
   },
   {
     title: 'Membership Plans',
@@ -81,7 +81,7 @@ const services = [
       'Flexible cancellation terms'
     ],
     packages: ['Bi-Weekly', 'Monthly', 'Bi-Monthly'],
-    image: '/api/placeholder/600/400'
+    image: '/images/vehicles/luxury/bmw-ceramic-coating-38.webp'
   }
 ]
 
