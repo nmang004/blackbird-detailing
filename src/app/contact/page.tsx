@@ -43,20 +43,20 @@ const contactInfo = [
 
 const whyChooseUs = [
   {
-    title: 'Free Estimates',
-    description: 'Get detailed pricing with no obligation'
+    title: '100% Mobile Service',
+    description: 'Professional equipment brought to your location'
   },
   {
-    title: 'Quick Response',
-    description: 'We respond within 24 hours'
+    title: 'Automated Scheduling',
+    description: 'Set up maintenance programs that run automatically'
   },
   {
-    title: 'Transparent Pricing',
-    description: 'No hidden fees or surprises'
+    title: 'Drop-off Service Available',
+    description: 'We handle pickup and delivery for your convenience'
   },
   {
-    title: 'Expert Consultation',
-    description: 'Professional advice for your vehicle'
+    title: 'No Compromises Quality',
+    description: 'Premium products and techniques, always'
   }
 ]
 
@@ -79,9 +79,9 @@ export default function ContactPage() {
           </h1>
           
           <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto mb-12">
-            Get a personalized quote for your vehicle in just a few minutes. 
-            Our instant estimate engine provides accurate pricing based on your 
-            specific needs and vehicle condition.
+            Get a personalized quote for your luxury mobile detailing service in just a few minutes.
+            Our automated system provides accurate pricing and scheduling for all our services -
+            from one-time details to ongoing maintenance programs.
           </p>
         </div>
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
               <CardHeader>
                 <CardTitle className="text-blackbird-off-white">Contact Information</CardTitle>
                 <CardDescription className="text-blackbird-off-white/70">
-                  Prefer to speak with us directly? We&apos;re here to help.
+                  100% mobile service - we come to you. Prefer to speak directly? We&apos;re here to help.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -167,8 +167,8 @@ export default function ContactPage() {
                   Need to Speak with Someone?
                 </h3>
                 <p className="text-blackbird-off-white/80 text-sm mb-4">
-                  Our luxury detailing experts are here to provide personalized 
-                  consultations and recommendations.
+                  Our mobile luxury detailing experts understand your passion for quality
+                  and provide personalized consultations for enthusiasts like you.
                 </p>
                 <a
                   href="tel:+1-757-123-4567"
@@ -201,7 +201,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <p className="text-xs text-blackbird-off-white/60 mt-4">
-                  Mobile service available throughout Hampton Roads
+                  100% mobile service - we bring the detail shop to you
                 </p>
               </CardContent>
             </Card>
@@ -216,9 +216,9 @@ export default function ContactPage() {
                 Questions About Our Services?
               </h2>
               <p className="text-blackbird-off-white/80 mb-6 max-w-2xl mx-auto">
-                Every vehicle is unique, and we&apos;re here to provide personalized 
-                recommendations. Don&apos;t hesitate to reach out with any questions 
-                about our detailing services or packages.
+                Every vehicle is unique, and every enthusiast has different needs. We&apos;re here
+                to provide personalized recommendations for mobile services, maintenance programs,
+                and automated scheduling that fits your lifestyle. No compromises, ever.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

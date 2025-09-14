@@ -187,8 +187,8 @@ export default function PackagesPage() {
 
             <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
               Complete interior and exterior detailing services designed to clean every inch
-              of your vehicle. Choose from our Express or Executive packages based on your
-              vehicle's age and condition needs.
+              of your vehicle. From ongoing maintenance programs to full detail packages,
+              we provide the level of care your investment deserves.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -198,6 +198,244 @@ export default function PackagesPage() {
               <Button size="lg" variant="outline" className="border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black" asChild>
                 <Link href="/portfolio">See Package Results</Link>
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Maintenance Programs Section */}
+      <section className="py-20 md:py-32 bg-blackbird-charcoal/10">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
+              Full Vehicle Care{' '}
+              <span className="text-blackbird-ignition-blue">Programs</span>
+            </h2>
+            <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
+              Ongoing maintenance programs designed for enthusiasts who demand consistent luxury care.
+              Your vehicle maintained at the highest level, automatically scheduled at your convenience.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            {/* Weekly Luxury Program */}
+            <Card className="relative bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300 ring-2 ring-blackbird-ignition-blue/50 scale-105">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blackbird-ignition-blue text-white">
+                For Exotics & Track Cars
+              </Badge>
+
+              <CardHeader className="text-center pb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-full mb-4 mx-auto">
+                  <Crown className="h-8 w-8 text-blackbird-ignition-blue" />
+                </div>
+                <CardTitle className="text-2xl font-heading font-bold text-blackbird-off-white">
+                  Weekly Luxury Care
+                </CardTitle>
+                <p className="text-blackbird-ignition-blue font-medium mb-4">
+                  Ultimate Protection Program
+                </p>
+                <CardDescription className="text-blackbird-off-white/70">
+                  For high-performance and exotic vehicles requiring pristine condition maintenance.
+                  Complete mobile care at your location every week.
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <div className="space-y-4 mb-6">
+                  <h4 className="font-semibold text-blackbird-off-white mb-3">Weekly Services Include:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Complete wash and decontamination',
+                      'Paint protection maintenance',
+                      'Interior deep clean and conditioning',
+                      'Wheel and tire detailing',
+                      'Glass and trim restoration',
+                      'Engine bay maintenance (monthly)',
+                      'Priority scheduling and member rates'
+                    ].map((service, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
+                        <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6 p-4 bg-blackbird-ignition-blue/10 rounded-lg border border-blackbird-ignition-blue/20">
+                  <h4 className="font-semibold text-blackbird-off-white mb-2">Investment:</h4>
+                  <p className="text-blackbird-ignition-blue font-bold text-lg">Starting at $400/week</p>
+                  <p className="text-blackbird-off-white/60 text-sm">Pricing based on vehicle type and service location</p>
+                </div>
+
+                <Button
+                  size="lg"
+                  className="w-full bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 transition-colors"
+                  asChild
+                >
+                  <Link href="/contact">
+                    Enroll in Weekly Program
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Bi-Weekly Program */}
+            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300">
+              <CardHeader className="text-center pb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-full mb-4 mx-auto">
+                  <Package className="h-8 w-8 text-blackbird-ignition-blue" />
+                </div>
+                <CardTitle className="text-2xl font-heading font-bold text-blackbird-off-white">
+                  Bi-Weekly Care
+                </CardTitle>
+                <p className="text-blackbird-ignition-blue font-medium mb-4">
+                  Luxury Daily Driver Program
+                </p>
+                <CardDescription className="text-blackbird-off-white/70">
+                  Perfect for luxury daily drivers and weekend enthusiasts. Consistent care
+                  every two weeks to maintain that showroom condition.
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <div className="space-y-4 mb-6">
+                  <h4 className="font-semibold text-blackbird-off-white mb-3">Bi-Weekly Services Include:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Full exterior wash and dry',
+                      'Paint sealant maintenance',
+                      'Interior vacuum and wipe-down',
+                      'Leather conditioning (as needed)',
+                      'Wheel cleaning and tire dressing',
+                      'Window cleaning inside and out',
+                      'Member pricing on add-ons'
+                    ].map((service, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
+                        <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6 p-4 bg-blackbird-charcoal/50 rounded-lg">
+                  <h4 className="font-semibold text-blackbird-off-white mb-2">Investment:</h4>
+                  <p className="text-blackbird-ignition-blue font-bold text-lg">Starting at $180/bi-weekly</p>
+                  <p className="text-blackbird-off-white/60 text-sm">Pricing based on vehicle type and service location</p>
+                </div>
+
+                <Button
+                  size="lg"
+                  className="w-full bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 transition-colors"
+                  asChild
+                >
+                  <Link href="/contact">
+                    Enroll in Bi-Weekly Program
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Monthly Maintenance */}
+            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal hover:border-blackbird-ignition-blue/50 transition-all duration-300">
+              <CardHeader className="text-center pb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-full mb-4 mx-auto">
+                  <Shield className="h-8 w-8 text-blackbird-ignition-blue" />
+                </div>
+                <CardTitle className="text-2xl font-heading font-bold text-blackbird-off-white">
+                  Monthly Protection
+                </CardTitle>
+                <p className="text-blackbird-ignition-blue font-medium mb-4">
+                  Maintenance Program
+                </p>
+                <CardDescription className="text-blackbird-off-white/70">
+                  Monthly protection renewal and maintenance for ceramic-coated vehicles
+                  or those needing regular upkeep.
+                </CardDescription>
+              </CardHeader>
+
+              <CardContent>
+                <div className="space-y-4 mb-6">
+                  <h4 className="font-semibold text-blackbird-off-white mb-3">Monthly Services Include:</h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Ceramic coating maintenance wash',
+                      'Paint protection inspection',
+                      'Interior maintenance clean',
+                      'Trim and plastic restoration',
+                      'Protection product top-ups',
+                      'Condition assessment report'
+                    ].map((service, idx) => (
+                      <li key={idx} className="flex items-center text-sm text-blackbird-off-white/80">
+                        <Check className="h-3 w-3 text-blackbird-ignition-blue mr-2 flex-shrink-0" />
+                        {service}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-6 p-4 bg-blackbird-charcoal/50 rounded-lg">
+                  <h4 className="font-semibold text-blackbird-off-white mb-2">Investment:</h4>
+                  <p className="text-blackbird-ignition-blue font-bold text-lg">Starting at $120/month</p>
+                  <p className="text-blackbird-off-white/60 text-sm">Perfect for maintained vehicles</p>
+                </div>
+
+                <Button
+                  size="lg"
+                  className="w-full bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 transition-colors"
+                  asChild
+                >
+                  <Link href="/contact">
+                    Enroll in Monthly Program
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Program Benefits */}
+          <div className="bg-blackbird-charcoal/20 rounded-2xl p-8 md:p-12 border border-blackbird-charcoal/50">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-blackbird-off-white mb-4">
+                Program Member Benefits
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                {
+                  icon: Crown,
+                  title: 'Priority Scheduling',
+                  description: 'Members get first access to premium time slots'
+                },
+                {
+                  icon: Trophy,
+                  title: 'Member Pricing',
+                  description: '15-20% savings on all additional services'
+                },
+                {
+                  icon: Car,
+                  title: 'Drop-off Service',
+                  description: 'Complimentary vehicle pickup and delivery'
+                },
+                {
+                  icon: Shield,
+                  title: 'Automated Care',
+                  description: 'Set it and forget it - we handle the scheduling'
+                }
+              ].map((benefit, index) => (
+                <div key={index} className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-full mb-4">
+                    <benefit.icon className="h-8 w-8 text-blackbird-ignition-blue" />
+                  </div>
+                  <h4 className="font-heading font-semibold text-blackbird-off-white mb-2">
+                    {benefit.title}
+                  </h4>
+                  <p className="text-sm text-blackbird-off-white/70">
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

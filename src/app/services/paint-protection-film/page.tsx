@@ -184,10 +184,17 @@ export default function PaintProtectionFilmPage() {
                 <span className="text-blackbird-ignition-blue">Protection</span>
               </h1>
 
-              <p className="text-xl text-blackbird-off-white/70 mb-8">
+              <p className="text-xl text-blackbird-off-white/70 mb-6">
                 Invisible armor for the cars you love—whether it's an exotic or brand-new daily.
                 Crystal-clear, self-healing urethane shield that absorbs the abuse so your finish doesn't.
               </p>
+
+              <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 mb-8 border border-blackbird-ignition-blue/20">
+                <Shield className="h-4 w-4 text-blackbird-ignition-blue" />
+                <span className="text-sm text-blackbird-ignition-blue font-medium">
+                  In Partnership with Coastal Details Virginia Beach
+                </span>
+              </div>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <Button size="lg" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white" asChild>
@@ -392,55 +399,139 @@ export default function PaintProtectionFilmPage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Partnership & Process */}
       <section className="py-20 md:py-32 bg-blackbird-charcoal/10">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-              Why Choose{' '}
-              <span className="text-blackbird-ignition-blue">Blackbird?</span>
+              Professional PPF{' '}
+              <span className="text-blackbird-ignition-blue">Partnership</span>
             </h2>
+            <p className="text-xl text-blackbird-off-white/70 max-w-3xl mx-auto">
+              We partner exclusively with Coastal Details Virginia Beach for PPF installation
+              because we never compromise on quality. Only the best for your investment.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            {/* Our Process */}
+            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
               <CardContent className="p-8">
-                <Crown className="h-12 w-12 text-blackbird-ignition-blue mx-auto mb-4" />
-                <h3 className="font-heading font-bold text-blackbird-off-white mb-4">
-                  Precision Installation
+                <h3 className="text-2xl font-heading font-bold text-blackbird-off-white mb-6">
+                  Our Complete PPF Process
                 </h3>
-                <p className="text-blackbird-off-white/70">
-                  Precision patterns & wrapped edges for near-invisible installs with
-                  clean-room prep and paint decontamination.
-                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blackbird-ignition-blue/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-blackbird-ignition-blue font-bold text-sm">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Assessment & Quote</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        We evaluate your vehicle's needs and provide detailed pricing for your chosen coverage level.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blackbird-ignition-blue/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-blackbird-ignition-blue font-bold text-sm">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Partner Coordination</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        We coordinate directly with Coastal Details for professional installation scheduling.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blackbird-ignition-blue/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-blackbird-ignition-blue font-bold text-sm">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Professional Installation</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        Expert installation at Coastal Details' facility with precision patterns and clean-room environment.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-blackbird-ignition-blue/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-blackbird-ignition-blue font-bold text-sm">4</span>
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Ongoing Support</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        Complete aftercare support and maintenance guidance for long-lasting protection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal text-center">
+            {/* Why This Partnership */}
+            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
               <CardContent className="p-8">
-                <Sparkles className="h-12 w-12 text-blackbird-ignition-blue mx-auto mb-4" />
-                <h3 className="font-heading font-bold text-blackbird-off-white mb-4">
-                  Perfect Preparation
+                <h3 className="text-2xl font-heading font-bold text-blackbird-off-white mb-6">
+                  Why Coastal Details?
                 </h3>
-                <p className="text-blackbird-off-white/70">
-                  Clean-room prep with paint decontamination, polishing, and panel
-                  alignment to lock in a glassy finish.
-                </p>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-3">
+                    <Crown className="h-6 w-6 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Certified Excellence</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        Factory-trained installers with years of experience on luxury and exotic vehicles.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Sparkles className="h-6 w-6 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Premium Facility</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        Clean-room environment with climate control for perfect installation conditions.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Star className="h-6 w-6 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Quality Standards</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        The same uncompromising standards we apply to our own work - no shortcuts, ever.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Shield className="h-6 w-6 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="font-heading font-bold text-blackbird-off-white mb-2">Warranty Confidence</h4>
+                      <p className="text-blackbird-off-white/70 text-sm">
+                        Full manufacturer warranties backed by professional installation standards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal text-center">
-              <CardContent className="p-8">
-                <Star className="h-12 w-12 text-blackbird-ignition-blue mx-auto mb-4" />
-                <h3 className="font-heading font-bold text-blackbird-off-white mb-4">
-                  Complete Aftercare
-                </h3>
-                <p className="text-blackbird-off-white/70">
-                  Aftercare support with wash kits and maintenance tips so protection
-                  looks new for years to come.
-                </p>
-              </CardContent>
-            </Card>
+          {/* Drop-off Service */}
+          <div className="bg-gradient-to-r from-blackbird-ignition-blue/10 to-blackbird-charcoal/20 rounded-2xl p-8 border border-blackbird-ignition-blue/20">
+            <div className="text-center mb-6">
+              <Car className="h-12 w-12 text-blackbird-ignition-blue mx-auto mb-4" />
+              <h3 className="text-2xl font-heading font-bold text-blackbird-off-white mb-4">
+                Seamless Drop-off Service Available
+              </h3>
+              <p className="text-blackbird-off-white/80 max-w-2xl mx-auto mb-6">
+                Can't make it to the installation appointment? We'll handle the coordination.
+                Professional pickup and delivery service available for PPF installations.
+              </p>
+              <p className="text-blackbird-ignition-blue font-semibold">
+                Drop-off & Pickup Service: +$200
+              </p>
+            </div>
           </div>
         </div>
       </section>

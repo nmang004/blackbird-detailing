@@ -3,6 +3,19 @@ import { ServiceCard } from '@/components/ui/service-card'
 
 const services = [
   {
+    title: 'Full Vehicle Care Programs',
+    description: 'Ongoing weekly and bi-weekly maintenance programs for luxury and high-performance vehicles. Complete care tailored to enthusiasts who demand nothing but the best for their automotive investments.',
+    href: '/services/packages',
+    icon: Package,
+    features: [
+      'Weekly luxury vehicle maintenance',
+      'Bi-weekly comprehensive care',
+      'Priority scheduling and member pricing',
+      'Automated service coordination'
+    ],
+    popular: true
+  },
+  {
     title: 'Ceramic Coating',
     description: 'Ultimate paint protection with hydrophobic properties and multi-year durability. Our professional-grade ceramic coatings create an invisible shield that repels water, dirt, and UV rays.',
     href: '/services/ceramic-coating',
@@ -12,8 +25,7 @@ const services = [
       '5-10 year warranty options',
       'Hydrophobic and self-cleaning',
       'UV protection and gloss enhancement'
-    ],
-    popular: true
+    ]
   },
   {
     title: 'Paint Correction',
@@ -38,18 +50,6 @@ const services = [
       'Trim restoration and protection',
       'Deep vacuum and sanitization'
     ]
-  },
-  {
-    title: 'Detail Packages',
-    description: 'Comprehensive automotive care combining multiple services. Choose from Sport, Grand Tourer, or Trackhawk packages designed for different needs and budgets.',
-    href: '/services/packages',
-    icon: Package,
-    features: [
-      'Sport, Grand Tourer & Trackhawk tiers',
-      'Interior and exterior services',
-      'Package discounts available',
-      'Customizable service options'
-    ]
   }
 ]
 
@@ -72,9 +72,9 @@ export function ServicesOverview() {
           </h2>
           
           <p className="text-xl sm:text-2xl text-blackbird-off-white/80 max-w-3xl mx-auto font-body leading-relaxed">
-            Every mobile service we provide exemplifies our commitment to luxury and convenience.
-            From meticulous paint restoration to premium protection systems, we deliver
-            exceptional results directly at your location with professional-grade equipment.
+            100% mobile luxury detailing for enthusiasts who never compromise on quality.
+            From weekly maintenance programs to complete protection systems, we bring
+            professional-grade equipment and expertise directly to your location.
           </p>
         </div>
 
@@ -96,8 +96,9 @@ export function ServicesOverview() {
               The Blackbird Experience
             </h3>
             <p className="text-lg text-blackbird-off-white/80 max-w-2xl mx-auto font-body leading-relaxed">
-              Every vehicle receives our signature mobile white-glove treatment at your location,
-              ensuring an unparalleled luxury experience from consultation to completion.
+              Every vehicle receives our signature mobile white-glove treatment. We bring the detail shop
+              to you, complete with professional equipment and the expertise you'd expect from the finest
+              luxury vehicle specialists. No compromises, ever.
             </p>
           </div>
 
@@ -120,8 +121,8 @@ export function ServicesOverview() {
               },
               {
                 step: '04',
-                title: 'At-Location Completion',
-                description: 'Final inspection and luxury presentation at your convenience'
+                title: 'Mobile Completion',
+                description: 'Final inspection and luxury presentation - all at your location'
               }
             ].map((process, index) => (
               <div key={index} className="text-center">

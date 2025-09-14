@@ -77,10 +77,10 @@ const teamMembers = [
   {
     name: 'Judah Cates',
     role: 'Founder & Lead Technician',
-    bio: 'Professional automotive detailing specialist with a passion for luxury automotive care. Judah brings meticulous attention to detail and commitment to excellence to every vehicle that comes through Blackbird Detailing.',
+    bio: 'Lifelong automotive enthusiast with a passion for fast cars and motorsport precision. Judah founded Blackbird Detailing to bring the same uncompromising standards he applies to his own vehicles to fellow enthusiasts who understand that quality cars deserve quality care.',
     certifications: ['IDA Certified', 'Ceramic Pro Certified', 'Advanced Paint Correction'],
     image: '/images/portfolio/thumbnails/tesla-ceramic-coating-24.webp',
-    specialty: 'Comprehensive Vehicle Detailing'
+    specialty: 'Mobile Luxury Vehicle Care'
   }
 ]
 
@@ -114,9 +114,10 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8 leading-relaxed">
-                Born from a passion for automotive excellence, Blackbird Detailing brings 
-                uncompromising luxury and attention to detail to every vehicle we service. 
-                Our mission is simple: deliver perfection, protect your investment, and exceed expectations.
+                Born from a passion for fast cars and automotive excellence, Blackbird Detailing
+                was created by enthusiasts who understand that true car lovers never compromise on quality.
+                We bring that same uncompromising standard to every vehicle we service - because your car
+                deserves the same attention to detail you put into choosing it.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -171,8 +172,9 @@ export default function AboutPage() {
               <span className="text-blackbird-ignition-blue">Story</span>
             </h2>
             <p className="text-xl text-blackbird-off-white/70">
-              What started as a passion project has evolved into Hampton Roads' premier 
-              automotive detailing service, trusted by enthusiasts and everyday drivers alike.
+              What started as a love for fast cars and motorsport precision has evolved into
+              Hampton Roads' premier mobile luxury detailing service, built for enthusiasts
+              who demand nothing but the best for their automotive investments.
             </p>
           </div>
 
@@ -180,58 +182,59 @@ export default function AboutPage() {
             <div>
               <div className="prose prose-invert max-w-none">
                 <p className="text-blackbird-off-white/70 mb-6 text-lg leading-relaxed">
-                  Blackbird Detailing was born from a simple belief: every vehicle deserves to be treated 
-                  with the highest level of luxury care and attention to detail. Our founder, 
-                  a lifelong automotive enthusiast, saw a gap in the market for truly 
-                  exceptional, white-glove detailing services.
+                  Blackbird Detailing was born from a passion for high-performance vehicles and the belief
+                  that enthusiasts who invest in quality cars deserve the same level of excellence in their care.
+                  Our founder, a devoted automotive enthusiast with a love for fast cars and motorsport precision,
+                  created a mobile service that brings luxury-level detailing directly to your location.
                 </p>
-                
+
                 <p className="text-blackbird-off-white/70 mb-6 leading-relaxed">
-                  What sets us apart isn't just our technical expertise - though our team holds more 
-                  certifications than any other detailing service in Hampton Roads. It's our understanding 
-                  that your vehicle is more than transportation; it's an investment, a passion, and often 
-                  a reflection of who you are.
+                  We understand our clients because we are our clients. Whether you drive an exotic weekend toy
+                  or a luxury daily driver, we know the attention these vehicles demand. Just like you don't
+                  cut corners when choosing your cars, we never cut corners in caring for them. Quality equipment,
+                  premium products, professional technique - no compromises, ever.
                 </p>
-                
+
                 <p className="text-blackbird-off-white/70 leading-relaxed">
-                  Every member of our team shares this philosophy. From our lead technicians with decades 
-                  of experience to our newest apprentices, we all understand that excellence isn't just 
-                  about technique - it's about caring for each vehicle as if it were our own.
+                  This philosophy drives everything we do: from our fully mobile operation that brings professional-grade
+                  equipment to your location, to our ongoing maintenance programs designed for enthusiasts who want
+                  their vehicles maintained at the highest level automatically. Because true automotive passion
+                  deserves nothing less than perfection.
                 </p>
               </div>
             </div>
             
             <div className="bg-blackbird-charcoal/30 rounded-lg p-8 border border-blackbird-charcoal">
               <h3 className="text-2xl font-heading font-bold text-blackbird-off-white mb-6">
-                Why Choose Blackbird?
+                Built for Enthusiasts, By Enthusiasts
               </h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-heading font-bold text-blackbird-off-white">Certified Excellence</h4>
-                    <p className="text-blackbird-off-white/70 text-sm">Industry-leading certifications and continuous training</p>
+                    <h4 className="font-heading font-bold text-blackbird-off-white">100% Mobile Luxury</h4>
+                    <p className="text-blackbird-off-white/70 text-sm">Professional-grade equipment and expertise brought directly to your location</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-heading font-bold text-blackbird-off-white">Premium Products</h4>
-                    <p className="text-blackbird-off-white/70 text-sm">Only the finest ceramic coatings and professional-grade products</p>
+                    <h4 className="font-heading font-bold text-blackbird-off-white">No Compromises Philosophy</h4>
+                    <p className="text-blackbird-off-white/70 text-sm">Premium products and techniques - we never cut corners, just like our clients</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-heading font-bold text-blackbird-off-white">Personalized Service</h4>
-                    <p className="text-blackbird-off-white/70 text-sm">Tailored solutions for every vehicle and customer need</p>
+                    <h4 className="font-heading font-bold text-blackbird-off-white">Enthusiast Understanding</h4>
+                    <p className="text-blackbird-off-white/70 text-sm">We know your passion because we share it - from exotics to daily drivers</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-blackbird-ignition-blue mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="font-heading font-bold text-blackbird-off-white">Warranty Protection</h4>
-                    <p className="text-blackbird-off-white/70 text-sm">Comprehensive warranties on all ceramic coating services</p>
+                    <h4 className="font-heading font-bold text-blackbird-off-white">Automated Excellence</h4>
+                    <p className="text-blackbird-off-white/70 text-sm">Maintenance programs and drop-off service for seamless automotive care</p>
                   </div>
                 </div>
               </div>

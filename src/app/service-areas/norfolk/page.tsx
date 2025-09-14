@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 const localBenefits = [
   {
     icon: Anchor,
-    title: 'Naval-Grade Protection',
-    description: 'Military-inspired excellence and protection standards designed for Norfolk\'s naval community and the unique challenges of coastal military life.'
+    title: 'Professional-Grade Protection',
+    description: 'Excellence and protection standards designed for Norfolk\'s naval community and professionals with the unique challenges of coastal living.'
   },
   {
     icon: Building,
@@ -101,14 +101,14 @@ export default function NorfolkPage() {
               </div>
               
               <h1 className="text-4xl md:text-6xl font-heading font-bold text-blackbird-off-white mb-6">
-                Military-Grade Auto Detailing{' '}
+                Professional Auto Detailing{' '}
                 <span className="text-blackbird-ignition-blue">Norfolk</span>
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8">
                 Elite mobile automotive care for Norfolk's naval community and urban professionals.
-                From downtown to Ocean View, we bring military-grade equipment and excellence
-                directly to your location with the same precision Norfolk's heritage demands.
+                From downtown to Ocean View, we bring professional-grade equipment and excellence
+                directly to your location with the same attention to detail Norfolk's community values.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
@@ -128,14 +128,14 @@ export default function NorfolkPage() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
-                  <span>Military Scheduling Available</span>
+                  <span>Flexible Scheduling Available</span>
                 </div>
               </div>
             </div>
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/images/vehicles/luxury/tesla-ceramic-coating-24.webp')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/vehicles/sports/alfa-romeo-ceramic-coating-25.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Anchor className="h-8 w-8 text-white" />
@@ -320,7 +320,7 @@ export default function NorfolkPage() {
       <section className="py-20 md:py-32 bg-gradient-to-r from-blackbird-charcoal/30 to-blackbird-ignition-blue/10">
         <div className="container text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-blackbird-off-white mb-6">
-            Experience Military-Grade Excellence in{' '}
+            Experience Professional Excellence in{' '}
             <span className="text-blackbird-ignition-blue">Norfolk</span>
           </h2>
           <p className="text-xl text-blackbird-off-white/70 mb-8 max-w-2xl mx-auto">
