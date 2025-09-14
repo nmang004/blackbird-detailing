@@ -350,7 +350,7 @@ export default function MembershipPage() {
                       </div>
 
                       <Button
-                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80'} text-white`}
+                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-off-white hover:bg-blackbird-off-white/90 text-blackbird-black border border-blackbird-charcoal/20'}`}
                         asChild
                       >
                         <Link href="/contact">
@@ -455,7 +455,7 @@ export default function MembershipPage() {
                       </div>
 
                       <Button
-                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80'} text-white`}
+                        className={`w-full ${plan.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-off-white hover:bg-blackbird-off-white/90 text-blackbird-black border border-blackbird-charcoal/20'}`}
                         asChild
                       >
                         <Link href="/contact">

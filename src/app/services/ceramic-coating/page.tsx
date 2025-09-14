@@ -170,7 +170,7 @@ export default function CeramicCoatingPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/images/services/ceramic-coating/porsche-ceramic-coating-20.webp')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/services/ceramic-coating/ceramic-coating-detail-59.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Shield className="h-8 w-8 text-white" />
@@ -292,7 +292,7 @@ export default function CeramicCoatingPage() {
 
                   <Button
                     size="lg"
-                    className={`w-full ${option.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 text-blackbird-off-white'} transition-colors`}
+                    className={`w-full ${option.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-off-white hover:bg-blackbird-off-white/90 text-blackbird-black border border-blackbird-charcoal/20'} transition-colors`}
                     asChild
                   >
                     <Link href="/contact">
