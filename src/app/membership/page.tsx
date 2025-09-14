@@ -613,11 +613,11 @@ export default function MembershipPage() {
                 <Link href="/contact">Apply for Membership</Link>
               </Button>
               <a
-                href="tel:+1-757-123-4567"
+                href="tel:+1-757-500-1393"
                 className="flex items-center text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                <span className="font-semibold">(757) 123-4567</span>
+                <span className="font-semibold">(757) 500-1393</span>
               </a>
             </div>
           </div>

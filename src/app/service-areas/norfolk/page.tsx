@@ -124,7 +124,7 @@ export default function NorfolkPage() {
               <div className="flex items-center space-x-6 text-sm text-blackbird-off-white/70">
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
-                  <span>(757) 123-4567</span>
+                  <span>(757) 500-1393</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="h-4 w-4" />
@@ -332,7 +332,7 @@ export default function NorfolkPage() {
               <Link href="/contact">Get Free Estimate</Link>
             </Button>
             <Button size="lg" variant="outline" className="border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black" asChild>
-              <Link href="tel:+1-757-123-4567">Call (757) 123-4567</Link>
+              <Link href="tel:+1-757-500-1393">Call (757) 500-1393</Link>
             </Button>
           </div>
         </div>

@@ -165,10 +165,10 @@ export function TestimonialsSection() {
               Schedule Your Service
             </a>
             <a
-              href="tel:+1-757-123-4567"
+              href="tel:+1-757-500-1393"
               className="inline-flex items-center px-8 py-3 border border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black font-semibold rounded-lg transition-all duration-300"
             >
-              Call (757) 123-4567
+              Call (757) 500-1393
             </a>
           </div>
         </div>
