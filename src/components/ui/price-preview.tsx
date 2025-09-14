@@ -100,88 +100,79 @@ export function PricePreview({ selectedServices, selectedPackage, packages, clas
 
   return (
     <div className={cn(
-      "sticky top-4 space-y-4",
+      "space-y-6",
       className
     )}>
       {/* Main Price Display */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blackbird-ignition-blue/10 via-blackbird-charcoal/30 to-blackbird-charcoal/50 backdrop-blur-sm border border-blackbird-ignition-blue/20 p-6">
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-blackbird-ignition-blue/10 via-blackbird-charcoal/30 to-blackbird-charcoal/50 backdrop-blur-sm border border-blackbird-ignition-blue/20">
         {/* Background animation */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blackbird-ignition-blue/5 to-transparent animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blackbird-ignition-blue/5 to-transparent" />
 
-        <div className="relative z-10">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-blackbird-ignition-blue/20 rounded-lg">
-              <TrendingUp className="w-5 h-5 text-blackbird-ignition-blue" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-blackbird-off-white">
-                Estimated Total
-              </h3>
-              <p className="text-xs text-blackbird-off-white/60">
-                Subject to vehicle inspection
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-2">
-            <div className="text-4xl font-bold text-blackbird-off-white flex items-baseline gap-2">
-              ${animatedPrice.toLocaleString()}
-              {totalPrice > animatedPrice && (
-                <span className="text-sm text-blackbird-ignition-blue animate-pulse">
-                  ↗
-                </span>
-              )}
-              {totalPrice < animatedPrice && (
-                <span className="text-sm text-green-400 animate-pulse">
-                  ↘
-                </span>
-              )}
-            </div>
-
-            {packageSavings > 0 && (
-              <div className="flex items-center gap-2">
-                <span className="text-sm text-green-400">
-                  You save ${packageSavings} with this package
-                </span>
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+        <div className="relative z-10 p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+            {/* Price Section */}
+            <div className="text-center md:text-left">
+              <div className="flex items-center gap-3 mb-3 justify-center md:justify-start">
+                <div className="p-2 bg-blackbird-ignition-blue/20 rounded-lg">
+                  <TrendingUp className="w-5 h-5 text-blackbird-ignition-blue" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-blackbird-off-white">
+                    Estimated Total
+                  </h3>
+                  <p className="text-xs text-blackbird-off-white/60">
+                    Subject to vehicle inspection
+                  </p>
+                </div>
               </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Service Breakdown */}
-      {selectedServices.length > 0 && (
-        <div className="rounded-xl bg-blackbird-charcoal/20 backdrop-blur-sm border border-blackbird-charcoal/50 p-4">
-          <h4 className="font-semibold text-blackbird-off-white mb-3 flex items-center gap-2">
-            <div className="w-2 h-2 bg-blackbird-ignition-blue rounded-full" />
-            Selected Services
-          </h4>
-          <div className="space-y-2">
-            {selectedServices.map((serviceId) => (
-              <div key={serviceId} className="flex justify-between items-center text-sm">
-                <span className="text-blackbird-off-white/80">
-                  {serviceNames[serviceId] || serviceId}
-                </span>
-                <span className="text-blackbird-ignition-blue font-medium">
-                  ${servicePricing[serviceId]?.toLocaleString() || 0}
-                </span>
-              </div>
-            ))}
-
-            {!selectedPackage && selectedServices.length > 1 && (
-              <div className="border-t border-blackbird-charcoal/50 pt-2 mt-3">
-                <div className="flex justify-between items-center font-semibold">
-                  <span className="text-blackbird-off-white">Subtotal</span>
-                  <span className="text-blackbird-ignition-blue">
-                    ${individualServicesPrice.toLocaleString()}
+              <div className="text-4xl font-bold text-blackbird-off-white flex items-baseline gap-2 justify-center md:justify-start">
+                ${animatedPrice.toLocaleString()}
+                {totalPrice > animatedPrice && (
+                  <span className="text-sm text-blackbird-ignition-blue">
+                    ↗
                   </span>
+                )}
+                {totalPrice < animatedPrice && (
+                  <span className="text-sm text-green-400">
+                    ↘
+                  </span>
+                )}
+              </div>
+              {packageSavings > 0 && (
+                <div className="flex items-center gap-2 mt-2 justify-center md:justify-start">
+                  <span className="text-sm text-green-400">
+                    You save ${packageSavings} with this package
+                  </span>
+                  <div className="w-2 h-2 bg-green-400 rounded-full" />
+                </div>
+              )}
+            </div>
+
+            {/* Services Summary - Compact */}
+            {selectedServices.length > 0 && (
+              <div className="col-span-1 md:col-span-1 lg:col-span-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {selectedServices.slice(0, 4).map((serviceId) => (
+                    <div key={serviceId} className="flex justify-between items-center text-sm bg-blackbird-charcoal/20 rounded-lg px-3 py-2">
+                      <span className="text-blackbird-off-white/80 truncate mr-2">
+                        {serviceNames[serviceId] || serviceId}
+                      </span>
+                      <span className="text-blackbird-ignition-blue font-medium whitespace-nowrap">
+                        ${servicePricing[serviceId]?.toLocaleString() || 0}
+                      </span>
+                    </div>
+                  ))}
+                  {selectedServices.length > 4 && (
+                    <div className="text-xs text-blackbird-off-white/60 col-span-full text-center">
+                      +{selectedServices.length - 4} more services
+                    </div>
+                  )}
                 </div>
               </div>
             )}
           </div>
         </div>
-      )}
+      </div>
 
       {/* Package Info */}
       {selectedPackage && (
@@ -198,22 +189,22 @@ export function PricePreview({ selectedServices, selectedPackage, packages, clas
         </div>
       )}
 
-      {/* Value Propositions */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-3 text-sm text-blackbird-off-white/70">
-          <Clock className="w-4 h-4 text-blackbird-ignition-blue flex-shrink-0" />
-          <span>Professional mobile service at your location</span>
+      {/* Compact Footer */}
+      <div className="text-center">
+        <div className="text-xs text-blackbird-off-white/50 leading-relaxed mb-2">
+          * Final pricing may vary based on vehicle size, condition, and specific requirements.
+          All estimates include professional-grade products and expert application.
         </div>
-        <div className="flex items-center gap-3 text-sm text-blackbird-off-white/70">
-          <Shield className="w-4 h-4 text-blackbird-ignition-blue flex-shrink-0" />
-          <span>Fully insured with satisfaction guarantee</span>
+        <div className="flex items-center justify-center gap-6 text-xs text-blackbird-off-white/70">
+          <div className="flex items-center gap-2">
+            <Clock className="w-3 h-3 text-blackbird-ignition-blue flex-shrink-0" />
+            <span>Mobile Service</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Shield className="w-3 h-3 text-blackbird-ignition-blue flex-shrink-0" />
+            <span>Fully Insured</span>
+          </div>
         </div>
-      </div>
-
-      {/* Disclaimer */}
-      <div className="text-xs text-blackbird-off-white/50 leading-relaxed">
-        * Final pricing may vary based on vehicle size, condition, and specific requirements.
-        All estimates include professional-grade products and expert application.
       </div>
     </div>
   )
