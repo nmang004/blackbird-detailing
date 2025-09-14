@@ -8,7 +8,7 @@ interface ServiceOption {
   price?: number
   duration?: string
   recommended?: boolean
-  features?: string[]
+  features?: readonly string[]
 }
 
 interface FormServiceCardProps {
@@ -143,7 +143,7 @@ interface PackageCardProps {
     name: string
     price: number
     description: string
-    features?: string[]
+    features?: readonly string[]
     popular?: boolean
   }
   isSelected: boolean

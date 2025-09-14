@@ -489,10 +489,7 @@ export function InstantEstimateForm() {
                                   value={condition.value}
                                   className="text-blackbird-off-white focus:bg-blackbird-ignition-blue/20"
                                 >
-                                  <div>
-                                    <div className="font-medium">{condition.label}</div>
-                                    <div className="text-xs text-blackbird-off-white/60">{condition.description}</div>
-                                  </div>
+                                  <div className="font-medium">{condition.label}</div>
                                 </SelectItem>
                               ))}
                             </SelectContent>
