@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronLeft, ChevronRight, Car, Phone, Mail, Clock, CheckCircle, Sparkles, Shield, Zap } from 'lucide-react'
@@ -57,6 +57,7 @@ export function InstantEstimateForm() {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [estimatedPrice, setEstimatedPrice] = useState<number | null>(null)
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
+  const progressRef = useRef<HTMLDivElement>(null)
 
   const form = useForm<EstimateFormData>({
     resolver: zodResolver(estimateFormSchema),
@@ -212,9 +213,13 @@ export function InstantEstimateForm() {
       setFormErrors({}) // Clear any previous errors
       setCurrentStep(currentStep + 1)
 
-      // Smooth scroll to top on mobile
-      if (window.innerWidth < 768) {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+      // Smooth scroll to progress indicator on mobile
+      if (window.innerWidth < 768 && progressRef.current) {
+        progressRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
       }
     }
   }
@@ -223,9 +228,13 @@ export function InstantEstimateForm() {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1)
 
-      // Smooth scroll to top on mobile
-      if (window.innerWidth < 768) {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+      // Smooth scroll to progress indicator on mobile
+      if (window.innerWidth < 768 && progressRef.current) {
+        progressRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
       }
     }
   }
@@ -386,7 +395,7 @@ export function InstantEstimateForm() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* Enhanced Progress Indicator */}
-      <div className="mb-12">
+      <div ref={progressRef} className="mb-12">
         <ProgressIndicator
           steps={steps.map(step => ({
             ...step,
