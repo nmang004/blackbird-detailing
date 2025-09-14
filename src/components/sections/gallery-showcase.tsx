@@ -215,8 +215,8 @@ const featuredGalleryItems: GalleryItem[] = [
 export function GalleryShowcase() {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
 
-  // Show only first 6 items for homepage showcase
-  const showcaseItems = useMemo(() => featuredGalleryItems.slice(0, 6), [])
+  // Show only first 3 items for homepage showcase
+  const showcaseItems = useMemo(() => featuredGalleryItems.slice(0, 3), [])
 
   const handleOpenModal = (item: GalleryItem) => {
     setSelectedItem(item)
