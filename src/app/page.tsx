@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { HeroSection } from '@/components/sections/hero-section'
 import { ServicesOverview } from '@/components/sections/services-overview'
-import { PortfolioShowcase } from '@/components/sections/portfolio-showcase'
+import { GalleryShowcase } from '@/components/sections/gallery-showcase'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function HomePage() {
         <ServicesOverview />
       </div>
       <div id="portfolio">
-        <PortfolioShowcase />
+        <GalleryShowcase />
       </div>
       <div id="about">
         <TestimonialsSection />

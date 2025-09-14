@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from './button'
 import { cn } from '@/lib/utils'
@@ -37,6 +37,37 @@ export function Carousel({
   gap = 'gap-6'
 }: CarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
+
+  // Detect screen size for proper transform calculation
+  useEffect(() => {
+    const updateScreenSize = () => {
+      const width = window.innerWidth
+      if (width < 768) {
+        setScreenSize('mobile')
+      } else if (width < 1024) {
+        setScreenSize('tablet')
+      } else {
+        setScreenSize('desktop')
+      }
+    }
+
+    updateScreenSize()
+    window.addEventListener('resize', updateScreenSize)
+    return () => window.removeEventListener('resize', updateScreenSize)
+  }, [])
+
+  // Get current items per view based on screen size
+  const getCurrentItemsPerView = () => {
+    switch (screenSize) {
+      case 'mobile':
+        return itemsPerView.mobile
+      case 'tablet':
+        return itemsPerView.tablet
+      default:
+        return itemsPerView.desktop
+    }
+  }
 
   // Touch/swipe handling
   const touchStartX = useRef<number>(0)
@@ -101,10 +132,12 @@ export function Carousel({
         <div
           className={cn(
             'flex transition-transform duration-500 ease-in-out',
-            gap
+            gap,
+            // Ensure proper centering on mobile
+            screenSize === 'mobile' && itemsPerView.mobile === 1 && 'justify-center'
           )}
           style={{
-            transform: `translateX(-${currentIndex * 100}%)`
+            transform: `translateX(-${currentIndex * (100 / getCurrentItemsPerView())}%)`
           }}
         >
           {children.map((child, index) => (
@@ -112,11 +145,13 @@ export function Carousel({
               key={index}
               className={cn(
                 'flex-shrink-0',
-                // Mobile: Full width divided by mobile items
-                itemsPerView.mobile === 1 ? 'w-full' : `w-1/${itemsPerView.mobile}`,
-                // Tablet: Width based on tablet items  
-                itemsPerView.tablet === 1 ? 'md:w-full' : 
-                itemsPerView.tablet === 2 ? 'md:w-1/2' : 
+                // Mobile: Full width for single item, divided for multiple
+                itemsPerView.mobile === 1 ? 'w-full' :
+                itemsPerView.mobile === 2 ? 'w-1/2' :
+                itemsPerView.mobile === 3 ? 'w-1/3' : 'w-full',
+                // Tablet: Width based on tablet items
+                itemsPerView.tablet === 1 ? 'md:w-full' :
+                itemsPerView.tablet === 2 ? 'md:w-1/2' :
                 itemsPerView.tablet === 3 ? 'md:w-1/3' : 'md:w-full',
                 // Desktop: Width based on desktop items
                 itemsPerView.desktop === 1 ? 'lg:w-full' :
@@ -124,7 +159,7 @@ export function Carousel({
                 itemsPerView.desktop === 3 ? 'lg:w-1/3' : 'lg:w-full'
               )}
               aria-hidden={
-                index < currentIndex || 
+                index < currentIndex ||
                 index >= currentIndex + itemsPerView.desktop
               }
             >
