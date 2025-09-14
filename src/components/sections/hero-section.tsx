@@ -32,7 +32,7 @@ export function HeroSection() {
           <div className="inline-flex items-center space-x-2 bg-blackbird-charcoal/80 rounded-full px-3 py-2 sm:px-4 sm:py-2 mb-6 sm:mb-8 backdrop-blur-sm border border-blackbird-ignition-blue/30">
             <Award className="h-3 w-3 sm:h-4 sm:w-4 text-blackbird-ignition-blue" />
             <span className="text-xs sm:text-sm text-blackbird-off-white font-medium">
-              Virginia Beach's Exclusive Luxury Detailing
+              Virginia Beach's Exclusive Mobile Luxury Detailing
             </span>
           </div>
 
@@ -52,9 +52,9 @@ export function HeroSection() {
 
           {/* Description */}
           <p className="text-lg sm:text-xl text-blackbird-off-white/75 mb-8 sm:mb-12 max-w-2xl mx-auto px-2 leading-relaxed font-body">
-            Experience the ultimate in luxury automotive care with our exclusive, 
-            white-glove detailing services. Every detail perfected for discerning owners 
-            across Virginia Beach, Chesapeake, and Norfolk.
+            Experience the ultimate in luxury automotive care at your location. Our mobile
+            white-glove detailing service comes to you, bringing professional equipment and
+            expertise directly to your driveway across Virginia Beach, Chesapeake, and Norfolk.
           </p>
 
           {/* CTA Buttons */}
@@ -107,10 +107,10 @@ export function HeroSection() {
             <div className="flex flex-col items-center text-center p-6 bg-blackbird-charcoal/30 rounded-lg backdrop-blur-sm border border-blackbird-charcoal/50 hover:border-blackbird-ignition-blue/30 transition-colors duration-300">
               <Award className="h-8 w-8 text-blackbird-ignition-blue mb-3" />
               <h3 className="font-heading font-semibold text-blackbird-off-white mb-2 text-lg">
-                Concierge Experience
+                Mobile Convenience
               </h3>
               <p className="text-base text-blackbird-off-white/80 font-body">
-                Exclusive service experience tailored to discerning clients
+                Professional service at your location - home, office, or anywhere you prefer
               </p>
             </div>
           </div>

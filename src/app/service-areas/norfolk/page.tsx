@@ -106,9 +106,9 @@ export default function NorfolkPage() {
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8">
-                Elite automotive care for Norfolk's naval community and urban professionals. 
-                From downtown to Ocean View, we deliver the same attention to detail and excellence 
-                that Norfolk's military heritage demands.
+                Elite mobile automotive care for Norfolk's naval community and urban professionals.
+                From downtown to Ocean View, we bring military-grade equipment and excellence
+                directly to your location with the same precision Norfolk's heritage demands.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
@@ -135,7 +135,7 @@ export default function NorfolkPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/vehicles/luxury/tesla-ceramic-coating-24.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Anchor className="h-8 w-8 text-white" />

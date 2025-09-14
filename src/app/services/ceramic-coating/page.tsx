@@ -123,7 +123,7 @@ const process = [
   {
     step: '04',
     title: 'Coating Application',
-    description: 'Professional application of ceramic coating in controlled environment.'
+    description: 'Professional application of ceramic coating at your location with mobile equipment.'
   },
   {
     step: '05',
@@ -153,9 +153,9 @@ export default function CeramicCoatingPage() {
               </h1>
 
               <p className="text-xl text-blackbird-off-white/70 mb-8">
-                Professional-grade ceramic coatings that provide years of protection against
-                environmental contaminants, UV damage, and everyday wear. Choose from our
-                enhancement or protection-only options based on your vehicle's needs.
+                Professional-grade ceramic coatings applied at your location with mobile equipment.
+                Our service provides years of protection against environmental contaminants, UV damage,
+                and everyday wear - all from the convenience of your driveway.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -170,7 +170,7 @@ export default function CeramicCoatingPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/services/ceramic-coating/porsche-ceramic-coating-20.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Shield className="h-8 w-8 text-white" />

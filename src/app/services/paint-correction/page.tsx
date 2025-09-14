@@ -143,14 +143,14 @@ const process = [
 const beforeAfter = [
   {
     title: 'BMW M3 Paint Correction',
-    before: '/api/placeholder/400/300',
-    after: '/api/placeholder/400/300',
+    before: '/images/portfolio/before-after/ceramic-coating/bmw-ceramic-coating-2.webp',
+    after: '/images/portfolio/before-after/ceramic-coating/bmw-ceramic-coating-11.webp',
     description: 'Heavy swirl removal and scratch elimination on BMW M3'
   },
   {
     title: 'Porsche 911 Restoration',
-    before: '/api/placeholder/400/300',
-    after: '/api/placeholder/400/300',
+    before: '/images/portfolio/before-after/ceramic-coating/porsche-ceramic-coating-15.webp',
+    after: '/images/portfolio/before-after/ceramic-coating/porsche-ceramic-coating-20.webp',
     description: 'Complete paint restoration on classic Porsche 911'
   }
 ]
@@ -193,7 +193,7 @@ export default function PaintCorrectionPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/portfolio/before-after/ceramic-coating/porsche-ceramic-coating-46.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Sparkles className="h-8 w-8 text-white" />

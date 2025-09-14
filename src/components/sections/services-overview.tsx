@@ -72,9 +72,9 @@ export function ServicesOverview() {
           </h2>
           
           <p className="text-xl sm:text-2xl text-blackbird-off-white/80 max-w-3xl mx-auto font-body leading-relaxed">
-            Every service we provide exemplifies our commitment to luxury and exclusivity. 
-            From meticulous paint restoration to premium protection systems, we deliver 
-            exceptional results that surpass the highest expectations.
+            Every mobile service we provide exemplifies our commitment to luxury and convenience.
+            From meticulous paint restoration to premium protection systems, we deliver
+            exceptional results directly at your location with professional-grade equipment.
           </p>
         </div>
 
@@ -96,8 +96,8 @@ export function ServicesOverview() {
               The Blackbird Experience
             </h3>
             <p className="text-lg text-blackbird-off-white/80 max-w-2xl mx-auto font-body leading-relaxed">
-              Every vehicle receives our signature white-glove treatment, ensuring an unparalleled 
-              luxury experience from consultation to completion.
+              Every vehicle receives our signature mobile white-glove treatment at your location,
+              ensuring an unparalleled luxury experience from consultation to completion.
             </p>
           </div>
 
@@ -111,7 +111,7 @@ export function ServicesOverview() {
               {
                 step: '02',
                 title: 'Preparation',
-                description: 'Meticulous pre-service preparation in our climate-controlled facility'
+                description: 'Meticulous on-location setup with professional mobile equipment'
               },
               {
                 step: '03',
@@ -120,8 +120,8 @@ export function ServicesOverview() {
               },
               {
                 step: '04',
-                title: 'White-Glove Delivery',
-                description: 'Final inspection and luxurious vehicle presentation'
+                title: 'At-Location Completion',
+                description: 'Final inspection and luxury presentation at your convenience'
               }
             ].map((process, index) => (
               <div key={index} className="text-center">

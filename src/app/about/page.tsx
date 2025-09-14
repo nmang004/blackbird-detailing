@@ -79,7 +79,7 @@ const teamMembers = [
     role: 'Founder & Lead Technician',
     bio: 'Professional automotive detailing specialist with a passion for luxury automotive care. Judah brings meticulous attention to detail and commitment to excellence to every vehicle that comes through Blackbird Detailing.',
     certifications: ['IDA Certified', 'Ceramic Pro Certified', 'Advanced Paint Correction'],
-    image: '/api/placeholder/300/300',
+    image: '/images/portfolio/thumbnails/tesla-ceramic-coating-24.webp',
     specialty: 'Comprehensive Vehicle Detailing'
   }
 ]
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/vehicles/luxury/bmw-ceramic-coating-38.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Award className="h-8 w-8 text-white" />

@@ -106,9 +106,9 @@ export default function VirginiaBeachPage() {
               </h1>
               
               <p className="text-xl text-blackbird-off-white/70 mb-8">
-                Protect your vehicle from Virginia Beach's harsh coastal environment with our 
-                professional automotive detailing services. From the Oceanfront to Town Center, 
-                we bring luxury automotive excellence to every neighborhood.
+                Protect your vehicle from Virginia Beach's harsh coastal environment with our
+                mobile detailing services. From the Oceanfront to Town Center, we bring
+                professional equipment and luxury automotive excellence directly to your location.
               </p>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
@@ -135,7 +135,7 @@ export default function VirginiaBeachPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/portfolio/before-after/process/mobile-detailing-unit-3.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <MapPin className="h-8 w-8 text-white" />

@@ -122,14 +122,14 @@ const materials = [
 const beforeAfter = [
   {
     title: 'Ford Explorer Family Vehicle',
-    before: '/api/placeholder/400/300',
-    after: '/api/placeholder/400/300',
+    before: '/images/portfolio/before-after/interior-detailing/interior-detail-12.webp',
+    after: '/images/portfolio/before-after/interior-detailing/ford-interior-detail-4.webp',
     description: 'Complete interior restoration after heavy family use with kids and pets'
   },
   {
     title: 'BMW Leather Interior',
-    before: '/api/placeholder/400/300',
-    after: '/api/placeholder/400/300',
+    before: '/images/portfolio/before-after/interior-detailing/bmw-interior-detail-2.webp',
+    after: '/images/portfolio/before-after/interior-detailing/porsche-interior-detail-9.webp',
     description: 'Luxury leather cleaning and conditioning bringing back original appearance'
   }
 ]
@@ -172,7 +172,7 @@ export default function InteriorDetailingPage() {
 
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
-                <div className="h-full bg-[url('/api/placeholder/500/500')] bg-cover bg-center rounded-xl" />
+                <div className="h-full bg-[url('/images/portfolio/before-after/interior-detailing/porsche-interior-detail-11.webp')] bg-cover bg-center rounded-xl" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
                 <Car className="h-8 w-8 text-white" />

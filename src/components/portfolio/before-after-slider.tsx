@@ -79,7 +79,7 @@ export function BeforeAfterSlider({ beforeImage, afterImage, alt, className = ''
       {/* After Image (background) */}
       <div className="absolute inset-0">
         <Image
-          src={afterImage || '/api/placeholder/800/450'}
+          src={afterImage || '/images/portfolio/before-after/ceramic-coating/porsche-ceramic-coating-20.webp'}
           alt={`${alt} - After`}
           fill
           className="object-cover"
@@ -98,7 +98,7 @@ export function BeforeAfterSlider({ beforeImage, afterImage, alt, className = ''
         }}
       >
         <Image
-          src={beforeImage || '/api/placeholder/800/450'}
+          src={beforeImage || '/images/portfolio/before-after/ceramic-coating/porsche-ceramic-coating-15.webp'}
           alt={`${alt} - Before`}
           fill
           className="object-cover"

@@ -25,8 +25,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-blackbird-off-white/70 mb-6 max-w-xs">
-              Luxury detailing excellence for your automobile. Premium detailing services 
-              serving Virginia Beach, Chesapeake, and Norfolk.
+              Mobile luxury detailing excellence. Premium automotive care brought directly
+              to your location in Virginia Beach, Chesapeake, and Norfolk.
             </p>
             <div className="flex space-x-4">
               <a
@@ -183,8 +183,8 @@ export function Footer() {
                 <MapPin className="h-4 w-4 text-blackbird-ignition-blue mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-blackbird-off-white/70">
-                    Virginia Beach, VA<br />
-                    Serving Hampton Roads
+                    Mobile Service Area:<br />
+                    Virginia Beach, Chesapeake, Norfolk
                   </p>
                 </div>
               </li>
