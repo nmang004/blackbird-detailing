@@ -25,28 +25,24 @@ const showcaseCategories = [
   {
     name: 'Exotic & Supercars',
     count: 89,
-    icon: '🏎️',
     description: 'Lamborghini, Ferrari, McLaren, and more',
     gradient: 'from-orange-500/20 to-red-500/20'
   },
   {
     name: 'Luxury Sedans',
     count: 156,
-    icon: '🚗',
     description: 'BMW, Mercedes, Audi premium vehicles',
     gradient: 'from-blue-500/20 to-purple-500/20'
   },
   {
     name: 'Performance SUVs',
     count: 203,
-    icon: '🚙',
     description: 'Porsche, Range Rover, performance SUVs',
     gradient: 'from-green-500/20 to-blue-500/20'
   },
   {
     name: 'Electric Vehicles',
     count: 124,
-    icon: '⚡',
     description: 'Tesla, Lucid, premium electric vehicles',
     gradient: 'from-cyan-500/20 to-green-500/20'
   }
@@ -179,9 +175,6 @@ export default function GalleryPage() {
                 <CardContent className="p-6 text-center relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-blackbird-charcoal/20 to-blackbird-charcoal/40 transition-opacity duration-300 group-hover:opacity-80"></div>
                   <div className="relative z-10">
-                    <div className="text-5xl mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                      {category.icon}
-                    </div>
                     <h3 className="font-heading font-bold text-blackbird-off-white mb-2 text-lg">
                       {category.name}
                     </h3>
