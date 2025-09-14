@@ -189,11 +189,13 @@ export default function PaintProtectionFilmPage() {
                 Crystal-clear, self-healing urethane shield that absorbs the abuse so your finish doesn't.
               </p>
 
-              <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 mb-8 border border-blackbird-ignition-blue/20">
-                <Shield className="h-4 w-4 text-blackbird-ignition-blue flex-shrink-0" />
-                <span className="text-sm text-blackbird-ignition-blue font-medium text-center sm:text-left">
-                  In Partnership with<br className="sm:hidden" /> Coastal Details Virginia Beach
-                </span>
+              <div className="flex justify-center sm:justify-start mb-8">
+                <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 border border-blackbird-ignition-blue/20">
+                  <Shield className="h-4 w-4 text-blackbird-ignition-blue flex-shrink-0" />
+                  <span className="text-sm text-blackbird-ignition-blue font-medium text-center sm:text-left">
+                    In Partnership with<br className="sm:hidden" /> Coastal Details Virginia Beach
+                  </span>
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
