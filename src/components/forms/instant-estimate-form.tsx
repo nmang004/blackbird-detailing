@@ -801,20 +801,21 @@ export function InstantEstimateForm() {
               )}
 
               {/* Enhanced Navigation */}
-              <div className="flex justify-between items-center pt-8">
+              <div className="flex justify-between items-center pt-8 gap-4">
                 {currentStep > 1 ? (
                   <Button
                     type="button"
                     variant="outline"
                     onClick={prevStep}
-                    size="lg"
                     className={cn(
+                      "h-10 md:h-12 px-4 md:px-6 text-sm md:text-base",
                       "border-blackbird-charcoal/50 text-blackbird-off-white bg-blackbird-charcoal/20 backdrop-blur-sm",
                       "hover:bg-blackbird-charcoal/40 hover:border-blackbird-ignition-blue/30"
                     )}
                   >
-                    <ChevronLeft className="h-4 w-4 mr-2" />
-                    Previous
+                    <ChevronLeft className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                    <span className="hidden sm:inline">Previous</span>
+                    <span className="sm:hidden">Back</span>
                   </Button>
                 ) : (
                   <div />
@@ -824,28 +825,34 @@ export function InstantEstimateForm() {
                   <Button
                     type="button"
                     onClick={nextStep}
-                    size="lg"
-                    className="bg-gradient-to-r from-blackbird-ignition-blue to-blackbird-ignition-blue/80 hover:from-blackbird-ignition-blue/90 hover:to-blackbird-ignition-blue/70 shadow-lg shadow-blackbird-ignition-blue/25"
+                    className={cn(
+                      "h-10 md:h-12 px-4 md:px-6 text-sm md:text-base",
+                      "bg-gradient-to-r from-blackbird-ignition-blue to-blackbird-ignition-blue/80 hover:from-blackbird-ignition-blue/90 hover:to-blackbird-ignition-blue/70 shadow-lg shadow-blackbird-ignition-blue/25"
+                    )}
                   >
                     Continue
-                    <ChevronRight className="h-4 w-4 ml-2" />
+                    <ChevronRight className="h-3 w-3 md:h-4 md:w-4 ml-1 md:ml-2" />
                   </Button>
                 ) : (
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    size="lg"
-                    className="bg-gradient-to-r from-blackbird-ignition-blue to-blackbird-ignition-blue/80 hover:from-blackbird-ignition-blue/90 hover:to-blackbird-ignition-blue/70 shadow-lg shadow-blackbird-ignition-blue/25 min-w-[200px]"
+                    className={cn(
+                      "h-10 md:h-12 px-4 md:px-6 text-sm md:text-base min-w-[160px] md:min-w-[200px]",
+                      "bg-gradient-to-r from-blackbird-ignition-blue to-blackbird-ignition-blue/80 hover:from-blackbird-ignition-blue/90 hover:to-blackbird-ignition-blue/70 shadow-lg shadow-blackbird-ignition-blue/25"
+                    )}
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
-                        Submitting...
+                        <div className="w-3 h-3 md:w-4 md:h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-1 md:mr-2" />
+                        <span className="hidden sm:inline">Submitting...</span>
+                        <span className="sm:hidden">Sending...</span>
                       </>
                     ) : (
                       <>
-                        <Zap className="h-4 w-4 mr-2" />
-                        Get My Precision Estimate
+                        <Zap className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
+                        <span className="hidden sm:inline">Get My Precision Estimate</span>
+                        <span className="sm:hidden">Get Estimate</span>
                       </>
                     )}
                   </Button>
