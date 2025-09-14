@@ -184,8 +184,32 @@ export function InstantEstimateForm() {
   }
 
   const nextStep = async () => {
-    const isValid = await form.trigger() // Trigger validation for current step fields
+    let isValid = true
+
+    // Validate only current step fields
+    switch (currentStep) {
+      case 1:
+        isValid = await form.trigger(['vehicleYear', 'vehicleMake', 'vehicleModel', 'vehicleColor', 'vehicleCondition'])
+        break
+      case 2:
+        isValid = await form.trigger(['selectedServices'])
+        // Check if at least one service is selected
+        const services = form.getValues('selectedServices')
+        if (!services || services.length === 0) {
+          setFormErrors({ selectedServices: 'Please select at least one service' })
+          isValid = false
+        }
+        break
+      case 3:
+        // Package selection is optional
+        isValid = true
+        break
+      default:
+        isValid = await form.trigger()
+    }
+
     if (isValid && currentStep < 4) {
+      setFormErrors({}) // Clear any previous errors
       setCurrentStep(currentStep + 1)
 
       // Smooth scroll to top on mobile

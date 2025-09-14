@@ -85,7 +85,7 @@ export function ProgressIndicator({ steps, currentStep, className }: ProgressInd
                 "w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300",
                 "border-2 relative overflow-hidden",
                 isCompleted && "bg-blackbird-ignition-blue border-blackbird-ignition-blue text-white shadow-lg shadow-blackbird-ignition-blue/25",
-                isActive && "border-blackbird-ignition-blue text-blackbird-ignition-blue bg-blackbird-ignition-blue/10 animate-pulse",
+                isActive && "border-blackbird-ignition-blue text-blackbird-ignition-blue bg-blackbird-ignition-blue/10",
                 !isCompleted && !isActive && "border-blackbird-charcoal text-blackbird-off-white/60 bg-blackbird-charcoal/20"
               )}>
                 {isCompleted ? (
@@ -96,9 +96,9 @@ export function ProgressIndicator({ steps, currentStep, className }: ProgressInd
                   step.id
                 )}
 
-                {/* Scanning effect for active step */}
+                {/* Subtle glow effect for active step */}
                 {isActive && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blackbird-ignition-blue/20 to-transparent animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blackbird-ignition-blue/10 to-transparent" />
                 )}
               </div>
 

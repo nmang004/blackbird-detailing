@@ -4,13 +4,23 @@ import { ChevronDown, Search, Car } from "lucide-react"
 
 // Popular vehicle makes for the luxury market
 const vehicleMakes = [
+  // Luxury brands
   'Audi', 'BMW', 'Mercedes-Benz', 'Lexus', 'Acura', 'Infiniti', 'Cadillac',
   'Lincoln', 'Volvo', 'Jaguar', 'Land Rover', 'Porsche', 'Tesla', 'Genesis',
+
+  // Ultra-luxury and exotic brands
   'Alfa Romeo', 'Maserati', 'Bentley', 'Rolls-Royce', 'Ferrari', 'Lamborghini',
-  'McLaren', 'Aston Martin', 'Bugatti', 'Koenigsegg', 'Pagani',
+  'McLaren', 'Aston Martin', 'Bugatti', 'Koenigsegg', 'Pagani', 'Lotus',
+
   // Popular mainstream brands
   'Toyota', 'Honda', 'Ford', 'Chevrolet', 'Nissan', 'Hyundai', 'Kia',
-  'Volkswagen', 'Subaru', 'Mazda', 'Dodge', 'Jeep', 'Ram', 'GMC', 'Buick'
+  'Volkswagen', 'Subaru', 'Mazda', 'Dodge', 'Jeep', 'Ram', 'GMC', 'Buick',
+  'Chrysler', 'Mitsubishi', 'Scion', 'Isuzu', 'Suzuki',
+
+  // Additional popular brands
+  'Mini', 'Smart', 'Saab', 'Pontiac', 'Saturn', 'Mercury', 'Oldsmobile',
+  'Hummer', 'Plymouth', 'Fiat', 'Peugeot', 'Citroën', 'Renault', 'Škoda',
+  'Seat', 'Opel', 'Holden', 'Vauxhall'
 ].sort()
 
 // Popular luxury and sports models by make
@@ -62,12 +72,12 @@ export function VehicleAutocomplete({
 
   useEffect(() => {
     if (value.length === 0) {
-      setFilteredOptions(options.slice(0, 8)) // Show first 8 options
+      setFilteredOptions(options.slice(0, 12)) // Show more options initially
     } else {
       const filtered = options.filter(option =>
         option.toLowerCase().includes(value.toLowerCase())
-      ).slice(0, 8)
-      setFilteredOptions(filtered)
+      )
+      setFilteredOptions(filtered) // Show all matches when typing
     }
     setHighlightedIndex(-1)
   }, [value, options])
