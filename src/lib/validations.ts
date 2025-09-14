@@ -8,65 +8,142 @@ export const vehicleConditions = [
   { value: 'poor', label: 'Poor - Heavy wear, requires restoration' }
 ] as const
 
-// Service options
+// Enhanced service options with pricing and features
 export const serviceOptions = [
   {
     id: 'ceramic-coating',
     name: 'Ceramic Coating',
-    description: 'Long-lasting paint protection',
-    category: 'exterior'
+    description: 'Professional-grade paint protection with 2-5 year durability',
+    category: 'exterior',
+    price: 899,
+    duration: '6-8 hours',
+    recommended: true,
+    features: [
+      'UV protection and enhanced gloss',
+      'Hydrophobic water-repelling properties',
+      '2-5 year durability depending on tier',
+      'Scratch and chemical resistance'
+    ]
   },
   {
     id: 'paint-correction',
     name: 'Paint Correction',
-    description: 'Remove swirls and scratches',
-    category: 'exterior'
+    description: 'Multi-stage process to remove swirls, scratches, and imperfections',
+    category: 'exterior',
+    price: 599,
+    duration: '4-6 hours',
+    features: [
+      'Removes 80-95% of paint imperfections',
+      'Professional multi-stage polishing',
+      'Paint thickness monitoring',
+      'Dramatic improvement in clarity and gloss'
+    ]
   },
   {
     id: 'interior-detailing',
     name: 'Interior Detailing',
-    description: 'Deep clean and protect interior',
-    category: 'interior'
+    description: 'Comprehensive interior cleaning and protection',
+    category: 'interior',
+    price: 299,
+    duration: '3-4 hours',
+    features: [
+      'Steam cleaning and sanitization',
+      'Leather conditioning and protection',
+      'Fabric and carpet deep cleaning',
+      'Dashboard and trim conditioning'
+    ]
   },
   {
     id: 'exterior-wash',
     name: 'Exterior Detail',
-    description: 'Complete exterior cleaning',
-    category: 'exterior'
+    description: 'Complete exterior cleaning and finishing',
+    category: 'exterior',
+    price: 199,
+    duration: '2-3 hours',
+    features: [
+      'Hand wash with premium shampoo',
+      'Clay bar decontamination',
+      'Paint-safe drying techniques',
+      'Tire and wheel cleaning'
+    ]
   },
   {
     id: 'wheel-coating',
     name: 'Wheel Coating',
-    description: 'Ceramic coating for wheels',
-    category: 'exterior'
+    description: 'Ceramic protection for wheels and brake components',
+    category: 'exterior',
+    price: 299,
+    duration: '2-3 hours',
+    features: [
+      'Brake dust repelling properties',
+      'High-temperature resistance',
+      'Easy maintenance cleaning',
+      '1-2 year protection'
+    ]
   },
   {
     id: 'glass-coating',
     name: 'Glass Coating',
-    description: 'Hydrophobic glass treatment',
-    category: 'exterior'
+    description: 'Hydrophobic treatment for all glass surfaces',
+    category: 'exterior',
+    price: 199,
+    duration: '1-2 hours',
+    features: [
+      'Rain-repelling hydrophobic effect',
+      'Improved visibility in weather',
+      'Easy cleaning and maintenance',
+      '1 year protection'
+    ]
   }
 ] as const
 
-// Package options
+// Enhanced package options with features
 export const packageOptions = [
   {
     id: 'sport',
     name: 'Sport Package',
     price: 799,
-    description: 'Perfect for daily drivers and enthusiasts'
+    description: 'Perfect for daily drivers and enthusiasts',
+    features: [
+      'Exterior detail and decontamination',
+      'Single-stage paint correction',
+      'Entry-level ceramic coating (1 year)',
+      'Interior deep clean and protection',
+      'Wheel and tire cleaning'
+    ]
   },
   {
     id: 'grand-tourer',
     name: 'Grand Tourer Package',
     price: 1299,
-    description: 'Enhanced protection for luxury vehicles'
+    description: 'Enhanced protection for luxury vehicles',
+    popular: true,
+    features: [
+      'Complete exterior detail and decontamination',
+      'Multi-stage paint correction',
+      'Premium ceramic coating (3 years)',
+      'Comprehensive interior detailing',
+      'Wheel ceramic coating',
+      'Glass hydrophobic treatment',
+      '6-month maintenance follow-up'
+    ]
   },
   {
     id: 'trackhawk',
     name: 'Trackhawk Package',
     price: 1999,
-    description: 'Ultimate protection for exotic vehicles'
+    description: 'Ultimate protection for exotic and high-end vehicles',
+    features: [
+      'Full exterior detail and multi-stage decontamination',
+      'Professional multi-stage paint correction',
+      'Premium ceramic coating (5 years)',
+      'Comprehensive interior detailing with leather treatment',
+      'Wheel and caliper ceramic coating',
+      'Windshield and glass hydrophobic treatment',
+      'Paint protection film on high-impact areas',
+      'Quarterly maintenance program (1 year)',
+      'Priority scheduling and white-glove service'
+    ]
   }
 ] as const
 

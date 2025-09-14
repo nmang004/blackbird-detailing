@@ -120,11 +120,27 @@ export function Navigation() {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href="/portfolio" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuTrigger className="text-blackbird-off-white hover:text-blackbird-ignition-blue">
+                <Link href="/portfolio" className="hover:text-inherit">
                   Portfolio
-                </NavigationMenuLink>
-              </Link>
+                </Link>
+              </NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] lg:w-[600px]">
+                  <ListItem
+                    title="Gallery"
+                    href="/portfolio/gallery"
+                  >
+                    Explore our premium collection of automotive transformations, featuring photos and videos.
+                  </ListItem>
+                  <ListItem
+                    title="Before & After"
+                    href="/portfolio/before-after"
+                  >
+                    View stunning before and after comparisons showcasing our detailed work.
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
@@ -241,13 +257,27 @@ export function Navigation() {
                 Membership
               </Link>
 
-              <Link
-                href="/portfolio"
-                className="text-lg font-semibold text-blackbird-off-white/90 hover:text-blackbird-ignition-blue transition-colors py-2 font-heading"
-                onClick={() => setIsOpen(false)}
-              >
-                Portfolio
-              </Link>
+              <div className="space-y-3">
+                <h3 className="text-sm font-semibold text-blackbird-off-white/75 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-2">
+                  Portfolio
+                </h3>
+                <div className="space-y-2 pl-3">
+                  <Link
+                    href="/portfolio/gallery"
+                    className="block text-base text-blackbird-off-white/85 hover:text-blackbird-ignition-blue transition-colors py-1.5 font-body"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Gallery
+                  </Link>
+                  <Link
+                    href="/portfolio/before-after"
+                    className="block text-base text-blackbird-off-white/85 hover:text-blackbird-ignition-blue transition-colors py-1.5 font-body"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Before & After
+                  </Link>
+                </div>
+              </div>
 
               <div className="space-y-3">
                 <h3 className="text-sm font-semibold text-blackbird-off-white/75 uppercase tracking-wider border-b border-blackbird-charcoal/30 pb-2">
