@@ -240,7 +240,7 @@ export function InstantEstimateForm() {
     return (
       <div className="w-full max-w-4xl mx-auto">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full mb-6 animate-pulse">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full mb-6">
             <CheckCircle className="h-10 w-10 text-white" />
           </div>
           <h2 className="text-4xl font-heading font-bold text-blackbird-off-white mb-4">
@@ -378,8 +378,254 @@ export function InstantEstimateForm() {
         <div className="lg:col-span-2">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              {/* Step 1: Vehicle Details */}
+              {currentStep === 1 && (
+                <Card className="bg-gradient-to-br from-blackbird-charcoal/20 via-blackbird-charcoal/30 to-blackbird-charcoal/40 backdrop-blur-sm border-blackbird-charcoal/50">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-xl mb-4">
+                        <Car className="h-8 w-8 text-blackbird-ignition-blue" />
+                      </div>
+                      <h2 className="text-3xl font-heading font-bold text-blackbird-off-white mb-3">
+                        Your Vehicle Details
+                      </h2>
+                      <p className="text-blackbird-off-white/70 max-w-md mx-auto">
+                        Help us understand your vehicle to provide the most accurate estimate and recommendations.
+                      </p>
+                    </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      <FormField
+                        control={form.control}
+                        name="vehicleYear"
+                        render={({ field }) => (
+                          <FormItem>
+                            <PremiumInput
+                              label="Year"
+                              type="number"
+                              placeholder="2020"
+                              error={formErrors.vehicleYear || errors.vehicleYear?.message}
+                              {...field}
+                              onChange={(e) => field.onChange(parseInt(e.target.value))}
+                            />
+                          </FormItem>
+                        )}
+                      />
 
+                      <FormField
+                        control={form.control}
+                        name="vehicleMake"
+                        render={({ field }) => (
+                          <FormItem>
+                            <VehicleAutocomplete
+                              field="make"
+                              value={field.value || ''}
+                              onValueChange={field.onChange}
+                              label="Make"
+                              placeholder="Select or type make"
+                              error={formErrors.vehicleMake || errors.vehicleMake?.message}
+                            />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      <FormField
+                        control={form.control}
+                        name="vehicleModel"
+                        render={({ field }) => (
+                          <FormItem>
+                            <VehicleAutocomplete
+                              field="model"
+                              value={field.value || ''}
+                              onValueChange={field.onChange}
+                              vehicleMake={vehicleMake}
+                              label="Model"
+                              placeholder="Select or type model"
+                              error={formErrors.vehicleModel || errors.vehicleModel?.message}
+                            />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="vehicleColor"
+                        render={({ field }) => (
+                          <FormItem>
+                            <PremiumInput
+                              label="Color"
+                              placeholder="White, Black, Silver, etc."
+                              error={formErrors.vehicleColor || errors.vehicleColor?.message}
+                              {...field}
+                            />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="vehicleCondition"
+                      render={({ field }) => (
+                        <FormItem>
+                          <label className="text-sm font-medium text-blackbird-off-white mb-3 block">
+                            Vehicle Condition
+                          </label>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className={cn(
+                                "h-12 bg-blackbird-charcoal/20 backdrop-blur-sm border-blackbird-charcoal/50 text-blackbird-off-white",
+                                "hover:border-blackbird-ignition-blue/30 focus:border-blackbird-ignition-blue focus:ring-2 focus:ring-blackbird-ignition-blue/20"
+                              )}>
+                                <SelectValue placeholder="Select condition" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent className="bg-blackbird-charcoal/90 backdrop-blur-md border-blackbird-charcoal">
+                              {vehicleConditions.map((condition) => (
+                                <SelectItem
+                                  key={condition.value}
+                                  value={condition.value}
+                                  className="text-blackbird-off-white focus:bg-blackbird-ignition-blue/20"
+                                >
+                                  <div>
+                                    <div className="font-medium">{condition.label}</div>
+                                    <div className="text-xs text-blackbird-off-white/60">{condition.description}</div>
+                                  </div>
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <p className="text-xs text-blackbird-off-white/60 mt-2">
+                            This helps us recommend the right services for your vehicle
+                          </p>
+                        </FormItem>
+                      )}
+                    />
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Step 2: Service Selection */}
+              {currentStep === 2 && (
+                <Card className="bg-gradient-to-br from-blackbird-charcoal/20 via-blackbird-charcoal/30 to-blackbird-charcoal/40 backdrop-blur-sm border-blackbird-charcoal/50">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-xl mb-4">
+                        <Sparkles className="h-8 w-8 text-blackbird-ignition-blue" />
+                      </div>
+                      <h2 className="text-3xl font-heading font-bold text-blackbird-off-white mb-3">
+                        Choose Your Services
+                      </h2>
+                      <p className="text-blackbird-off-white/70 max-w-md mx-auto">
+                        Select the detailing services that best match your vehicle's needs. Our smart recommendations are based on your vehicle information.
+                      </p>
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="selectedServices"
+                      render={({ field }) => (
+                        <FormItem>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {getRecommendedServices().map((service) => (
+                              <FormServiceCard
+                                key={service.id}
+                                service={service}
+                                isSelected={field.value?.includes(service.id) || false}
+                                onToggle={(serviceId) => {
+                                  const current = field.value || []
+                                  const updated = current.includes(serviceId)
+                                    ? current.filter(id => id !== serviceId)
+                                    : [...current, serviceId]
+                                  field.onChange(updated)
+                                }}
+                              />
+                            ))}
+                          </div>
+                          {formErrors.selectedServices && (
+                            <p className="text-xs text-red-400 flex items-center gap-1 mt-2">
+                              <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                              </svg>
+                              {formErrors.selectedServices}
+                            </p>
+                          )}
+                        </FormItem>
+                      )}
+                    />
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Step 3: Package Selection */}
+              {currentStep === 3 && (
+                <Card className="bg-gradient-to-br from-blackbird-charcoal/20 via-blackbird-charcoal/30 to-blackbird-charcoal/40 backdrop-blur-sm border-blackbird-charcoal/50">
+                  <CardContent className="p-8">
+                    <div className="text-center mb-8">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-blackbird-ignition-blue/20 rounded-xl mb-4">
+                        <Shield className="h-8 w-8 text-blackbird-ignition-blue" />
+                      </div>
+                      <h2 className="text-3xl font-heading font-bold text-blackbird-off-white mb-3">
+                        Upgrade to a Package
+                      </h2>
+                      <p className="text-blackbird-off-white/70 max-w-md mx-auto">
+                        Save money and get comprehensive protection with our curated service packages. Or continue with individual services.
+                      </p>
+                    </div>
+
+                    <FormField
+                      control={form.control}
+                      name="packageSelection"
+                      render={({ field }) => (
+                        <FormItem>
+                          <div className="space-y-6">
+                            {/* Option to stick with individual services */}
+                            <div className="text-center">
+                              <Button
+                                type="button"
+                                variant="outline"
+                                size="sm"
+                                className={cn(
+                                  "border-blackbird-charcoal/50 text-blackbird-off-white bg-blackbird-charcoal/20",
+                                  "hover:bg-blackbird-charcoal/40 hover:border-blackbird-ignition-blue/30",
+                                  !field.value && "border-blackbird-ignition-blue bg-blackbird-ignition-blue/10"
+                                )}
+                                onClick={() => field.onChange(undefined)}
+                              >
+                                Continue with Individual Services
+                              </Button>
+                            </div>
+
+                            <div className="relative">
+                              <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-blackbird-charcoal/30" />
+                              </div>
+                              <div className="relative flex justify-center text-sm">
+                                <span className="px-4 bg-blackbird-black text-blackbird-off-white/60">or choose a package</span>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                              {packageOptions.map((pkg) => (
+                                <PackageCard
+                                  key={pkg.id}
+                                  package={pkg}
+                                  isSelected={field.value === pkg.id}
+                                  onSelect={(packageId) => {
+                                    field.onChange(field.value === packageId ? undefined : packageId)
+                                  }}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                        </FormItem>
+                      )}
+                    />
+                  </CardContent>
+                </Card>
+              )}
 
               {/* Step 4: Contact Information */}
               {currentStep === 4 && (
