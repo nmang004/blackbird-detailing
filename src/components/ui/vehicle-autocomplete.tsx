@@ -63,6 +63,7 @@ export function VehicleAutocomplete({
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const inputRef = useRef<HTMLInputElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const options = field === 'make'
     ? vehicleMakes
@@ -81,6 +82,25 @@ export function VehicleAutocomplete({
     }
     setHighlightedIndex(-1)
   }, [value, options])
+
+  // Close dropdown when clicking outside - important for mobile navigation
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('touchstart', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+    }
+  }, [isOpen])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value
@@ -135,13 +155,21 @@ export function VehicleAutocomplete({
     setIsOpen(true)
   }
 
-  const handleBlur = () => {
-    // Delay closing to allow option clicks
-    setTimeout(() => setIsOpen(false), 150)
+  const handleBlur = (e: React.FocusEvent) => {
+    // Only delay closing if focus is moving to a dropdown option
+    // Otherwise close immediately to prevent blocking navigation
+    const relatedTarget = e.relatedTarget as HTMLElement
+    if (relatedTarget && listRef.current?.contains(relatedTarget)) {
+      // Focus moved to dropdown option, delay closing
+      setTimeout(() => setIsOpen(false), 150)
+    } else {
+      // Focus moved elsewhere, close immediately
+      setIsOpen(false)
+    }
   }
 
   return (
-    <div className={cn("relative space-y-2", className)}>
+    <div ref={containerRef} className={cn("relative space-y-2", className)}>
       {label && (
         <label className="text-sm font-medium text-blackbird-off-white">
           {label}
@@ -185,7 +213,7 @@ export function VehicleAutocomplete({
 
         {/* Dropdown */}
         {isOpen && filteredOptions.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-1 z-50">
+          <div className="absolute top-full left-0 right-0 mt-1 z-40">
             <ul
               ref={listRef}
               className="max-h-60 overflow-auto rounded-lg border border-blackbird-charcoal/50 bg-blackbird-charcoal/90 backdrop-blur-md shadow-xl shadow-blackbird-black/20"
@@ -212,7 +240,7 @@ export function VehicleAutocomplete({
 
         {/* No options message */}
         {isOpen && filteredOptions.length === 0 && value.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-1 z-50">
+          <div className="absolute top-full left-0 right-0 mt-1 z-40">
             <div className="rounded-lg border border-blackbird-charcoal/50 bg-blackbird-charcoal/90 backdrop-blur-md shadow-xl shadow-blackbird-black/20 p-4 text-center">
               <p className="text-blackbird-off-white/60 text-sm">
                 No {field === 'make' ? 'makes' : 'models'} found matching "{value}"

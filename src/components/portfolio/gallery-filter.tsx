@@ -123,7 +123,7 @@ export function GalleryFilter({
       </div>
 
       {/* Quick Filters */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
         <div className="flex flex-wrap items-center gap-2">
           {quickFilters.map((filter) => {
             const isActive =
@@ -152,9 +152,9 @@ export function GalleryFilter({
           })}
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center justify-between sm:justify-end space-x-3">
           {/* Results Count */}
-          <div className="text-sm text-blackbird-off-white/60">
+          <div className="text-sm text-blackbird-off-white/60 whitespace-nowrap">
             {isLoading ? (
               <span className="animate-pulse">Filtering...</span>
             ) : (
@@ -169,7 +169,7 @@ export function GalleryFilter({
             variant="ghost"
             size="sm"
             onClick={() => setIsExpanded(!isExpanded)}
-            className={`text-blackbird-off-white/80 hover:text-blackbird-off-white hover:bg-blackbird-charcoal/30 ${
+            className={`text-blackbird-off-white/80 hover:text-blackbird-off-white hover:bg-blackbird-charcoal/30 flex-shrink-0 ${
               hasActiveFilters ? 'text-blackbird-ignition-blue' : ''
             }`}
           >
