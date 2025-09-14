@@ -190,9 +190,9 @@ export default function PaintProtectionFilmPage() {
               </p>
 
               <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 mb-8 border border-blackbird-ignition-blue/20">
-                <Shield className="h-4 w-4 text-blackbird-ignition-blue" />
-                <span className="text-sm text-blackbird-ignition-blue font-medium">
-                  In Partnership with Coastal Details Virginia Beach
+                <Shield className="h-4 w-4 text-blackbird-ignition-blue flex-shrink-0" />
+                <span className="text-sm text-blackbird-ignition-blue font-medium text-center sm:text-left">
+                  In Partnership with<br className="sm:hidden" /> Coastal Details Virginia Beach
                 </span>
               </div>
 
@@ -375,7 +375,7 @@ export default function PaintProtectionFilmPage() {
 
                   <Button
                     size="sm"
-                    className={`w-full ${pkg.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-charcoal hover:bg-blackbird-charcoal/80 text-blackbird-off-white'} transition-colors`}
+                    className={`w-full ${pkg.popular ? 'bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white' : 'bg-blackbird-off-white hover:bg-blackbird-off-white/90 text-blackbird-black border border-blackbird-charcoal/20'} transition-colors`}
                     asChild
                   >
                     <Link href="/contact">
