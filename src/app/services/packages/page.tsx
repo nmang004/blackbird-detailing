@@ -170,34 +170,45 @@ export default function PackagesPage() {
   return (
     <div className="min-h-screen bg-blackbird-black">
       {/* Hero Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-br from-blackbird-black via-blackbird-charcoal/20 to-blackbird-black">
+      <section className="py-20 md:py-32 bg-blackbird-black">
         <div className="container">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 mb-6">
-              <Package className="h-4 w-4 text-blackbird-ignition-blue" />
-              <span className="text-sm text-blackbird-ignition-blue font-medium uppercase tracking-wider">
-                Complete Packages
-              </span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-blackbird-ignition-blue/10 rounded-full px-4 py-2 mb-6">
+                <Package className="h-4 w-4 text-blackbird-ignition-blue" />
+                <span className="text-sm text-blackbird-ignition-blue font-medium uppercase tracking-wider">
+                  Complete Packages
+                </span>
+              </div>
+
+              <h1 className="text-4xl md:text-6xl font-heading font-bold text-blackbird-off-white mb-6">
+                Professional Detail{' '}
+                <span className="text-blackbird-ignition-blue">Packages</span>
+              </h1>
+
+              <p className="text-xl text-blackbird-off-white/70 mb-8">
+                Complete interior and exterior detailing services designed to clean every inch
+                of your vehicle. From ongoing maintenance programs to full detail packages,
+                we provide the level of care your investment deserves.
+              </p>
+
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <Button size="lg" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white" asChild>
+                  <Link href="/contact">Get Package Quote</Link>
+                </Button>
+                <Button size="lg" variant="outline" className="border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black" asChild>
+                  <Link href="/portfolio">See Package Results</Link>
+                </Button>
+              </div>
             </div>
-            
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-blackbird-off-white mb-6">
-              Professional Detail{' '}
-              <span className="text-blackbird-ignition-blue">Packages</span>
-            </h1>
 
-            <p className="text-xl text-blackbird-off-white/70 mb-12 max-w-3xl mx-auto">
-              Complete interior and exterior detailing services designed to clean every inch
-              of your vehicle. From ongoing maintenance programs to full detail packages,
-              we provide the level of care your investment deserves.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button size="lg" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white" asChild>
-                <Link href="/contact">Get Package Quote</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black" asChild>
-                <Link href="/portfolio">See Package Results</Link>
-              </Button>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 rounded-2xl p-8 border border-blackbird-charcoal/50">
+                <div className="h-full bg-[url('/images/portfolio/before-after/ceramic-coating/aston-martin-ceramic-coating-35.webp')] bg-cover bg-center rounded-xl" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-blackbird-ignition-blue rounded-lg p-4">
+                <Package className="h-8 w-8 text-white" />
+              </div>
             </div>
           </div>
         </div>
