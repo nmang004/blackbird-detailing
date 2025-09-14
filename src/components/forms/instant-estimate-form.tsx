@@ -397,9 +397,9 @@ export function InstantEstimateForm() {
         />
       </div>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Form Content */}
-        <div className="max-w-4xl mx-auto">
+        <div className="lg:col-span-2">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               {/* Step 1: Vehicle Details */}
@@ -855,16 +855,14 @@ export function InstantEstimateForm() {
           </Form>
         </div>
 
-        {/* Price Preview - Now below the form */}
-        {(selectedServices.length > 0 || packageSelection) && (
-          <div className="max-w-4xl mx-auto">
-            <PricePreview
-              selectedServices={selectedServices}
-              selectedPackage={packageSelection}
-              packages={packageOptions}
-            />
-          </div>
-        )}
+        {/* Price Preview Sidebar */}
+        <div className="lg:col-span-1">
+          <PricePreview
+            selectedServices={selectedServices}
+            selectedPackage={packageSelection}
+            packages={packageOptions}
+          />
+        </div>
       </div>
     </div>
   )

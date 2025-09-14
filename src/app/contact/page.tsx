@@ -86,125 +86,73 @@ export default function ContactPage() {
         </div>
 
         {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Estimate Form - Takes 2 columns */}
-          <div className="lg:col-span-2">
+        <div className="space-y-12">
+          {/* Estimate Form - Full width */}
+          <div className="max-w-6xl mx-auto">
             <InstantEstimateForm />
           </div>
 
-          {/* Contact Information Sidebar */}
-          <div className="space-y-8">
-            {/* Contact Details */}
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
-              <CardHeader>
-                <CardTitle className="text-blackbird-off-white">Contact Information</CardTitle>
-                <CardDescription className="text-blackbird-off-white/70">
-                  100% mobile service - we come to you. Prefer to speak directly? We&apos;re here to help.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <div className="p-2 bg-blackbird-ignition-blue/20 rounded-lg">
-                      <item.icon className="h-5 w-5 text-blackbird-ignition-blue" />
+          {/* Contact Information - Below form */}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {/* Contact Info Cards */}
+              {contactInfo.map((item, index) => (
+                <Card key={index} className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
+                  <CardContent className="p-6 text-center">
+                    <div className="p-3 bg-blackbird-ignition-blue/20 rounded-lg inline-flex mb-4">
+                      <item.icon className="h-6 w-6 text-blackbird-ignition-blue" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-blackbird-off-white mb-1">
-                        {item.title}
-                      </h3>
-                      {item.action ? (
-                        <a
-                          href={item.action}
-                          className="text-blackbird-ignition-blue hover:text-blackbird-ignition-blue/80 transition-colors font-medium"
-                        >
-                          {item.content}
-                        </a>
-                      ) : (
-                        <p className="text-blackbird-off-white font-medium">
-                          {item.content}
-                        </p>
-                      )}
-                      <p className="text-sm text-blackbird-off-white/60">
-                        {item.description}
+                    <h3 className="font-semibold text-blackbird-off-white mb-2">
+                      {item.title}
+                    </h3>
+                    {item.action ? (
+                      <a
+                        href={item.action}
+                        className="text-blackbird-ignition-blue hover:text-blackbird-ignition-blue/80 transition-colors font-medium block mb-2"
+                      >
+                        {item.content}
+                      </a>
+                    ) : (
+                      <p className="text-blackbird-off-white font-medium mb-2">
+                        {item.content}
                       </p>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+                    )}
+                    <p className="text-sm text-blackbird-off-white/60">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
 
-            {/* Why Choose Us */}
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
-              <CardHeader>
-                <CardTitle className="text-blackbird-off-white">Why Choose Blackbird?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {whyChooseUs.map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blackbird-ignition-blue rounded-full mt-2 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold text-blackbird-off-white mb-1">
+            {/* Why Choose Us - Full width below contact cards */}
+            <div className="mt-12">
+              <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-blackbird-off-white text-2xl">Why Choose Blackbird?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {whyChooseUs.map((item, index) => (
+                      <div key={index} className="text-center">
+                        <div className="w-3 h-3 bg-blackbird-ignition-blue rounded-full mx-auto mb-3" />
+                        <h4 className="font-semibold text-blackbird-off-white mb-2">
                           {item.title}
                         </h4>
                         <p className="text-sm text-blackbird-off-white/70">
                           {item.description}
                         </p>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* URABLE Booking System */}
-            <UrableBooking variant="compact" className="mb-8" />
-
-            {/* Quick Contact CTA */}
-            <Card className="bg-gradient-to-br from-blackbird-ignition-blue/20 to-blackbird-charcoal/50 border-blackbird-ignition-blue/30">
-              <CardContent className="p-6 text-center">
-                <h3 className="font-heading font-bold text-blackbird-off-white mb-3">
-                  Need to Speak with Someone?
-                </h3>
-                <p className="text-blackbird-off-white/80 text-sm mb-4">
-                  Our mobile luxury detailing experts understand your passion for quality
-                  and provide personalized consultations for enthusiasts like you.
-                </p>
-                <a
-                  href="tel:+1-757-123-4567"
-                  className="inline-flex items-center justify-center w-full px-4 py-3 bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white font-semibold rounded-lg transition-colors"
-                >
-                  <Phone className="h-4 w-4 mr-2" />
-                  Call Now: (757) 123-4567
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Service Areas */}
-            <Card className="bg-blackbird-charcoal/30 border-blackbird-charcoal">
-              <CardHeader>
-                <CardTitle className="text-blackbird-off-white">Service Areas</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-blackbird-off-white">Virginia Beach</span>
-                    <span className="text-blackbird-ignition-blue text-sm font-medium">Primary</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-blackbird-off-white">Chesapeake</span>
-                    <span className="text-blackbird-off-white/60 text-sm">Available</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-blackbird-off-white">Norfolk</span>
-                    <span className="text-blackbird-off-white/60 text-sm">Available</span>
-                  </div>
-                </div>
-                <p className="text-xs text-blackbird-off-white/60 mt-4">
-                  100% mobile service - we bring the detail shop to you
-                </p>
-              </CardContent>
-            </Card>
+            <div className="mt-8">
+              <UrableBooking variant="compact" />
+            </div>
           </div>
         </div>
 
