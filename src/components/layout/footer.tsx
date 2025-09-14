@@ -161,10 +161,10 @@ export function Footer() {
                 <Phone className="h-4 w-4 text-blackbird-ignition-blue mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="tel:+1-757-123-4567"
+                    href="tel:+1-757-500-1393"
                     className="text-sm text-blackbird-off-white/70 hover:text-blackbird-ignition-blue transition-colors"
                   >
-                    (757) 123-4567
+                    (757) 500-1393
                   </a>
                 </div>
               </li>
@@ -172,10 +172,10 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-blackbird-ignition-blue mt-0.5 flex-shrink-0" />
                 <div>
                   <a
-                    href="mailto:info@blackbirddetailing.com"
+                    href="mailto:blackbirddetailingva@gmail.com"
                     className="text-sm text-blackbird-off-white/70 hover:text-blackbird-ignition-blue transition-colors"
                   >
-                    info@blackbirddetailing.com
+                    blackbirddetailingva@gmail.com
                   </a>
                 </div>
               </li>
@@ -192,8 +192,9 @@ export function Footer() {
                 <Clock className="h-4 w-4 text-blackbird-ignition-blue mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-blackbird-off-white/70">
-                    Mon - Sat: 8am - 6pm<br />
-                    Sun: By Appointment
+                    Mon - Fri: 9am - 6pm<br />
+                    Sat: 9am - 3pm<br />
+                    Sun: Closed
                   </p>
                 </div>
               </li>

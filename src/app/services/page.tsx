@@ -284,11 +284,11 @@ export default function ServicesPage() {
                 <Link href="/contact">Get Your Free Estimate</Link>
               </Button>
               <a
-                href="tel:+1-757-123-4567"
+                href="tel:+1-757-500-1393"
                 className="flex items-center text-blackbird-off-white hover:text-blackbird-ignition-blue transition-colors"
               >
                 <span className="mr-2">📞</span>
-                <span className="font-semibold">(757) 123-4567</span>
+                <span className="font-semibold">(757) 500-1393</span>
               </a>
             </div>
           </div>

@@ -14,16 +14,16 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Phone',
-    content: '(757) 123-4567',
+    content: '(757) 500-1393',
     description: 'Call us for immediate assistance',
-    action: 'tel:+1-757-123-4567'
+    action: 'tel:+1-757-500-1393'
   },
   {
     icon: Mail,
     title: 'Email',
-    content: 'info@blackbirddetailing.com',
+    content: 'blackbirddetailingva@gmail.com',
     description: 'Email us your questions',
-    action: 'mailto:info@blackbirddetailing.com'
+    action: 'mailto:blackbirddetailingva@gmail.com'
   },
   {
     icon: MapPin,
@@ -35,8 +35,8 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Hours',
-    content: 'Mon-Sat: 8am-6pm',
-    description: 'Sun: By Appointment',
+    content: 'Mon-Fri: 9am-6pm',
+    description: 'Sat: 9am-3pm, Sun: Closed',
     action: null
   }
 ]
@@ -170,14 +170,14 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="tel:+1-757-123-4567"
+                  href="tel:+1-757-500-1393"
                   className="inline-flex items-center justify-center px-6 py-3 bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 text-white font-semibold rounded-lg transition-colors"
                 >
                   <Phone className="h-4 w-4 mr-2" />
-                  Call (757) 123-4567
+                  Call (757) 500-1393
                 </a>
                 <a
-                  href="mailto:info@blackbirddetailing.com"
+                  href="mailto:blackbirddetailingva@gmail.com"
                   className="inline-flex items-center justify-center px-6 py-3 border border-blackbird-off-white/30 text-blackbird-off-white hover:bg-blackbird-off-white hover:text-blackbird-black font-semibold rounded-lg transition-colors"
                 >
                   <Mail className="h-4 w-4 mr-2" />

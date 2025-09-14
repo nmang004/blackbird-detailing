@@ -66,7 +66,7 @@ export function InstantEstimateForm() {
       preferredContactMethod: 'phone',
       timeframe: 'flexible'
     },
-    mode: 'onChange' // Real-time validation
+    mode: 'onBlur' // Less aggressive validation, better performance
   })
 
   const { watch, formState: { errors } } = form
@@ -75,11 +75,16 @@ export function InstantEstimateForm() {
   const vehicleMake = watch('vehicleMake')
   const vehicleCondition = watch('vehicleCondition')
 
-  // Auto-save functionality
+  // Auto-save functionality - debounced to improve performance
   useEffect(() => {
     const subscription = watch((data) => {
       if (typeof window !== 'undefined') {
-        localStorage.setItem('blackbird-estimate-form', JSON.stringify(data))
+        // Debounce the localStorage save to avoid excessive writes
+        const timeoutId = setTimeout(() => {
+          localStorage.setItem('blackbird-estimate-form', JSON.stringify(data))
+        }, 500) // Wait 500ms after last change
+
+        return () => clearTimeout(timeoutId)
       }
     })
     return () => subscription.unsubscribe()
@@ -362,16 +367,16 @@ export function InstantEstimateForm() {
                   <Button
                     size="sm"
                     className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 flex-1"
-                    onClick={() => window.open('tel:+1-757-123-4567')}
+                    onClick={() => window.open('tel:+1-757-500-1393')}
                   >
                     <Phone className="h-4 w-4 mr-2" />
-                    Call (757) 123-4567
+                    Call (757) 500-1393
                   </Button>
                   <Button
                     variant="outline"
                     size="sm"
                     className="border-blackbird-off-white/30 text-blackbird-off-white flex-1"
-                    onClick={() => window.open('mailto:info@blackbirddetailing.com')}
+                    onClick={() => window.open('mailto:blackbirddetailingva@gmail.com')}
                   >
                     <Mail className="h-4 w-4 mr-2" />
                     Send Email

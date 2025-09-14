@@ -208,11 +208,11 @@ export function Navigation() {
         {/* Contact Info - positioned on far right (desktop) */}
         <div className="ml-auto hidden items-center space-x-4 lg:flex">
           <a
-            href="tel:+1-757-123-4567"
+            href="tel:+1-757-500-1393"
             className="flex items-center space-x-2 text-sm text-blackbird-off-white/80 hover:text-blackbird-ignition-blue transition-colors"
           >
             <Phone className="h-4 w-4" />
-            <span>(757) 123-4567</span>
+            <span>(757) 500-1393</span>
           </a>
           <Link href="/contact">
             <Button size="sm" className="bg-blackbird-ignition-blue hover:bg-blackbird-ignition-blue/90 font-semibold">
@@ -323,11 +323,11 @@ export function Navigation() {
                   </Button>
                 </Link>
                 <a
-                  href="tel:+1-757-123-4567"
+                  href="tel:+1-757-500-1393"
                   className="flex items-center justify-center space-x-2 text-base text-blackbird-off-white/85 py-2 font-body hover:text-blackbird-ignition-blue transition-colors"
                 >
                   <Phone className="h-4 w-4" />
-                  <span>(757) 123-4567</span>
+                  <span>(757) 500-1393</span>
                 </a>
               </div>
             </div>
